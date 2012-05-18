@@ -6,16 +6,12 @@
 //  Copyright (c) 2012 Pallas Free Foundation. All rights reserved.
 //
 
-#import "StreamController.h"
-
 
 #define NETWORK_DATA_DATE_FORMAT	@"yyyy-MM-dd'T'HH:mm:ss'Z'"
 
 
-@interface DataController : NSObject<StreamControllerDelegate>
+@interface DataController : NSObject
 
-@property (nonatomic, strong) StreamController *streamController;
-@property (nonatomic, strong) NSArray *allowedElementNames;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 + (DataController *)sharedInstance;

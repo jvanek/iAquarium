@@ -26,6 +26,7 @@
 		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
 		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
+		D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F0A271566A5330093941F /* XmlParsingOperation.m */; };
 		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
 		D882AFE3155C056D0029F188 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFE2155C056D0029F188 /* SearchViewController.xib */; };
 		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
@@ -92,6 +93,8 @@
 		D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+Additions.m"; path = "Classes/CoreData/NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
 		D85F09FC156670150093941F /* Fish-mapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Fish-mapping.plist"; path = "Resources/Fish-mapping.plist"; sourceTree = "<group>"; };
 		D85F09FE156672D00093941F /* StreamKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StreamKeys.h; path = Classes/StreamKeys.h; sourceTree = "<group>"; };
+		D85F0A261566A5330093941F /* XmlParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XmlParsingOperation.h; path = Classes/XmlParsingOperation.h; sourceTree = "<group>"; };
+		D85F0A271566A5330093941F /* XmlParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParsingOperation.m; path = Classes/XmlParsingOperation.m; sourceTree = "<group>"; };
 		D882AFDE155C051D0029F188 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Classes/SearchViewController.h; sourceTree = "<group>"; };
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
 		D882AFE2155C056D0029F188 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Resources/SearchViewController.xib; sourceTree = "<group>"; };
@@ -416,6 +419,8 @@
 				D8B919C7155BE9CB0029B555 /* StreamController.m */,
 				D80DF8BE156637E300488A0D /* SearchCriterium.h */,
 				D80DF8BF156637E300488A0D /* SearchCriterium.m */,
+				D85F0A261566A5330093941F /* XmlParsingOperation.h */,
+				D85F0A271566A5330093941F /* XmlParsingOperation.m */,
 				D80DF8F8156655FD00488A0D /* DataController.h */,
 				D80DF8F9156655FD00488A0D /* DataController.m */,
 			);
@@ -543,6 +548,7 @@
 				D80DF8FA156655FD00488A0D /* DataController.m in Sources */,
 				D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */,
 				D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */,
+				D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
