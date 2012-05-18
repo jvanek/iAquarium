@@ -21,7 +21,6 @@ static NSMutableArray *mappingsNotFound;
 @interface DataController()
 
 @property (nonatomic, strong) NSOperationQueue *queue;
-@property (nonatomic, strong) NetworkIndicatorController *indicatorController;
 @property (nonatomic, strong) NSMutableDictionary *currentItem;
 
 - (void)setup;
@@ -31,7 +30,7 @@ static NSMutableArray *mappingsNotFound;
 
 @implementation DataController
 
-@synthesize queue, indicatorController, streamController, allowedElementNames;
+@synthesize queue, streamController, allowedElementNames;
 @synthesize currentItem, dateFormatter = _dateFormatter;
 
 
@@ -60,15 +59,13 @@ static NSMutableArray *mappingsNotFound;
 
 - (void)dealloc {
 	self.queue = nil;
-	self.indicatorController = nil;
 	self.streamController = nil;
 	self.allowedElementNames = nil;
 	self.currentItem = nil;
 }
 
-- (BOOL)updateDatabaseUsingURL:(NSURL *)remoteUrl progressController:(NetworkIndicatorController *)controller error:(NSError **)error {
+- (BOOL)updateDatabaseUsingURL:(NSURL *)remoteUrl error:(NSError **)error {
 	BOOL result = YES;
-	self.indicatorController = controller;
 	self.streamController = [[StreamController alloc] init];
 	self.streamController.delegate = self;
 	result = [self.streamController parseXmlFromUrl:remoteUrl error:error];
@@ -143,7 +140,9 @@ static NSMutableArray *mappingsNotFound;
 }
 
 - (void)xmlReaderAddToList:(id)currentItem {
+#ifdef DEBUG_XML
 	NSLog(@"%s : Adding to database %@", __PRETTY_FUNCTION__, [self.currentItem description]);
+#endif
 	[GenericManagedObject updateObjectForKey:FISH_KEY_SCIENTIFIC_NAME
 									   value:[self.currentItem objectForKey:STREAM_KEY_NOM_SCIENT]
 								  entityName:FISH_ENTITY_NAME

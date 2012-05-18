@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Pallas Free Foundation. All rights reserved.
 //
 
-#import "NetworkIndicatorController.h"
 #import "StreamController.h"
 
 
@@ -22,6 +21,6 @@
 + (DataController *)sharedInstance;
 + (NSDictionary *)mappingForEntityName:(NSString *)entityName;
 
-- (BOOL)updateDatabaseUsingURL:(NSURL *)remoteUrl progressController:(NetworkIndicatorController *)controller error:(NSError **)error;
+- (BOOL)updateDatabaseUsingURL:(NSURL *)remoteUrl error:(NSError **)error;
 
 @end

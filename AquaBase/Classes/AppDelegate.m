@@ -17,7 +17,8 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize mainViewController;
-@synthesize searchViewController;
+@synthesize searchViewController, networkIndicatorController = _networkIndicatorController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -147,6 +148,30 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Network Activity Indicator
+
+- (NetworkIndicatorController *)networkIndicatorController {
+	if (_networkIndicatorController == nil)
+		_networkIndicatorController = [[NetworkIndicatorController alloc] initWithNibName:@"NetworkIndicatorController" bundle:nil];
+	return _networkIndicatorController;
+}
+
+- (void)showNetworkActivity {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+	CGRect container = self.mainViewController.view.frame;
+	self.networkIndicatorController.view.frame = CGRectMake((container.size.width - NETWORK_INDICATOR_SIZE) / 2.0,
+															(container.size.height - NETWORK_INDICATOR_SIZE) / 2.0,
+															NETWORK_INDICATOR_SIZE, NETWORK_INDICATOR_SIZE);
+	[self.mainViewController.view addSubview:self.networkIndicatorController.view];
+	[self.networkIndicatorController.activityIndicator startAnimating];
+}
+
+- (void)hideNetworkActivity {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	[self.networkIndicatorController.activityIndicator stopAnimating];
+	[self.networkIndicatorController.view removeFromSuperview];
 }
 
 @end

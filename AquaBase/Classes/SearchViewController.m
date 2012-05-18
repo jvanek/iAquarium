@@ -134,8 +134,15 @@
 - (void)refreshDatabase:(UIBarButtonItem *)sender {
 	NSError *error = nil;
 	NSURL *databaseUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
-	NetworkIndicatorController *indicatorController = [[NetworkIndicatorController alloc] initWithNibName:@"NetworkIndicatorController" bundle:nil];
-	BOOL result = [[DataController sharedInstance] updateDatabaseUsingURL:databaseUrl progressController:indicatorController error:&error];
+	self.navigationItem.rightBarButtonItem.enabled = NO;
+	
+//	APP_DELEGATE.networkIndicatorController.showsTitle = YES;
+//	APP_DELEGATE.networkIndicatorController.showsSecondary = YES;
+//	APP_DELEGATE.networkIndicatorController.showsProgress = YES;
+//	[APP_DELEGATE.networkIndicatorController prepareWithMinValue:0.0 maxValue:0.0 forTitle:LOCALIZED_STRING(@"Refreshing...")];
+//	[APP_DELEGATE performSelectorOnMainThread:@selector(showNetworkActivity) withObject:nil waitUntilDone:NO];
+	
+	BOOL result = [[DataController sharedInstance] updateDatabaseUsingURL:databaseUrl error:&error];
 	if (!result) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED_STRING(@"Error")
 														message:LOCALIZED_STRING(@"An error occured when updating the database. Please try again later.")
@@ -144,6 +151,9 @@
 											  otherButtonTitles:nil];
 		[alert show];
 	}
+	
+//	[APP_DELEGATE performSelectorOnMainThread:@selector(hideNetworkActivity) withObject:nil waitUntilDone:NO];
+	self.navigationItem.rightBarButtonItem.enabled = YES;	
 }
 
 @end

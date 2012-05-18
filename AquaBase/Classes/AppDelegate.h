@@ -7,6 +7,7 @@
 //
 
 #import "SearchViewController.h"
+#import "NetworkIndicatorController.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -16,11 +17,13 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (strong, nonatomic) IBOutlet UINavigationController *mainViewController;
+@property (strong, nonatomic) IBOutlet SearchViewController *searchViewController;
+@property (nonatomic, strong) NetworkIndicatorController *networkIndicatorController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
-@property (strong, nonatomic) IBOutlet UINavigationController *mainViewController;
-@property (strong, nonatomic) IBOutlet SearchViewController *searchViewController;
+- (void)showNetworkActivity;
+- (void)hideNetworkActivity;
 
 @end
