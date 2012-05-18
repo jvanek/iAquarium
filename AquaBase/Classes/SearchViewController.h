@@ -10,7 +10,7 @@
 #import "PredicateViewController.h"
 
 
-@interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PredicateViewControllerDelegate>
+@interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PredicateViewControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

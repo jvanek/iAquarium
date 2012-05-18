@@ -17,6 +17,15 @@
 		D80DF8DD15664D4600488A0D /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8DC15664D4600488A0D /* Localization.m */; };
 		D80DF8E015664D5900488A0D /* Medium.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8DF15664D5900488A0D /* Medium.m */; };
 		D80DF8E315664DAB00488A0D /* GenericManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8E215664DAA00488A0D /* GenericManagedObject.m */; };
+		D80DF8E6156653D300488A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D80DF8E8156653D300488A0D /* Localizable.strings */; };
+		D80DF8F21566552D00488A0D /* NetworkIndicatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8EF1566552D00488A0D /* NetworkIndicatorController.m */; };
+		D80DF8F31566552D00488A0D /* RoundedCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8F11566552D00488A0D /* RoundedCornerView.m */; };
+		D80DF8F61566555900488A0D /* NetworkIndicatorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80DF8F51566555900488A0D /* NetworkIndicatorController.xib */; };
+		D80DF8FA156655FD00488A0D /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8F9156655FD00488A0D /* DataController.m */; };
+		D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8B919AF155BE0070029B555 /* poissons-aquarium.xml */; };
+		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
+		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
+		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
 		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
 		D882AFE3155C056D0029F188 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFE2155C056D0029F188 /* SearchViewController.xib */; };
 		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
@@ -69,6 +78,20 @@
 		D80DF8DF15664D5900488A0D /* Medium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medium.m; path = Classes/CoreData/Medium.m; sourceTree = "<group>"; };
 		D80DF8E115664DAA00488A0D /* GenericManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericManagedObject.h; path = Classes/CoreData/GenericManagedObject.h; sourceTree = "<group>"; };
 		D80DF8E215664DAA00488A0D /* GenericManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericManagedObject.m; path = Classes/CoreData/GenericManagedObject.m; sourceTree = "<group>"; };
+		D80DF8E7156653D300488A0D /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D80DF8EE1566552C00488A0D /* NetworkIndicatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkIndicatorController.h; path = Classes/NetworkIndicatorController.h; sourceTree = "<group>"; };
+		D80DF8EF1566552D00488A0D /* NetworkIndicatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkIndicatorController.m; path = Classes/NetworkIndicatorController.m; sourceTree = "<group>"; };
+		D80DF8F01566552D00488A0D /* RoundedCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundedCornerView.h; path = Classes/RoundedCornerView.h; sourceTree = "<group>"; };
+		D80DF8F11566552D00488A0D /* RoundedCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundedCornerView.m; path = Classes/RoundedCornerView.m; sourceTree = "<group>"; };
+		D80DF8F51566555900488A0D /* NetworkIndicatorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NetworkIndicatorController.xib; path = Resources/NetworkIndicatorController.xib; sourceTree = "<group>"; };
+		D80DF8F8156655FD00488A0D /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataController.h; path = Classes/DataController.h; sourceTree = "<group>"; };
+		D80DF8F9156655FD00488A0D /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Classes/DataController.m; sourceTree = "<group>"; };
+		D80DF8FC1566627200488A0D /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Classes/NSString+Additions.h"; sourceTree = "<group>"; };
+		D80DF8FD1566627200488A0D /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "Classes/NSString+Additions.m"; sourceTree = "<group>"; };
+		D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+Additions.h"; path = "Classes/CoreData/NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
+		D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+Additions.m"; path = "Classes/CoreData/NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
+		D85F09FC156670150093941F /* Fish-mapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Fish-mapping.plist"; path = "Resources/Fish-mapping.plist"; sourceTree = "<group>"; };
+		D85F09FE156672D00093941F /* StreamKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StreamKeys.h; path = Classes/StreamKeys.h; sourceTree = "<group>"; };
 		D882AFDE155C051D0029F188 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Classes/SearchViewController.h; sourceTree = "<group>"; };
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
 		D882AFE2155C056D0029F188 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Resources/SearchViewController.xib; sourceTree = "<group>"; };
@@ -150,6 +173,7 @@
 		D80DF8CD15664CAA00488A0D /* Data Objects */ = {
 			isa = PBXGroup;
 			children = (
+				D85F09FB15666FFA0093941F /* Mappings */,
 				D80DF8E115664DAA00488A0D /* GenericManagedObject.h */,
 				D80DF8E215664DAA00488A0D /* GenericManagedObject.m */,
 				D80DF8CF15664CEB00488A0D /* CommonName.h */,
@@ -166,6 +190,34 @@
 				D80DF8DF15664D5900488A0D /* Medium.m */,
 			);
 			name = "Data Objects";
+			sourceTree = "<group>";
+		};
+		D80DF8F41566553F00488A0D /* Network Indicator Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D80DF8F71566556200488A0D /* Rounded Corner View */,
+				D80DF8EE1566552C00488A0D /* NetworkIndicatorController.h */,
+				D80DF8EF1566552D00488A0D /* NetworkIndicatorController.m */,
+				D80DF8F51566555900488A0D /* NetworkIndicatorController.xib */,
+			);
+			name = "Network Indicator Controller";
+			sourceTree = "<group>";
+		};
+		D80DF8F71566556200488A0D /* Rounded Corner View */ = {
+			isa = PBXGroup;
+			children = (
+				D80DF8F01566552D00488A0D /* RoundedCornerView.h */,
+				D80DF8F11566552D00488A0D /* RoundedCornerView.m */,
+			);
+			name = "Rounded Corner View";
+			sourceTree = "<group>";
+		};
+		D85F09FB15666FFA0093941F /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				D85F09FC156670150093941F /* Fish-mapping.plist */,
+			);
+			name = Mappings;
 			sourceTree = "<group>";
 		};
 		D882AFE4155C05800029F188 /* Master View Controller */ = {
@@ -212,6 +264,10 @@
 		D884C44A155C474C00F7149B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D80DF8FC1566627200488A0D /* NSString+Additions.h */,
+				D80DF8FD1566627200488A0D /* NSString+Additions.m */,
+				D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */,
+				D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -264,6 +320,7 @@
 				D8B9195B155BDC140029B555 /* InfoPlist.strings */,
 				D8B9195E155BDC140029B555 /* main.m */,
 				D8B91960155BDC140029B555 /* AquaBase-Prefix.pch */,
+				D80DF8E8156653D300488A0D /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -346,6 +403,7 @@
 				D882AFE5155C05890029F188 /* Detail View Controller */,
 				D882AFE6155C05910029F188 /* Search View Controller */,
 				D80DF8C715663B1600488A0D /* Predicate View Controller */,
+				D80DF8F41566553F00488A0D /* Network Indicator Controller */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -353,10 +411,13 @@
 		D8B919C0155BE9650029B555 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D85F09FE156672D00093941F /* StreamKeys.h */,
 				D8B919C6155BE9CB0029B555 /* StreamController.h */,
 				D8B919C7155BE9CB0029B555 /* StreamController.m */,
 				D80DF8BE156637E300488A0D /* SearchCriterium.h */,
 				D80DF8BF156637E300488A0D /* SearchCriterium.m */,
+				D80DF8F8156655FD00488A0D /* DataController.h */,
+				D80DF8F9156655FD00488A0D /* DataController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -437,6 +498,10 @@
 				D882AFE3155C056D0029F188 /* SearchViewController.xib in Resources */,
 				D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */,
 				D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */,
+				D80DF8E6156653D300488A0D /* Localizable.strings in Resources */,
+				D80DF8F61566555900488A0D /* NetworkIndicatorController.xib in Resources */,
+				D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */,
+				D85F09FD156670150093941F /* Fish-mapping.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +538,11 @@
 				D80DF8DD15664D4600488A0D /* Localization.m in Sources */,
 				D80DF8E015664D5900488A0D /* Medium.m in Sources */,
 				D80DF8E315664DAB00488A0D /* GenericManagedObject.m in Sources */,
+				D80DF8F21566552D00488A0D /* NetworkIndicatorController.m in Sources */,
+				D80DF8F31566552D00488A0D /* RoundedCornerView.m in Sources */,
+				D80DF8FA156655FD00488A0D /* DataController.m in Sources */,
+				D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */,
+				D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +561,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D80DF8E8156653D300488A0D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D80DF8E7156653D300488A0D /* en */,
+			);
+			name = Localizable.strings;
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D8B9195B155BDC140029B555 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

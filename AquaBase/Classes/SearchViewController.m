@@ -7,6 +7,8 @@
 //
 
 #import "SearchViewController.h"
+#import "NetworkIndicatorController.h"
+#import "DataController.h"
 
 
 @interface SearchViewController ()
@@ -14,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *searchCriteria;
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
+- (void)refreshDatabase:(UIBarButtonItem *)sender;
 
 @end
 
@@ -28,6 +31,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithTitle:LOCALIZED_STRING(@"Refresh Database")
+																style:UIBarButtonItemStyleBordered
+															   target:self
+															   action:@selector(refreshDatabase:)];
+	self.navigationItem.rightBarButtonItem = refresh;
+
 	self.searchCriteria = [NSMutableArray array];
 	[self addCell:nil];
 }
@@ -119,6 +129,21 @@
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath {
 	return [self.searchCriteria objectAtIndex:indexPath.row];
+}
+
+- (void)refreshDatabase:(UIBarButtonItem *)sender {
+	NSError *error = nil;
+	NSURL *databaseUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
+	NetworkIndicatorController *indicatorController = [[NetworkIndicatorController alloc] initWithNibName:@"NetworkIndicatorController" bundle:nil];
+	BOOL result = [[DataController sharedInstance] updateDatabaseUsingURL:databaseUrl progressController:indicatorController error:&error];
+	if (!result) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED_STRING(@"Error")
+														message:LOCALIZED_STRING(@"An error occured when updating the database. Please try again later.")
+													   delegate:self
+											  cancelButtonTitle:LOCALIZED_STRING(@"Ok")
+											  otherButtonTitles:nil];
+		[alert show];
+	}
 }
 
 @end

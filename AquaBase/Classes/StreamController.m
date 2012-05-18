@@ -83,7 +83,7 @@
 		}
 		NSLog(@"%s : Parse Error : %@\nat line %d and column %d", __PRETTY_FUNCTION__, [parseError localizedDescription], self.xmlParser.lineNumber, self.xmlParser.columnNumber);
     }
-#ifdef DEBUG
+#ifdef DEBUG_XML
     NSLog(@"%s : Parsed %d items", __PRETTY_FUNCTION__, parsedCounter);
 #endif
 
@@ -101,7 +101,7 @@ didStartElement:(NSString *)elementName
     if (qName) {
         elementName = qName;
     }
-#ifdef DEBUG
+#ifdef DEBUG_XML
     NSLog(@"%s : ParserDidStartElement: %@", __PRETTY_FUNCTION__, qName);
 #endif
 	
@@ -143,7 +143,7 @@ didStartElement:(NSString *)elementName
     if (qName) {
         elementName = qName;
     }
-#ifdef DEBUG
+#ifdef DEBUG_XML
     NSLog(@"%s : ParserDidEndElement: %@", __PRETTY_FUNCTION__, qName);
 #endif
 	

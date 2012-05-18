@@ -19,6 +19,7 @@
 #define FISH_KEY_DIMORPHISM			@"dimorphism"
 #define FISH_KEY_BEHAVIOR			@"behavior"
 #define FISH_KEY_REPRODUCTION		@"reproduction"
+#define FISH_KEY_AUTHOR				@"author"
 
 #define FISH_REL_COMMON_NAMES		@"commonNames"
 #define FISH_REL_TEMPERATURE		@"temperature"
@@ -43,6 +44,8 @@
 @property (nonatomic, retain) NSString * dimorphism;
 @property (nonatomic, retain) NSString * behavior;
 @property (nonatomic, retain) NSString * reproduction;
+@property (nonatomic, retain) NSString * author;
+
 @property (nonatomic, retain) NSSet *commonNames;
 @property (nonatomic, retain) LifeValues *temperature;
 @property (nonatomic, retain) LifeValues *acidity;

@@ -11,3 +11,4 @@
 
 #define APP_DELEGATE				((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define IS_EMPTY_STRING(str)		((str) == nil || [(str) length] == 0)
+#define LOCALIZED_STRING(str)		NSLocalizedString((str), (str))

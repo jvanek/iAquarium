@@ -6,6 +6,7 @@
         <relationship name="localization" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Localization" inverseName="commonNames" inverseEntity="Localization" syncable="YES"/>
     </entity>
     <entity name="Fish" representedClassName="Fish" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="behavior" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dimorphism" optional="YES" attributeType="String" syncable="YES"/>
@@ -47,11 +48,11 @@
         <relationship name="fish" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Fish" inverseName="media" inverseEntity="Fish" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="270"/>
         <element name="CommonName" positionX="-20241" positionY="-8802" width="128" height="90"/>
-        <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>
-        <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="135"/>
+        <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="285"/>
         <element name="GenderValues" positionX="-20241" positionY="-8505" width="128" height="90"/>
+        <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="135"/>
+        <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>
         <element name="Medium" positionX="-19730" positionY="-8532" width="128" height="105"/>
     </elements>
 </model>

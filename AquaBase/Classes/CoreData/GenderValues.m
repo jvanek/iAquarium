@@ -16,4 +16,8 @@
 @dynamic femaleValue;
 @dynamic fish;
 
+- (NSArray *)attributeKeys {
+	return [NSArray arrayWithObjects:GENDER_VALUES_KEY_FEMALE_VALUE, GENDER_VALUES_KEY_MALE_VALUE, nil];
+}
+
 @end

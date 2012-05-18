@@ -10,10 +10,10 @@
 
 #define GENDER_VALUES_ENTITY_NAME			@"GenderValues"
 
-#define FISH_KEY_MALE_VALUE		@"maleValue"
-#define FISH_KEY_FEMALE_VALUE	@"femaleValue"
+#define GENDER_VALUES_KEY_MALE_VALUE		@"maleValue"
+#define GENDER_VALUES_KEY_FEMALE_VALUE		@"femaleValue"
 
-#define FISH_REL_FISH			@"fish"
+#define GENDER_VALUES_REL_FISH				@"fish"
 
 @class Fish;
 
