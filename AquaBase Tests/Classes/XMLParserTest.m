@@ -3,7 +3,7 @@
 //  LiveUp
 //
 //  Created by Vanek Josef on 06/10/11.
-//  Copyright (c) 2011 Intellicore. All rights reserved.
+//  Copyright (c) 2011 Pallas Free Foundation. All rights reserved.
 //
 
 #import "StreamController.h"
