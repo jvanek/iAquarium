@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CommonName" representedClassName="CommonName" syncable="YES">
+        <attribute name="label" attributeType="String" syncable="YES"/>
+        <relationship name="fish" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Fish" inverseName="commonNames" inverseEntity="Fish" syncable="YES"/>
+        <relationship name="localization" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Localization" inverseName="commonNames" inverseEntity="Localization" syncable="YES"/>
+    </entity>
+    <entity name="Fish" representedClassName="Fish" syncable="YES">
+        <attribute name="behavior" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dimorphism" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="family" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lifeDuration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lifeZone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reproduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scientificName" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="acidity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishAcid" inverseEntity="LifeValues" syncable="YES"/>
+        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommonName" inverseName="fish" inverseEntity="CommonName" syncable="YES"/>
+        <relationship name="hardnessGH" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishHardnessGH" inverseEntity="LifeValues" syncable="YES"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medium" inverseName="fish" inverseEntity="Medium" syncable="YES"/>
+        <relationship name="size" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GenderValues" inverseName="fish" inverseEntity="GenderValues" syncable="YES"/>
+        <relationship name="temperature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishTemp" inverseEntity="LifeValues" syncable="YES"/>
+    </entity>
+    <entity name="GenderValues" representedClassName="GenderValues" syncable="YES">
+        <attribute name="femaleValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="maleValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="fish" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="size" inverseEntity="Fish" syncable="YES"/>
+    </entity>
+    <entity name="LifeValues" representedClassName="LifeValues" syncable="YES">
+        <attribute name="valueMax" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valueMin" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valueRepro" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="fishAcid" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="acidity" inverseEntity="Fish" syncable="YES"/>
+        <relationship name="fishHardnessGH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="hardnessGH" inverseEntity="Fish" syncable="YES"/>
+        <relationship name="fishTemp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="temperature" inverseEntity="Fish" syncable="YES"/>
+    </entity>
+    <entity name="Localization" representedClassName="Localization" syncable="YES">
+        <attribute name="code" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommonName" inverseName="localization" inverseEntity="CommonName" syncable="YES"/>
+    </entity>
+    <entity name="Medium" representedClassName="Medium" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediumUrl" attributeType="String" syncable="YES"/>
+        <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fish" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Fish" inverseName="media" inverseEntity="Fish" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="270"/>
+        <element name="CommonName" positionX="-20241" positionY="-8802" width="128" height="90"/>
+        <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>
+        <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="135"/>
+        <element name="GenderValues" positionX="-20241" positionY="-8505" width="128" height="90"/>
+        <element name="Medium" positionX="-19730" positionY="-8532" width="128" height="105"/>
     </elements>
 </model>

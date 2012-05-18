@@ -10,6 +10,13 @@
 		D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8BF156637E300488A0D /* SearchCriterium.m */; };
 		D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8C315663ACB00488A0D /* PredicateViewController.m */; };
 		D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80DF8C515663AF100488A0D /* PredicateViewController.xib */; };
+		D80DF8D115664CEB00488A0D /* CommonName.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D015664CEB00488A0D /* CommonName.m */; };
+		D80DF8D415664D0400488A0D /* Fish.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D315664D0400488A0D /* Fish.m */; };
+		D80DF8D715664D1C00488A0D /* GenderValues.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D615664D1C00488A0D /* GenderValues.m */; };
+		D80DF8DA15664D3500488A0D /* LifeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D915664D3500488A0D /* LifeValues.m */; };
+		D80DF8DD15664D4600488A0D /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8DC15664D4600488A0D /* Localization.m */; };
+		D80DF8E015664D5900488A0D /* Medium.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8DF15664D5900488A0D /* Medium.m */; };
+		D80DF8E315664DAB00488A0D /* GenericManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8E215664DAA00488A0D /* GenericManagedObject.m */; };
 		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
 		D882AFE3155C056D0029F188 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFE2155C056D0029F188 /* SearchViewController.xib */; };
 		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
@@ -48,6 +55,20 @@
 		D80DF8C215663ACB00488A0D /* PredicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PredicateViewController.h; path = Classes/PredicateViewController.h; sourceTree = "<group>"; };
 		D80DF8C315663ACB00488A0D /* PredicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredicateViewController.m; path = Classes/PredicateViewController.m; sourceTree = "<group>"; };
 		D80DF8C515663AF100488A0D /* PredicateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PredicateViewController.xib; path = Resources/PredicateViewController.xib; sourceTree = "<group>"; };
+		D80DF8CF15664CEB00488A0D /* CommonName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonName.h; path = Classes/CoreData/CommonName.h; sourceTree = "<group>"; };
+		D80DF8D015664CEB00488A0D /* CommonName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonName.m; path = Classes/CoreData/CommonName.m; sourceTree = "<group>"; };
+		D80DF8D215664D0400488A0D /* Fish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fish.h; path = Classes/CoreData/Fish.h; sourceTree = "<group>"; };
+		D80DF8D315664D0400488A0D /* Fish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fish.m; path = Classes/CoreData/Fish.m; sourceTree = "<group>"; };
+		D80DF8D515664D1C00488A0D /* GenderValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenderValues.h; path = Classes/CoreData/GenderValues.h; sourceTree = "<group>"; };
+		D80DF8D615664D1C00488A0D /* GenderValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenderValues.m; path = Classes/CoreData/GenderValues.m; sourceTree = "<group>"; };
+		D80DF8D815664D3500488A0D /* LifeValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValues.h; path = Classes/CoreData/LifeValues.h; sourceTree = "<group>"; };
+		D80DF8D915664D3500488A0D /* LifeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValues.m; path = Classes/CoreData/LifeValues.m; sourceTree = "<group>"; };
+		D80DF8DB15664D4600488A0D /* Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Localization.h; path = Classes/CoreData/Localization.h; sourceTree = "<group>"; };
+		D80DF8DC15664D4600488A0D /* Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Localization.m; path = Classes/CoreData/Localization.m; sourceTree = "<group>"; };
+		D80DF8DE15664D5900488A0D /* Medium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medium.h; path = Classes/CoreData/Medium.h; sourceTree = "<group>"; };
+		D80DF8DF15664D5900488A0D /* Medium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medium.m; path = Classes/CoreData/Medium.m; sourceTree = "<group>"; };
+		D80DF8E115664DAA00488A0D /* GenericManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericManagedObject.h; path = Classes/CoreData/GenericManagedObject.h; sourceTree = "<group>"; };
+		D80DF8E215664DAA00488A0D /* GenericManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericManagedObject.m; path = Classes/CoreData/GenericManagedObject.m; sourceTree = "<group>"; };
 		D882AFDE155C051D0029F188 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Classes/SearchViewController.h; sourceTree = "<group>"; };
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
 		D882AFE2155C056D0029F188 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Resources/SearchViewController.xib; sourceTree = "<group>"; };
@@ -124,6 +145,27 @@
 				D80DF8C515663AF100488A0D /* PredicateViewController.xib */,
 			);
 			name = "Predicate View Controller";
+			sourceTree = "<group>";
+		};
+		D80DF8CD15664CAA00488A0D /* Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D80DF8E115664DAA00488A0D /* GenericManagedObject.h */,
+				D80DF8E215664DAA00488A0D /* GenericManagedObject.m */,
+				D80DF8CF15664CEB00488A0D /* CommonName.h */,
+				D80DF8D015664CEB00488A0D /* CommonName.m */,
+				D80DF8D215664D0400488A0D /* Fish.h */,
+				D80DF8D315664D0400488A0D /* Fish.m */,
+				D80DF8D515664D1C00488A0D /* GenderValues.h */,
+				D80DF8D615664D1C00488A0D /* GenderValues.m */,
+				D80DF8D815664D3500488A0D /* LifeValues.h */,
+				D80DF8D915664D3500488A0D /* LifeValues.m */,
+				D80DF8DB15664D4600488A0D /* Localization.h */,
+				D80DF8DC15664D4600488A0D /* Localization.m */,
+				D80DF8DE15664D5900488A0D /* Medium.h */,
+				D80DF8DF15664D5900488A0D /* Medium.m */,
+			);
+			name = "Data Objects";
 			sourceTree = "<group>";
 		};
 		D882AFE4155C05800029F188 /* Master View Controller */ = {
@@ -229,6 +271,7 @@
 		D8B9197C155BDC680029B555 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D80DF8CD15664CAA00488A0D /* Data Objects */,
 				D8B919C0155BE9650029B555 /* Controllers */,
 				D8B919BF155BE9500029B555 /* View Controllers */,
 				D884C44A155C474C00F7149B /* Utilities */,
@@ -423,6 +466,13 @@
 				D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */,
 				D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */,
 				D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */,
+				D80DF8D115664CEB00488A0D /* CommonName.m in Sources */,
+				D80DF8D415664D0400488A0D /* Fish.m in Sources */,
+				D80DF8D715664D1C00488A0D /* GenderValues.m in Sources */,
+				D80DF8DA15664D3500488A0D /* LifeValues.m in Sources */,
+				D80DF8DD15664D4600488A0D /* Localization.m in Sources */,
+				D80DF8E015664D5900488A0D /* Medium.m in Sources */,
+				D80DF8E315664DAB00488A0D /* GenericManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
