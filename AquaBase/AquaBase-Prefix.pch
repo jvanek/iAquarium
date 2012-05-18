@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'AquaBase' target in the 'AquaBase' project
+//
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+	#import <CoreData/CoreData.h>
+	#import "AppDelegate.h"
+#endif
+
+#define APP_DELEGATE				((AppDelegate *)[[UIApplication sharedApplication] delegate])
+#define IS_EMPTY_STRING(str)		((str) == nil || [(str) length] == 0)

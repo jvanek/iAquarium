@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8BF156637E300488A0D /* SearchCriterium.m */; };
+		D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8C315663ACB00488A0D /* PredicateViewController.m */; };
+		D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80DF8C515663AF100488A0D /* PredicateViewController.xib */; };
+		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
+		D882AFE3155C056D0029F188 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFE2155C056D0029F188 /* SearchViewController.xib */; };
+		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
+		D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */; };
+		D8B91951155BDC140029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
+		D8B91953155BDC140029B555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91952155BDC140029B555 /* Foundation.framework */; };
+		D8B91955155BDC140029B555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91954155BDC140029B555 /* CoreGraphics.framework */; };
+		D8B91957155BDC140029B555 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91956155BDC140029B555 /* CoreData.framework */; };
+		D8B9195D155BDC140029B555 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8B9195B155BDC140029B555 /* InfoPlist.strings */; };
+		D8B9195F155BDC140029B555 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B9195E155BDC140029B555 /* main.m */; };
+		D8B91963155BDC140029B555 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B91962155BDC140029B555 /* AppDelegate.m */; };
+		D8B91966155BDC140029B555 /* AquaBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */; };
+		D8B91969155BDC140029B555 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B91968155BDC140029B555 /* MasterViewController.m */; };
+		D8B9196C155BDC140029B555 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B9196B155BDC140029B555 /* DetailViewController.m */; };
+		D8B9196F155BDC140029B555 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B9196D155BDC140029B555 /* MasterViewController.xib */; };
+		D8B91972155BDC140029B555 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B91970155BDC140029B555 /* DetailViewController.xib */; };
+		D8B91985155BDCC60029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
+		D8B91986155BDCC60029B555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91952155BDC140029B555 /* Foundation.framework */; };
+		D8B91987155BDCC60029B555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91954155BDC140029B555 /* CoreGraphics.framework */; };
+		D8B9198D155BDCC60029B555 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8B9198B155BDCC60029B555 /* InfoPlist.strings */; };
+		D8B919A8155BDED20029B555 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B919A7155BDED20029B555 /* GHUnitIOS.framework */; };
+		D8B919AB155BDF140029B555 /* XMLParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919AA155BDF140029B555 /* XMLParserTest.m */; };
+		D8B919B0155BE0070029B555 /* poissons-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8B919AF155BE0070029B555 /* poissons-aquarium.xml */; };
+		D8B919B1155BE0330029B555 /* AquaBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */; };
+		D8B919B4155BE0D20029B555 /* AquaBaseTestsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919B3155BE0D20029B555 /* AquaBaseTestsAppDelegate.m */; };
+		D8B919B5155BE1A00029B555 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91956155BDC140029B555 /* CoreData.framework */; };
+		D8B919BC155BE3970029B555 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */; };
+		D8B919BE155BE7D70029B555 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */; };
+		D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
+		D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D80DF8BE156637E300488A0D /* SearchCriterium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCriterium.h; path = Classes/SearchCriterium.h; sourceTree = "<group>"; };
+		D80DF8BF156637E300488A0D /* SearchCriterium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCriterium.m; path = Classes/SearchCriterium.m; sourceTree = "<group>"; };
+		D80DF8C215663ACB00488A0D /* PredicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PredicateViewController.h; path = Classes/PredicateViewController.h; sourceTree = "<group>"; };
+		D80DF8C315663ACB00488A0D /* PredicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredicateViewController.m; path = Classes/PredicateViewController.m; sourceTree = "<group>"; };
+		D80DF8C515663AF100488A0D /* PredicateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PredicateViewController.xib; path = Resources/PredicateViewController.xib; sourceTree = "<group>"; };
+		D882AFDE155C051D0029F188 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Classes/SearchViewController.h; sourceTree = "<group>"; };
+		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
+		D882AFE2155C056D0029F188 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Resources/SearchViewController.xib; sourceTree = "<group>"; };
+		D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewControllerCell.h; path = Classes/SearchViewControllerCell.h; sourceTree = "<group>"; };
+		D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewControllerCell.m; path = Classes/SearchViewControllerCell.m; sourceTree = "<group>"; };
+		D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewControllerCell.xib; path = Resources/SearchViewControllerCell.xib; sourceTree = "<group>"; };
+		D8B9194C155BDC140029B555 /* AquaBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B91950155BDC140029B555 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D8B91952155BDC140029B555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D8B91954155BDC140029B555 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D8B91956155BDC140029B555 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D8B9195A155BDC140029B555 /* AquaBase-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AquaBase-Info.plist"; sourceTree = "<group>"; };
+		D8B9195C155BDC140029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8B9195E155BDC140029B555 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D8B91960155BDC140029B555 /* AquaBase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AquaBase-Prefix.pch"; sourceTree = "<group>"; };
+		D8B91961155BDC140029B555 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		D8B91962155BDC140029B555 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		D8B91965155BDC140029B555 /* AquaBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AquaBase.xcdatamodel; sourceTree = "<group>"; };
+		D8B91967155BDC140029B555 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = Classes/MasterViewController.h; sourceTree = "<group>"; };
+		D8B91968155BDC140029B555 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = Classes/MasterViewController.m; sourceTree = "<group>"; };
+		D8B9196A155BDC140029B555 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Classes/DetailViewController.h; sourceTree = "<group>"; };
+		D8B9196B155BDC140029B555 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Classes/DetailViewController.m; sourceTree = "<group>"; };
+		D8B9196E155BDC140029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		D8B91971155BDC140029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		D8B91983155BDCC60029B555 /* AquaBase Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AquaBase Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B9198A155BDCC60029B555 /* AquaBase Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AquaBase Tests-Info.plist"; sourceTree = "<group>"; };
+		D8B9198C155BDCC60029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8B91990155BDCC60029B555 /* AquaBase Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AquaBase Tests-Prefix.pch"; sourceTree = "<group>"; };
+		D8B919A7155BDED20029B555 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = Libraries/GHUnitIOS.framework; sourceTree = "<group>"; };
+		D8B919AA155BDF140029B555 /* XMLParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLParserTest.m; path = Classes/XMLParserTest.m; sourceTree = "<group>"; };
+		D8B919AD155BDF290029B555 /* RunTests.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
+		D8B919AF155BE0070029B555 /* poissons-aquarium.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "poissons-aquarium.xml"; path = "Resources/poissons-aquarium.xml"; sourceTree = "<group>"; };
+		D8B919B2155BE0D20029B555 /* AquaBaseTestsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AquaBaseTestsAppDelegate.h; path = Classes/AquaBaseTestsAppDelegate.h; sourceTree = "<group>"; };
+		D8B919B3155BE0D20029B555 /* AquaBaseTestsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AquaBaseTestsAppDelegate.m; path = Classes/AquaBaseTestsAppDelegate.m; sourceTree = "<group>"; };
+		D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
+		D8B919C6155BE9CB0029B555 /* StreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamController.h; path = Classes/StreamController.h; sourceTree = "<group>"; };
+		D8B919C7155BE9CB0029B555 /* StreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamController.m; path = Classes/StreamController.m; sourceTree = "<group>"; };
+		D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "poissons-aquarium.xsd"; path = "Resources/poissons-aquarium.xsd"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8B91949155BDC140029B555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B91951155BDC140029B555 /* UIKit.framework in Frameworks */,
+				D8B91953155BDC140029B555 /* Foundation.framework in Frameworks */,
+				D8B91955155BDC140029B555 /* CoreGraphics.framework in Frameworks */,
+				D8B91957155BDC140029B555 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B91980155BDCC60029B555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B91985155BDCC60029B555 /* UIKit.framework in Frameworks */,
+				D8B91986155BDCC60029B555 /* Foundation.framework in Frameworks */,
+				D8B91987155BDCC60029B555 /* CoreGraphics.framework in Frameworks */,
+				D8B919A8155BDED20029B555 /* GHUnitIOS.framework in Frameworks */,
+				D8B919B5155BE1A00029B555 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D80DF8C715663B1600488A0D /* Predicate View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D80DF8C215663ACB00488A0D /* PredicateViewController.h */,
+				D80DF8C315663ACB00488A0D /* PredicateViewController.m */,
+				D80DF8C515663AF100488A0D /* PredicateViewController.xib */,
+			);
+			name = "Predicate View Controller";
+			sourceTree = "<group>";
+		};
+		D882AFE4155C05800029F188 /* Master View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8B91967155BDC140029B555 /* MasterViewController.h */,
+				D8B91968155BDC140029B555 /* MasterViewController.m */,
+				D8B9196D155BDC140029B555 /* MasterViewController.xib */,
+			);
+			name = "Master View Controller";
+			sourceTree = "<group>";
+		};
+		D882AFE5155C05890029F188 /* Detail View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8B9196A155BDC140029B555 /* DetailViewController.h */,
+				D8B9196B155BDC140029B555 /* DetailViewController.m */,
+				D8B91970155BDC140029B555 /* DetailViewController.xib */,
+			);
+			name = "Detail View Controller";
+			sourceTree = "<group>";
+		};
+		D882AFE6155C05910029F188 /* Search View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D882AFEA155C0B200029F188 /* Search View Controller Cell */,
+				D882AFDE155C051D0029F188 /* SearchViewController.h */,
+				D882AFDF155C051D0029F188 /* SearchViewController.m */,
+				D882AFE2155C056D0029F188 /* SearchViewController.xib */,
+			);
+			name = "Search View Controller";
+			sourceTree = "<group>";
+		};
+		D882AFEA155C0B200029F188 /* Search View Controller Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */,
+				D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */,
+				D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */,
+			);
+			name = "Search View Controller Cell";
+			sourceTree = "<group>";
+		};
+		D884C44A155C474C00F7149B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D8B91941155BDC140029B555 = {
+			isa = PBXGroup;
+			children = (
+				D8B91958155BDC140029B555 /* AquaBase */,
+				D8B91988155BDCC60029B555 /* AquaBase Tests */,
+				D8B9194F155BDC140029B555 /* Frameworks */,
+				D8B9194D155BDC140029B555 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8B9194D155BDC140029B555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8B9194C155BDC140029B555 /* AquaBase.app */,
+				D8B91983155BDCC60029B555 /* AquaBase Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8B9194F155BDC140029B555 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919A7155BDED20029B555 /* GHUnitIOS.framework */,
+				D8B91950155BDC140029B555 /* UIKit.framework */,
+				D8B91952155BDC140029B555 /* Foundation.framework */,
+				D8B91954155BDC140029B555 /* CoreGraphics.framework */,
+				D8B91956155BDC140029B555 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8B91958155BDC140029B555 /* AquaBase */ = {
+			isa = PBXGroup;
+			children = (
+				D8B9197C155BDC680029B555 /* Classes */,
+				D8B9197E155BDC7B0029B555 /* Resources */,
+				D8B91959155BDC140029B555 /* Supporting Files */,
+			);
+			path = AquaBase;
+			sourceTree = "<group>";
+		};
+		D8B91959155BDC140029B555 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8B9195A155BDC140029B555 /* AquaBase-Info.plist */,
+				D8B9195B155BDC140029B555 /* InfoPlist.strings */,
+				D8B9195E155BDC140029B555 /* main.m */,
+				D8B91960155BDC140029B555 /* AquaBase-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8B9197C155BDC680029B555 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919C0155BE9650029B555 /* Controllers */,
+				D8B919BF155BE9500029B555 /* View Controllers */,
+				D884C44A155C474C00F7149B /* Utilities */,
+				D8B91961155BDC140029B555 /* AppDelegate.h */,
+				D8B91962155BDC140029B555 /* AppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D8B9197E155BDC7B0029B555 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */,
+				D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D8B91988155BDCC60029B555 /* AquaBase Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919A9155BDF050029B555 /* Classes */,
+				D8B919AE155BDFF90029B555 /* Resources */,
+				D8B91989155BDCC60029B555 /* Supporting Files */,
+				D8B919AC155BDF180029B555 /* Scripts */,
+			);
+			path = "AquaBase Tests";
+			sourceTree = "<group>";
+		};
+		D8B91989155BDCC60029B555 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919B2155BE0D20029B555 /* AquaBaseTestsAppDelegate.h */,
+				D8B919B3155BE0D20029B555 /* AquaBaseTestsAppDelegate.m */,
+				D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */,
+				D8B9198A155BDCC60029B555 /* AquaBase Tests-Info.plist */,
+				D8B9198B155BDCC60029B555 /* InfoPlist.strings */,
+				D8B91990155BDCC60029B555 /* AquaBase Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8B919A9155BDF050029B555 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919AA155BDF140029B555 /* XMLParserTest.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D8B919AC155BDF180029B555 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919AD155BDF290029B555 /* RunTests.sh */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
+		D8B919AE155BDFF90029B555 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919AF155BE0070029B555 /* poissons-aquarium.xml */,
+				D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D8B919BF155BE9500029B555 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D882AFE4155C05800029F188 /* Master View Controller */,
+				D882AFE5155C05890029F188 /* Detail View Controller */,
+				D882AFE6155C05910029F188 /* Search View Controller */,
+				D80DF8C715663B1600488A0D /* Predicate View Controller */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D8B919C0155BE9650029B555 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8B919C6155BE9CB0029B555 /* StreamController.h */,
+				D8B919C7155BE9CB0029B555 /* StreamController.m */,
+				D80DF8BE156637E300488A0D /* SearchCriterium.h */,
+				D80DF8BF156637E300488A0D /* SearchCriterium.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8B9194B155BDC140029B555 /* AquaBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8B91975155BDC140029B555 /* Build configuration list for PBXNativeTarget "AquaBase" */;
+			buildPhases = (
+				D8B91948155BDC140029B555 /* Sources */,
+				D8B91949155BDC140029B555 /* Frameworks */,
+				D8B9194A155BDC140029B555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AquaBase;
+			productName = AquaBase;
+			productReference = D8B9194C155BDC140029B555 /* AquaBase.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8B91982155BDCC60029B555 /* AquaBase Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8B9199D155BDCC60029B555 /* Build configuration list for PBXNativeTarget "AquaBase Tests" */;
+			buildPhases = (
+				D8B9197F155BDCC60029B555 /* Sources */,
+				D8B91980155BDCC60029B555 /* Frameworks */,
+				D8B91981155BDCC60029B555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AquaBase Tests";
+			productName = "AquaBase Tests";
+			productReference = D8B91983155BDCC60029B555 /* AquaBase Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8B91943155BDC140029B555 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Pallas Free Foundation";
+			};
+			buildConfigurationList = D8B91946155BDC140029B555 /* Build configuration list for PBXProject "AquaBase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D8B91941155BDC140029B555;
+			productRefGroup = D8B9194D155BDC140029B555 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8B9194B155BDC140029B555 /* AquaBase */,
+				D8B91982155BDCC60029B555 /* AquaBase Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8B9194A155BDC140029B555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B9195D155BDC140029B555 /* InfoPlist.strings in Resources */,
+				D8B9196F155BDC140029B555 /* MasterViewController.xib in Resources */,
+				D8B91972155BDC140029B555 /* DetailViewController.xib in Resources */,
+				D8B919BC155BE3970029B555 /* MainWindow-iPad.xib in Resources */,
+				D882AFE3155C056D0029F188 /* SearchViewController.xib in Resources */,
+				D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */,
+				D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B91981155BDCC60029B555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B9198D155BDCC60029B555 /* InfoPlist.strings in Resources */,
+				D8B919B0155BE0070029B555 /* poissons-aquarium.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8B91948155BDC140029B555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B9195F155BDC140029B555 /* main.m in Sources */,
+				D8B91963155BDC140029B555 /* AppDelegate.m in Sources */,
+				D8B91966155BDC140029B555 /* AquaBase.xcdatamodeld in Sources */,
+				D8B91969155BDC140029B555 /* MasterViewController.m in Sources */,
+				D8B9196C155BDC140029B555 /* DetailViewController.m in Sources */,
+				D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */,
+				D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */,
+				D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */,
+				D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */,
+				D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B9197F155BDCC60029B555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B919AB155BDF140029B555 /* XMLParserTest.m in Sources */,
+				D8B919B1155BE0330029B555 /* AquaBase.xcdatamodeld in Sources */,
+				D8B919B4155BE0D20029B555 /* AquaBaseTestsAppDelegate.m in Sources */,
+				D8B919BE155BE7D70029B555 /* GHUnitIOSTestMain.m in Sources */,
+				D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D8B9195B155BDC140029B555 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8B9195C155BDC140029B555 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8B9196D155BDC140029B555 /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8B9196E155BDC140029B555 /* en */,
+			);
+			name = MasterViewController.xib;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8B91970155BDC140029B555 /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8B91971155BDC140029B555 /* en */,
+			);
+			name = DetailViewController.xib;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8B9198B155BDCC60029B555 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8B9198C155BDCC60029B555 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8B91973155BDC140029B555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		D8B91974155BDC140029B555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8B91976155BDC140029B555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AquaBase/AquaBase-Prefix.pch";
+				INFOPLIST_FILE = "AquaBase/AquaBase-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D8B91977155BDC140029B555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AquaBase/AquaBase-Prefix.pch";
+				INFOPLIST_FILE = "AquaBase/AquaBase-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D8B9199E155BDCC60029B555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AquaBase Tests/AquaBase Tests-Prefix.pch";
+				INFOPLIST_FILE = "AquaBase Tests/AquaBase Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D8B9199F155BDCC60029B555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AquaBase Tests/AquaBase Tests-Prefix.pch";
+				INFOPLIST_FILE = "AquaBase Tests/AquaBase Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8B91946155BDC140029B555 /* Build configuration list for PBXProject "AquaBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B91973155BDC140029B555 /* Debug */,
+				D8B91974155BDC140029B555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8B91975155BDC140029B555 /* Build configuration list for PBXNativeTarget "AquaBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B91976155BDC140029B555 /* Debug */,
+				D8B91977155BDC140029B555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8B9199D155BDCC60029B555 /* Build configuration list for PBXNativeTarget "AquaBase Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B9199E155BDCC60029B555 /* Debug */,
+				D8B9199F155BDCC60029B555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8B91965155BDC140029B555 /* AquaBase.xcdatamodel */,
+			);
+			currentVersion = D8B91965155BDC140029B555 /* AquaBase.xcdatamodel */;
+			path = AquaBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D8B91943155BDC140029B555 /* Project object */;
+}
