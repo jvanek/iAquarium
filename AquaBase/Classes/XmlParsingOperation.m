@@ -12,20 +12,26 @@
 #import "Fish.h"
 
 
+static NSUInteger const kSizeOfFishBatch = 20;
+
+
 @interface XmlParsingOperation() {
-	int count;
+	int count, batchCount;
 }
 
 @property (nonatomic, strong) NSURL *remoteUrl;
 @property (nonatomic, strong) NSMutableDictionary *currentItem;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSMutableArray *currentParseBatch;
+
+- (void)addBatchToDatabase:(NSArray *)batch;
 
 @end
 
 
 @implementation XmlParsingOperation
 
-@synthesize remoteUrl, currentItem;
+@synthesize remoteUrl, currentItem, currentParseBatch;
 @synthesize managedObjectContext, completionHandler;
 @synthesize streamController, allowedElementNames;
 
@@ -45,6 +51,7 @@
 	self.managedObjectContext = nil;
 	self.streamController = nil;
 	self.allowedElementNames = nil;
+	self.currentParseBatch = nil;
 }
 
 - (void)main {
@@ -59,11 +66,24 @@
 								STREAM_KEY_REPRODUCTION, nil];
 	self.currentItem = nil;
 	count = 0;
+	batchCount = 0;
+	self.currentParseBatch = [NSMutableArray array];
+
 	self.streamController = [[StreamController alloc] init];
 	self.streamController.delegate = self;
 	[self.streamController parseXmlFromUrl:remoteUrl error:&err];
-	[self.managedObjectContext save:&err];
+
+    if (![self isCancelled]) {
+        if ([self.currentParseBatch count] > 0) {
+			[self performSelectorOnMainThread:@selector(addBatchToDatabase:)
+								   withObject:self.currentParseBatch
+								waitUntilDone:NO];
+        }
+    }
+
 	if (self.completionHandler) self.completionHandler();
+	
+	NSLog(@"%s : Added %d objects (%d batches)", __PRETTY_FUNCTION__, count, batchCount);
 }
 
 #pragma mark - StreamControllerDelegate methods
@@ -92,15 +112,44 @@
 	}
 }
 
-- (void)xmlReaderAddToList:(id)currentItem {
+- (void)xmlReaderAddToList:(id)anItem {
+	count++;
+	[self.currentParseBatch addObject:self.currentItem];
+	if ([self.currentParseBatch count] >= kSizeOfFishBatch) {
+		[self performSelectorOnMainThread:@selector(addBatchToDatabase:)
+							   withObject:self.currentParseBatch
+							waitUntilDone:NO];
+		self.currentParseBatch = [NSMutableArray array];
+	}
+}
+
+#pragma mark - Batch methods
+
+- (void)addBatchToDatabase:(NSArray *)batch {
+	NSError *error = nil;
+	for (NSDictionary *aDict in batch) {
 #ifdef DEBUG_XML
-	NSLog(@"%s : Adding to database %@", __PRETTY_FUNCTION__, [self.currentItem description]);
+		NSLog(@"%s : Adding to database %@", __PRETTY_FUNCTION__, [self.currentItem description]);
 #endif
-	[GenericManagedObject updateObjectForKey:FISH_KEY_SCIENTIFIC_NAME
-									   value:[self.currentItem objectForKey:STREAM_KEY_NOM_SCIENT]
-								  entityName:FISH_ENTITY_NAME
-							  fromDictionary:self.currentItem
-						   orCreateInContext:self.managedObjectContext];
+		[GenericManagedObject updateObjectForKey:FISH_KEY_SCIENTIFIC_NAME
+										   value:[aDict objectForKey:STREAM_KEY_NOM_SCIENT]
+									  entityName:FISH_ENTITY_NAME
+								  fromDictionary:aDict
+							   orCreateInContext:self.managedObjectContext];
+	}
+	
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate.
+        // You should not use this function in a shipping application, although it may be useful
+        // during development. If it is not possible to recover from the error, display an alert
+        // panel that instructs the user to quit the application by pressing the Home button.
+        //
+        NSLog(@"%s : Unresolved error %@, %@", __PRETTY_FUNCTION__, error, [error userInfo]);
+        abort();
+    }
+	
+	batchCount++;
 }
 
 @end
