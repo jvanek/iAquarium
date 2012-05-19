@@ -25,6 +25,7 @@
 @dynamic behavior;
 @dynamic reproduction;
 @dynamic author;
+@dynamic section;
 
 @dynamic commonNames;
 @dynamic temperature;
@@ -32,6 +33,14 @@
 @dynamic hardnessGH;
 @dynamic size;
 @dynamic media;
+
++ (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx {
+	NSError *err = nil;
+	NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:FISH_ENTITY_NAME];
+	[req setPredicate:predicate];
+	[req setSortDescriptors:orderings];
+	return [ctx executeFetchRequest:req error:&err];
+}
 
 - (NSArray *)attributeKeys {
 	return [NSArray arrayWithObjects:FISH_KEY_AUTHOR, FISH_KEY_BEHAVIOR, FISH_KEY_COMMENT, FISH_KEY_DIMORPHISM, FISH_KEY_FAMILY,
@@ -41,6 +50,7 @@
 - (void)replaceWithDictionary:(NSDictionary *)aDict {
 	[super replaceWithDictionary:aDict];
 
+	self.section = IS_EMPTY_STRING(self.scientificName) ? nil : [[self.scientificName substringToIndex:1] uppercaseString];
 	self.lifeDuration = [self floatValueFromObject:[aDict objectForKey:[self mappedKeyForKey:FISH_KEY_LIFE_DURATION]]];
 
 	NSArray *names = [aDict objectForKey:STREAM_KEY_NOM_COMMUNS];

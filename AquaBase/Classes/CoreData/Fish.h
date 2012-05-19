@@ -20,6 +20,7 @@
 #define FISH_KEY_BEHAVIOR			@"behavior"
 #define FISH_KEY_REPRODUCTION		@"reproduction"
 #define FISH_KEY_AUTHOR				@"author"
+#define FISH_KEY_SECTION			@"section"
 
 #define FISH_REL_COMMON_NAMES		@"commonNames"
 #define FISH_REL_TEMPERATURE		@"temperature"
@@ -45,6 +46,7 @@
 @property (nonatomic, retain) NSString * behavior;
 @property (nonatomic, retain) NSString * reproduction;
 @property (nonatomic, retain) NSString * author;
+@property (nonatomic, retain) NSString * section;
 
 @property (nonatomic, retain) NSSet *commonNames;
 @property (nonatomic, retain) LifeValues *temperature;
@@ -52,6 +54,8 @@
 @property (nonatomic, retain) LifeValues *hardnessGH;
 @property (nonatomic, retain) GenderValues *size;
 @property (nonatomic, retain) NSSet *media;
+
++ (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx;
 
 @end
 

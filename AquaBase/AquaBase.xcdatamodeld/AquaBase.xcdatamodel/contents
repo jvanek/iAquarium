@@ -16,6 +16,7 @@
         <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reproduction" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scientificName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="section" optional="YES" attributeType="String" maxValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="acidity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishAcid" inverseEntity="LifeValues" syncable="YES"/>
         <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommonName" inverseName="fish" inverseEntity="CommonName" syncable="YES"/>
         <relationship name="hardnessGH" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishHardnessGH" inverseEntity="LifeValues" syncable="YES"/>
@@ -49,7 +50,7 @@
     </entity>
     <elements>
         <element name="CommonName" positionX="-20241" positionY="-8802" width="128" height="90"/>
-        <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="285"/>
+        <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="300"/>
         <element name="GenderValues" positionX="-20241" positionY="-8505" width="128" height="90"/>
         <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="135"/>
         <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>

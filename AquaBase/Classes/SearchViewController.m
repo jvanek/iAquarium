@@ -9,6 +9,9 @@
 #import "SearchViewController.h"
 #import "NetworkIndicatorController.h"
 #import "DataController.h"
+#import "MasterViewController.h"
+#import "DetailViewController.h"
+#import "Fish.h"
 
 
 @interface SearchViewController ()
@@ -57,7 +60,13 @@
 }
 
 - (IBAction)goSearch:(UIButton *)sender {
+//	NSArray *orderings = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:FISH_KEY_SCIENTIFIC_NAME ascending:YES]];
+//	
+//	// Fetch all fish using composed predicate from list
+//	NSArray *results = [Fish fishUsingPredicate:nil andOrderings:orderings inContext:APP_DELEGATE.managedObjectContext];
 	
+	MasterViewController *next = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
+	[self.navigationController pushViewController:next animated:YES];
 }
 
 - (IBAction)addCell:(UIButton *)sender {
