@@ -13,8 +13,12 @@
 
 
 @interface MasterViewController ()
+@property (strong, nonatomic) DetailViewController *detailViewController;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
+
+
 
 @implementation MasterViewController
 
@@ -102,8 +106,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    self.detailViewController.detailItem = object;
+    Fish *object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+	DetailViewController *next = [[DetailViewController alloc] initWithFish:object];
+	[self.navigationController pushViewController:next animated:YES];
 }
 
 #pragma mark - Fetched results controller

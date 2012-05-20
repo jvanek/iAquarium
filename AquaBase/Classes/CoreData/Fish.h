@@ -57,6 +57,9 @@
 
 + (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx;
 
+- (BOOL)hasBiotopInformation;
+- (NSUInteger)biotopRowCount;
+
 @end
 
 @interface Fish (CoreDataGeneratedAccessors)

@@ -7,73 +7,63 @@
 //
 
 #import "DetailViewController.h"
+#import "CommonName.h"
+
 
 @interface DetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
+//@property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 @end
+
+
 
 @implementation DetailViewController
 
 @synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
-@synthesize masterPopoverController = _masterPopoverController;
+@synthesize fishTableView, sections;
+//@synthesize detailDescriptionLabel = _detailDescriptionLabel;
+//@synthesize masterPopoverController = _masterPopoverController;
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+- (id)initWithFish:(Fish *)aFish {
+	if ((self = [super initWithNibName:@"DetailViewController" bundle:nil]) != nil) {
+		self.detailItem = aFish;
+		self.sections = [NSMutableArray array];
+		[self configureView];
 	}
+	return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)configureView {
+    // Update the user interface for the detail item.
+	if (self.detailItem) {
+		self.navigationItem.title = self.detailItem.scientificName;
+		if (self.detailItem.commonNames != nil && [self.detailItem.commonNames count] > 0) [self.sections addObject:DETAIL_SECTION_COMMON_NAMES];
+		if (!IS_EMPTY_STRING(self.detailItem.family)) [self.sections addObject:DETAIL_SECTION_FAMILY];
+		if ([self.detailItem hasBiotopInformation]) [self.sections addObject:DETAIL_SECTION_BIOTOP];
+	} else self.navigationItem.title = @"";
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-	[self configureView];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-	self.detailDescriptionLabel = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-		self.title = NSLocalizedString(@"Detail", @"Detail");
-    }
-    return self;
-}
 							
 #pragma mark - Split view
-
+/*
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
     barButtonItem.title = NSLocalizedString(@"Master", @"Master");
@@ -86,6 +76,66 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+*/
+
+#pragma mark - Table View
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return [self.sections count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSString *sectionTitle = [self.sections objectAtIndex:section];
+	if ([DETAIL_SECTION_COMMON_NAMES isEqualToString:sectionTitle]) {
+		return [self.detailItem.commonNames count];
+	}
+	else if ([DETAIL_SECTION_FAMILY isEqualToString:sectionTitle]) {
+		return 1;
+	}
+	else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
+		return [self.detailItem biotopRowCount];
+	}
+	return 0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return [self.sections objectAtIndex:section];
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *DetailCellIdentifier = @"DetailCell";    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:DetailCellIdentifier];
+    }
+	[self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
+	if ([DETAIL_SECTION_COMMON_NAMES isEqualToString:sectionTitle]) {
+		NSArray *descriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:COMMON_NAME_KEY_LABEL ascending:YES]];
+		NSArray *sortedNames = [[self.detailItem.commonNames allObjects] sortedArrayUsingDescriptors:descriptors];
+		cell.textLabel.text = [[sortedNames objectAtIndex:indexPath.row] label];
+	} else if ([DETAIL_SECTION_FAMILY isEqualToString:sectionTitle]) {
+		cell.textLabel.text = self.detailItem.family;
+	} else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
+	} else cell.textLabel.text = @"";
 }
 
 @end

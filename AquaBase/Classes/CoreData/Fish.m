@@ -100,4 +100,17 @@
 	} else [self.managedObjectContext deleteObject:self.size];
 }
 
+- (BOOL)hasBiotopInformation {
+	return self.temperature != nil || self.hardnessGH != nil || self.acidity != nil || self.lifeZone != nil;
+}
+
+- (NSUInteger)biotopRowCount {
+	NSUInteger result = 0;
+	result += (self.temperature != nil) ? 1 : 0;
+	result += (self.hardnessGH != nil) ? 1 : 0;
+	result += (self.acidity != nil) ? 1 : 0;
+	result += IS_EMPTY_STRING(self.lifeZone) ? 0 : 1;
+	return result;
+}
+
 @end
