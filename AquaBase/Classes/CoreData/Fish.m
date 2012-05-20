@@ -113,4 +113,22 @@
 	return result;
 }
 
+- (NSArray *)biotopKeys {
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:4];
+	if (self.temperature != nil) [result addObject:FISH_REL_TEMPERATURE];
+	if (self.acidity != nil) [result addObject:FISH_REL_ACIDITY];
+	if (self.hardnessGH != nil) [result addObject:FISH_REL_HARDNESS_GH];
+	if (!IS_EMPTY_STRING(self.lifeZone)) [result addObject:FISH_KEY_LIFE_ZONE];
+	return result;	
+}
+
+- (NSDictionary *)biotopValues {
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:4];
+	if (self.temperature != nil) [result setObject:self.temperature forKey:FISH_REL_TEMPERATURE];
+	if (self.acidity != nil) [result setObject:self.acidity forKey:FISH_REL_ACIDITY];
+	if (self.hardnessGH != nil) [result setObject:self.hardnessGH forKey:FISH_REL_HARDNESS_GH];
+	if (!IS_EMPTY_STRING(self.lifeZone)) [result setObject:self.lifeZone forKey:FISH_KEY_LIFE_ZONE];
+	return result;
+}
+
 @end

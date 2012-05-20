@@ -59,6 +59,8 @@
 
 - (BOOL)hasBiotopInformation;
 - (NSUInteger)biotopRowCount;
+- (NSArray *)biotopKeys;
+- (NSDictionary *)biotopValues;
 
 @end
 

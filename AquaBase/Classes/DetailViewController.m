@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "CommonName.h"
+#import "LifeValues.h"
 
 
 @interface DetailViewController ()
@@ -105,11 +106,21 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *DetailCellIdentifier = @"DetailCell";    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:DetailCellIdentifier];
-    }
+    static NSString *DetailKVCellIdentifier = @"DetailKVCell";
+    static NSString *DetailCellIdentifier = @"DetailCell";
+    UITableViewCell *cell = nil;
+	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
+	if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
+		cell = [tableView dequeueReusableCellWithIdentifier:DetailKVCellIdentifier];
+		if (cell == nil) {
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:DetailKVCellIdentifier];
+		}
+	} else {
+		cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
+		if (cell == nil) {
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:DetailCellIdentifier];
+		}
+	}
 	[self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -135,6 +146,14 @@
 	} else if ([DETAIL_SECTION_FAMILY isEqualToString:sectionTitle]) {
 		cell.textLabel.text = self.detailItem.family;
 	} else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
+		NSString *biotopKey = [[self.detailItem biotopKeys] objectAtIndex:indexPath.row];
+		id biotopValue = [[self.detailItem biotopValues] objectForKey:biotopKey];
+		if ([biotopValue isKindOfClass:[NSString class]]) cell.detailTextLabel.text = biotopValue;
+		else {
+			LifeValues *lv = (LifeValues *)biotopValue;
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"Min:%@\tMax:%@\tRep:%@", lv.valueMin, lv.valueMax, lv.valueRepro];
+		}
+		cell.textLabel.text = biotopKey;
 	} else cell.textLabel.text = @"";
 }
 
