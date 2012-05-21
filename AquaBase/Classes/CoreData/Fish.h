@@ -67,6 +67,11 @@
 - (NSArray *)factsKeys;
 - (NSDictionary *)factsValues;
 
+- (BOOL)hasDescriptions;
+- (NSUInteger)descriptionsRowCount;
+- (NSArray *)descriptionsKeys;
+- (NSDictionary *)descriptionsValues;
+
 @end
 
 @interface Fish (CoreDataGeneratedAccessors)

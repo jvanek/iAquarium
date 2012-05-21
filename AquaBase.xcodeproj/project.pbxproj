@@ -26,6 +26,9 @@
 		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
 		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
 		D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */; };
+		D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E7481156A4256005E6ABA /* LongTextCell.m */; };
+		D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E7484156A4277005E6ABA /* LongTextCell.xib */; };
+		D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E748D156A4840005E6ABA /* UILabel+Multiline.m */; };
 		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
 		D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F0A271566A5330093941F /* XmlParsingOperation.m */; };
@@ -96,6 +99,11 @@
 		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
 		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
 		D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LifeValuesCell.xib; path = Resources/LifeValuesCell.xib; sourceTree = "<group>"; };
+		D85E7480156A4256005E6ABA /* LongTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LongTextCell.h; path = Classes/LongTextCell.h; sourceTree = "<group>"; };
+		D85E7481156A4256005E6ABA /* LongTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LongTextCell.m; path = Classes/LongTextCell.m; sourceTree = "<group>"; };
+		D85E7484156A4277005E6ABA /* LongTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LongTextCell.xib; path = Resources/LongTextCell.xib; sourceTree = "<group>"; };
+		D85E748C156A4840005E6ABA /* UILabel+Multiline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Multiline.h"; path = "Classes/UILabel+Multiline.h"; sourceTree = "<group>"; };
+		D85E748D156A4840005E6ABA /* UILabel+Multiline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Multiline.m"; path = "Classes/UILabel+Multiline.m"; sourceTree = "<group>"; };
 		D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+Additions.h"; path = "Classes/CoreData/NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+Additions.m"; path = "Classes/CoreData/NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
 		D85F09FC156670150093941F /* Fish-mapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Fish-mapping.plist"; path = "Resources/Fish-mapping.plist"; sourceTree = "<group>"; };
@@ -235,6 +243,16 @@
 			name = "Life Values Cell";
 			sourceTree = "<group>";
 		};
+		D85E7483156A425A005E6ABA /* Long Text Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D85E7480156A4256005E6ABA /* LongTextCell.h */,
+				D85E7481156A4256005E6ABA /* LongTextCell.m */,
+				D85E7484156A4277005E6ABA /* LongTextCell.xib */,
+			);
+			name = "Long Text Cell";
+			sourceTree = "<group>";
+		};
 		D85F09FB15666FFA0093941F /* Mappings */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				D85E747D156A338C005E6ABA /* Life Values Cell */,
+				D85E7483156A425A005E6ABA /* Long Text Cell */,
 				D8B9196A155BDC140029B555 /* DetailViewController.h */,
 				D8B9196B155BDC140029B555 /* DetailViewController.m */,
 				D8B91970155BDC140029B555 /* DetailViewController.xib */,
@@ -288,6 +307,8 @@
 		D884C44A155C474C00F7149B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D85E748C156A4840005E6ABA /* UILabel+Multiline.h */,
+				D85E748D156A4840005E6ABA /* UILabel+Multiline.m */,
 				D80DF8FC1566627200488A0D /* NSString+Additions.h */,
 				D80DF8FD1566627200488A0D /* NSString+Additions.m */,
 				D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */,
@@ -541,6 +562,7 @@
 				D85F09FD156670150093941F /* Fish-mapping.plist in Resources */,
 				D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */,
 				D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */,
+				D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +607,8 @@
 				D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */,
 				D8F7AA711567A02C00B08181 /* ResultsViewController.m in Sources */,
 				D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */,
+				D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */,
+				D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -148,4 +148,33 @@
 	return result;	
 }
 
+- (BOOL)hasDescriptions {
+	return !(IS_EMPTY_STRING(self.origin) && IS_EMPTY_STRING(self.comment) && IS_EMPTY_STRING(self.dimorphism) &&
+			 IS_EMPTY_STRING(self.behavior) && IS_EMPTY_STRING(self.reproduction));
+}
+
+- (NSUInteger)descriptionsRowCount {
+	return [[self descriptionsKeys] count];
+}
+
+- (NSArray *)descriptionsKeys {
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:5];
+	if (!IS_EMPTY_STRING(self.origin)) [result addObject:LOCALIZED_STRING(@"Origin")];
+	if (!IS_EMPTY_STRING(self.comment)) [result addObject:LOCALIZED_STRING(@"Description")];
+	if (!IS_EMPTY_STRING(self.dimorphism)) [result addObject:LOCALIZED_STRING(@"Dimorphism")];
+	if (!IS_EMPTY_STRING(self.behavior)) [result addObject:LOCALIZED_STRING(@"Behavior")];
+	if (!IS_EMPTY_STRING(self.reproduction)) [result addObject:LOCALIZED_STRING(@"Reproduction")];
+	return result;	
+}
+
+- (NSDictionary *)descriptionsValues {
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:5];
+	if (!IS_EMPTY_STRING(self.origin)) [result setObject:self.origin forKey:LOCALIZED_STRING(@"Origin")];
+	if (!IS_EMPTY_STRING(self.comment)) [result setObject:self.comment forKey:LOCALIZED_STRING(@"Description")];
+	if (!IS_EMPTY_STRING(self.dimorphism)) [result setObject:self.dimorphism forKey:LOCALIZED_STRING(@"Dimorphism")];
+	if (!IS_EMPTY_STRING(self.behavior)) [result setObject:self.behavior forKey:LOCALIZED_STRING(@"Behavior")];
+	if (!IS_EMPTY_STRING(self.reproduction)) [result setObject:self.reproduction forKey:LOCALIZED_STRING(@"Reproduction")];
+	return result;	
+}
+
 @end

@@ -25,7 +25,7 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize fishTableView, sections;
-@synthesize lifeValuesCell;
+@synthesize lifeValuesCell, longTextCell;
 //@synthesize detailDescriptionLabel = _detailDescriptionLabel;
 //@synthesize masterPopoverController = _masterPopoverController;
 
@@ -48,6 +48,7 @@
 		if (!IS_EMPTY_STRING(self.detailItem.family)) [self.sections addObject:DETAIL_SECTION_FAMILY];
 		if ([self.detailItem hasBiotopInformation]) [self.sections addObject:DETAIL_SECTION_BIOTOP];
 		if ([self.detailItem hasFactsInformation]) [self.sections addObject:DETAIL_SECTION_SIMPLE_VALUES];
+		if ([self.detailItem hasDescriptions]) [self.sections addObject:DETAIL_SECTION_DESCRIPTIONS];
 	} else self.navigationItem.title = @"";
 }
 
@@ -59,6 +60,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	self.lifeValuesCell = nil;
+	self.longTextCell = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -103,6 +105,9 @@
 	else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
 		return [self.detailItem factsRowCount];
 	}
+	else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
+		return [self.detailItem descriptionsRowCount];
+	}
 	return 0;
 }
 
@@ -128,6 +133,13 @@
 		if (cell == nil) {
 			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:FactsDetailCellIdentifier];
 		}
+	} else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
+		cell = [tableView dequeueReusableCellWithIdentifier:LONG_TEXT_CELL_ID];
+		if (cell == nil) {
+			[[NSBundle mainBundle] loadNibNamed:@"LongTextCell" owner:self options:nil];
+			cell = self.longTextCell;
+			self.longTextCell = nil;
+		}
 	} else {
 		cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
 		if (cell == nil) {
@@ -150,6 +162,12 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
+	if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) return 180.0;
+	else return 44.0;
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
 	if ([DETAIL_SECTION_COMMON_NAMES isEqualToString:sectionTitle]) {
@@ -166,6 +184,9 @@
 		NSString *factKey = [[self.detailItem factsKeys] objectAtIndex:indexPath.row];
 		cell.textLabel.text = factKey;
 		cell.detailTextLabel.text = [[self.detailItem factsValues] objectForKey:factKey];
+	} else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
+		NSString *textKey = [[self.detailItem descriptionsKeys] objectAtIndex:indexPath.row];
+		[(LongTextCell *)cell configureWithTitle:textKey andText:[[self.detailItem descriptionsValues] objectForKey:textKey]];
 	} else cell.textLabel.text = @"";
 }
 
