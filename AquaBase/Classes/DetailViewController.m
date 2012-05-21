@@ -47,6 +47,7 @@
 		if (self.detailItem.commonNames != nil && [self.detailItem.commonNames count] > 0) [self.sections addObject:DETAIL_SECTION_COMMON_NAMES];
 		if (!IS_EMPTY_STRING(self.detailItem.family)) [self.sections addObject:DETAIL_SECTION_FAMILY];
 		if ([self.detailItem hasBiotopInformation]) [self.sections addObject:DETAIL_SECTION_BIOTOP];
+		if ([self.detailItem hasFactsInformation]) [self.sections addObject:DETAIL_SECTION_SIMPLE_VALUES];
 	} else self.navigationItem.title = @"";
 }
 
@@ -99,6 +100,9 @@
 	else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
 		return [self.detailItem biotopRowCount];
 	}
+	else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
+		return [self.detailItem factsRowCount];
+	}
 	return 0;
 }
 
@@ -109,6 +113,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *DetailCellIdentifier = @"DetailCell";
+    static NSString *FactsDetailCellIdentifier = @"FactsDetailCell";
     UITableViewCell *cell = nil;
 	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
 	if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
@@ -117,6 +122,11 @@
 			[[NSBundle mainBundle] loadNibNamed:@"LifeValuesCell" owner:self options:nil];
 			cell = self.lifeValuesCell;
 			self.lifeValuesCell = nil;
+		}
+	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
+		cell = [tableView dequeueReusableCellWithIdentifier:FactsDetailCellIdentifier];
+		if (cell == nil) {
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:FactsDetailCellIdentifier];
 		}
 	} else {
 		cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
@@ -152,6 +162,10 @@
 		NSString *biotopKey = [[self.detailItem biotopKeys] objectAtIndex:indexPath.row];
 		LifeValues *lv = [[self.detailItem biotopValues] objectForKey:biotopKey];
 		[(LifeValuesCell *)cell configureWithLifeValues:lv forTitle:biotopKey];
+	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
+		NSString *factKey = [[self.detailItem factsKeys] objectAtIndex:indexPath.row];
+		cell.textLabel.text = factKey;
+		cell.detailTextLabel.text = [[self.detailItem factsValues] objectForKey:factKey];
 	} else cell.textLabel.text = @"";
 }
 

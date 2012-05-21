@@ -105,15 +105,11 @@
 }
 
 - (NSUInteger)biotopRowCount {
-	NSUInteger result = 0;
-	result += (self.temperature != nil) ? 1 : 0;
-	result += (self.hardnessGH != nil) ? 1 : 0;
-	result += (self.acidity != nil) ? 1 : 0;
-	return result;
+	return [[self biotopKeys] count];
 }
 
 - (NSArray *)biotopKeys {
-	NSMutableArray *result = [NSMutableArray arrayWithCapacity:4];
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:3];
 	if (self.temperature != nil) [result addObject:LOCALIZED_STRING(@"Temp (°C)")];
 	if (self.acidity != nil) [result addObject:LOCALIZED_STRING(@"pH")];
 	if (self.hardnessGH != nil) [result addObject:LOCALIZED_STRING(@"GH")];
@@ -121,11 +117,35 @@
 }
 
 - (NSDictionary *)biotopValues {
-	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:4];
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:3];
 	if (self.temperature != nil) [result setObject:self.temperature forKey:LOCALIZED_STRING(@"Temp (°C)")];
 	if (self.acidity != nil) [result setObject:self.acidity forKey:LOCALIZED_STRING(@"pH")];
 	if (self.hardnessGH != nil) [result setObject:self.hardnessGH forKey:LOCALIZED_STRING(@"GH")];
 	return result;
+}
+
+- (BOOL)hasFactsInformation {
+	return self.lifeDuration != nil || self.lifeZone != nil || self.author != nil;
+}
+
+- (NSUInteger)factsRowCount {
+	return [[self factsKeys] count];
+}
+
+- (NSArray *)factsKeys {
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:3];
+	if (self.lifeDuration != nil && self.lifeDuration.intValue != 0) [result addObject:LOCALIZED_STRING(@"Life duration")];
+	if (self.lifeZone != nil) [result addObject:LOCALIZED_STRING(@"Life zone")];
+	if (self.author != nil) [result addObject:LOCALIZED_STRING(@"Author")];
+	return result;	
+}
+
+- (NSDictionary *)factsValues {
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:3];
+	if (self.lifeDuration != nil && self.lifeDuration.intValue != 0) [result setObject:[NSString stringWithFormat:@"%d", self.lifeDuration.intValue] forKey:LOCALIZED_STRING(@"Life duration")];
+	if (self.lifeZone != nil) [result setObject:self.lifeZone forKey:LOCALIZED_STRING(@"Life zone")];
+	if (self.author != nil) [result setObject:self.author forKey:LOCALIZED_STRING(@"Author")];
+	return result;	
 }
 
 @end

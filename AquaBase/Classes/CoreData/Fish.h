@@ -62,6 +62,11 @@
 - (NSArray *)biotopKeys;
 - (NSDictionary *)biotopValues;
 
+- (BOOL)hasFactsInformation;
+- (NSUInteger)factsRowCount;
+- (NSArray *)factsKeys;
+- (NSDictionary *)factsValues;
+
 @end
 
 @interface Fish (CoreDataGeneratedAccessors)

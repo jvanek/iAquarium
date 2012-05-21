@@ -13,6 +13,7 @@
 #define DETAIL_SECTION_COMMON_NAMES		LOCALIZED_STRING(@"Common names")
 #define DETAIL_SECTION_FAMILY			LOCALIZED_STRING(@"Family")
 #define DETAIL_SECTION_BIOTOP			LOCALIZED_STRING(@"Biotop")
+#define DETAIL_SECTION_SIMPLE_VALUES	LOCALIZED_STRING(@"Facts")
 
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
