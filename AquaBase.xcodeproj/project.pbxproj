@@ -24,6 +24,8 @@
 		D80DF8FA156655FD00488A0D /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8F9156655FD00488A0D /* DataController.m */; };
 		D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8B919AF155BE0070029B555 /* poissons-aquarium.xml */; };
 		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
+		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
+		D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */; };
 		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
 		D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F0A271566A5330093941F /* XmlParsingOperation.m */; };
@@ -91,6 +93,9 @@
 		D80DF8F9156655FD00488A0D /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Classes/DataController.m; sourceTree = "<group>"; };
 		D80DF8FC1566627200488A0D /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Classes/NSString+Additions.h"; sourceTree = "<group>"; };
 		D80DF8FD1566627200488A0D /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "Classes/NSString+Additions.m"; sourceTree = "<group>"; };
+		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
+		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
+		D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LifeValuesCell.xib; path = Resources/LifeValuesCell.xib; sourceTree = "<group>"; };
 		D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+Additions.h"; path = "Classes/CoreData/NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+Additions.m"; path = "Classes/CoreData/NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
 		D85F09FC156670150093941F /* Fish-mapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Fish-mapping.plist"; path = "Resources/Fish-mapping.plist"; sourceTree = "<group>"; };
@@ -220,6 +225,16 @@
 			name = "Rounded Corner View";
 			sourceTree = "<group>";
 		};
+		D85E747D156A338C005E6ABA /* Life Values Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D85E7479156A3389005E6ABA /* LifeValuesCell.h */,
+				D85E747A156A3389005E6ABA /* LifeValuesCell.m */,
+				D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */,
+			);
+			name = "Life Values Cell";
+			sourceTree = "<group>";
+		};
 		D85F09FB15666FFA0093941F /* Mappings */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +256,7 @@
 		D882AFE5155C05890029F188 /* Detail View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D85E747D156A338C005E6ABA /* Life Values Cell */,
 				D8B9196A155BDC140029B555 /* DetailViewController.h */,
 				D8B9196B155BDC140029B555 /* DetailViewController.m */,
 				D8B91970155BDC140029B555 /* DetailViewController.xib */,
@@ -524,6 +540,7 @@
 				D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */,
 				D85F09FD156670150093941F /* Fish-mapping.plist in Resources */,
 				D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */,
+				D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +584,7 @@
 				D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */,
 				D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */,
 				D8F7AA711567A02C00B08181 /* ResultsViewController.m in Sources */,
+				D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

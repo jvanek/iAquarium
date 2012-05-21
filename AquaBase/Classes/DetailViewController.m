@@ -25,6 +25,7 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize fishTableView, sections;
+@synthesize lifeValuesCell;
 //@synthesize detailDescriptionLabel = _detailDescriptionLabel;
 //@synthesize masterPopoverController = _masterPopoverController;
 
@@ -56,6 +57,7 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+	self.lifeValuesCell = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -106,14 +108,15 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *DetailKVCellIdentifier = @"DetailKVCell";
     static NSString *DetailCellIdentifier = @"DetailCell";
     UITableViewCell *cell = nil;
 	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
 	if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
-		cell = [tableView dequeueReusableCellWithIdentifier:DetailKVCellIdentifier];
+		cell = [tableView dequeueReusableCellWithIdentifier:LIFE_VALUES_CELL_ID];
 		if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:DetailKVCellIdentifier];
+			[[NSBundle mainBundle] loadNibNamed:@"LifeValuesCell" owner:self options:nil];
+			cell = self.lifeValuesCell;
+			self.lifeValuesCell = nil;
 		}
 	} else {
 		cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
@@ -147,13 +150,8 @@
 		cell.textLabel.text = self.detailItem.family;
 	} else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
 		NSString *biotopKey = [[self.detailItem biotopKeys] objectAtIndex:indexPath.row];
-		id biotopValue = [[self.detailItem biotopValues] objectForKey:biotopKey];
-		if ([biotopValue isKindOfClass:[NSString class]]) cell.detailTextLabel.text = biotopValue;
-		else {
-			LifeValues *lv = (LifeValues *)biotopValue;
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"Min:%@\tMax:%@\tRep:%@", lv.valueMin, lv.valueMax, lv.valueRepro];
-		}
-		cell.textLabel.text = biotopKey;
+		LifeValues *lv = [[self.detailItem biotopValues] objectForKey:biotopKey];
+		[(LifeValuesCell *)cell configureWithLifeValues:lv forTitle:biotopKey];
 	} else cell.textLabel.text = @"";
 }
 

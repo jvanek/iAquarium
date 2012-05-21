@@ -109,25 +109,22 @@
 	result += (self.temperature != nil) ? 1 : 0;
 	result += (self.hardnessGH != nil) ? 1 : 0;
 	result += (self.acidity != nil) ? 1 : 0;
-	result += IS_EMPTY_STRING(self.lifeZone) ? 0 : 1;
 	return result;
 }
 
 - (NSArray *)biotopKeys {
 	NSMutableArray *result = [NSMutableArray arrayWithCapacity:4];
-	if (self.temperature != nil) [result addObject:FISH_REL_TEMPERATURE];
-	if (self.acidity != nil) [result addObject:FISH_REL_ACIDITY];
-	if (self.hardnessGH != nil) [result addObject:FISH_REL_HARDNESS_GH];
-	if (!IS_EMPTY_STRING(self.lifeZone)) [result addObject:FISH_KEY_LIFE_ZONE];
+	if (self.temperature != nil) [result addObject:LOCALIZED_STRING(@"Temp (°C)")];
+	if (self.acidity != nil) [result addObject:LOCALIZED_STRING(@"pH")];
+	if (self.hardnessGH != nil) [result addObject:LOCALIZED_STRING(@"GH")];
 	return result;	
 }
 
 - (NSDictionary *)biotopValues {
 	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:4];
-	if (self.temperature != nil) [result setObject:self.temperature forKey:FISH_REL_TEMPERATURE];
-	if (self.acidity != nil) [result setObject:self.acidity forKey:FISH_REL_ACIDITY];
-	if (self.hardnessGH != nil) [result setObject:self.hardnessGH forKey:FISH_REL_HARDNESS_GH];
-	if (!IS_EMPTY_STRING(self.lifeZone)) [result setObject:self.lifeZone forKey:FISH_KEY_LIFE_ZONE];
+	if (self.temperature != nil) [result setObject:self.temperature forKey:LOCALIZED_STRING(@"Temp (°C)")];
+	if (self.acidity != nil) [result setObject:self.acidity forKey:LOCALIZED_STRING(@"pH")];
+	if (self.hardnessGH != nil) [result setObject:self.hardnessGH forKey:LOCALIZED_STRING(@"GH")];
 	return result;
 }
 
