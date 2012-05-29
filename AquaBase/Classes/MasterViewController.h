@@ -7,8 +7,9 @@
 //
 
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MasterViewController : UIViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

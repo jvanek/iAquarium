@@ -12,10 +12,16 @@
 #import "CommonName.h"
 
 
-@interface MasterViewController ()
+@interface MasterViewController () {
+	BOOL isSearching;
+}
+
 @property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) NSArray *searchResults;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)updateSearchResults:(NSString *)searchText;
+
 @end
 
 
@@ -25,67 +31,65 @@
 @synthesize detailViewController = _detailViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize tableView, searchResults;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		self.title = NSLocalizedString(@"Master", @"Master");
-		self.clearsSelectionOnViewWillAppear = NO;
+//		self.clearsSelectionOnViewWillAppear = NO;
 		self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
     return self;
 }
 							
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 //	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	isSearching = NO;
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return [[self.fetchedResultsController sections] count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+	return isSearching ? 1 : [[self.fetchedResultsController sections] count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
+	if (isSearching) return [self.searchResults count];
 	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
 	return [sectionInfo numberOfObjects];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [[self.fetchedResultsController sectionIndexTitles] objectAtIndex:section];
+- (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
+	return isSearching ? [NSString stringWithFormat:LOCALIZED_STRING(@"Search results %d"), [self.searchResults count]] :
+						[[self.fetchedResultsController sectionIndexTitles] objectAtIndex:section];
 }
 
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-	return [self.fetchedResultsController sectionIndexTitles];
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)aTableView {
+	return isSearching ? nil : [self.fetchedResultsController sectionIndexTitles];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-	return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+- (NSInteger)tableView:(UITableView *)aTableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+	return isSearching ? 0 : [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"FishCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
@@ -94,19 +98,18 @@
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Fish *object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Fish *object = nil;
+	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
+    else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
 	DetailViewController *next = [[DetailViewController alloc] initWithFish:object];
 	[self.navigationController pushViewController:next animated:YES];
 }
@@ -118,8 +121,7 @@
 	return __managedObjectContext;
 }
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
+- (NSFetchedResultsController *)fetchedResultsController {
     if (__fetchedResultsController != nil) {
         return __fetchedResultsController;
     }
@@ -155,14 +157,12 @@
     return __fetchedResultsController;
 }    
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
@@ -176,32 +176,30 @@
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath
-{
-    UITableView *tableView = self.tableView;
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    UITableView *aTableView = self.tableView;
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [aTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:[aTableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
+            [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [aTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
 
@@ -215,11 +213,39 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    Fish *object = (Fish *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Fish *object = nil;
+	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
+    else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
     cell.textLabel.text = object.scientificName;
 	cell.detailTextLabel.text = [[[object.commonNames valueForKey:COMMON_NAME_KEY_LABEL] allObjects] componentsJoinedByString:@", "];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)updateSearchResults:(NSString *)searchText {
+	if (IS_EMPTY_STRING(searchText)) {
+		self.searchResults = [NSArray array];
+		isSearching = NO;
+	} else {
+		NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@ or %K.%K contains[cd] %@", 
+										FISH_KEY_SCIENTIFIC_NAME, searchText, FISH_REL_COMMON_NAMES, COMMON_NAME_KEY_LABEL, searchText];
+		self.searchResults = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:filterPredicate];
+		isSearching = YES;
+	}
+	[self.tableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+	[self updateSearchResults:searchBar.text];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+	[self updateSearchResults:nil];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	[self updateSearchResults:searchBar.text];
 }
 
 @end
