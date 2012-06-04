@@ -86,7 +86,7 @@
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="1000613991"/>
-						<string key="IBUINibName">SearchViewController</string>
+						<string key="IBUINibName">SearchViewController-iPad</string>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 							<int key="IBUIInterfaceOrientation">1</int>
 							<int key="interfaceOrientation">1</int>

@@ -17,6 +17,7 @@
 @interface SearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *searchCriteria;
+@property (nonatomic, strong) ComboboxController *combobox;
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
 - (void)refreshDatabase:(UIBarButtonItem *)sender;
@@ -30,6 +31,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize tableView, searchCell;
 @synthesize searchCriteria, searchButton;
+@synthesize combobox;
 
 
 - (void)viewDidLoad {
@@ -43,11 +45,21 @@
 
 	self.searchCriteria = [NSMutableArray array];
 	[self addCell:nil];
+	
+	self.combobox = [[ComboboxController alloc] initWithDataSource:[NSArray arrayWithObjects:@"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", nil] displayStringKeypath:nil];
+	self.combobox.delegate = self;
+	self.combobox.view.frame = CGRectMake(20.0, 42.0, self.view.frame.size.width - 40.0, 40.0);
+	[self.view addSubview:self.combobox.view];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    self.combobox = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	if (self.combobox != nil) [self.combobox viewWillAppear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -132,6 +144,12 @@
 
 - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
 	return NO;
+}
+
+#pragma mark - Combobox delegate
+
+- (void)comboboxController:(ComboboxController *)controller didSelectObject:(id)selectedObject {
+	NSLog(@"%s : %@", __PRETTY_FUNCTION__, selectedObject);
 }
 
 #pragma mark - Private methods

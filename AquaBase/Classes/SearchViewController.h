@@ -8,9 +8,11 @@
 
 #import "SearchViewControllerCell.h"
 #import "PredicateViewController.h"
+#import "ComboboxController.h"
 
 
-@interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PredicateViewControllerDelegate, UIAlertViewDelegate>
+@interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PredicateViewControllerDelegate,
+									UIAlertViewDelegate, ComboboxControllerDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

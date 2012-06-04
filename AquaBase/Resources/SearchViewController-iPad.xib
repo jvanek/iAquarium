@@ -40,7 +40,7 @@
 					<object class="IBUILabel" id="360003207">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">290</int>
-						<string key="NSFrame">{{20, 20}, {728, 21}}</string>
+						<string key="NSFrame">{{20, 20}, {275, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="918763466"/>
@@ -71,7 +71,7 @@
 					<object class="IBUITableView" id="918763466">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 49}, {728, 846}}</string>
+						<string key="NSFrame">{{20, 76}, {728, 819}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="490061299"/>
@@ -258,7 +258,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">13</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
