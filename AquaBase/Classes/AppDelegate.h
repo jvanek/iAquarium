@@ -20,11 +20,12 @@
 @property (strong, nonatomic) IBOutlet UINavigationController *mainViewController;
 @property (strong, nonatomic) IBOutlet SearchViewController *searchViewController;
 @property (nonatomic, strong) NetworkIndicatorController *networkIndicatorController;
+@property (nonatomic, readonly) BOOL isIpad;
+@property (nonatomic, readonly) BOOL isIphone;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (void)showNetworkActivity;
 - (void)hideNetworkActivity;
-- (BOOL)isIpad;
 
 @end

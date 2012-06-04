@@ -66,6 +66,10 @@
 	return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
+- (BOOL)isIphone {
+	return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
+}
+
 #pragma mark - Core Data stack
 
 // Returns the managed object context for the application.

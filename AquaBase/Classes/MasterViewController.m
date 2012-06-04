@@ -39,7 +39,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		self.title = LOCALIZED_STRING(@"Search Results");
-		self.clearsSelectionOnViewWillAppear = NO;
+//		self.clearsSelectionOnViewWillAppear = NO;
 		self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
     return self;
@@ -242,10 +242,12 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 	[self updateSearchResults:nil];
+	if (APP_DELEGATE.isIphone) [searchBar resignFirstResponder];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	[self updateSearchResults:searchBar.text];
+	if (APP_DELEGATE.isIphone) [searchBar resignFirstResponder];
 }
 
 @end
