@@ -53,14 +53,16 @@ static NSMutableArray *mappingsNotFound;
 	self.dateFormatter = nil;
 }
 
-- (BOOL)updateDatabaseUsingURL:(NSURL *)remoteUrl error:(NSError **)error {
-	BOOL result = YES;
+- (void)updateDatabaseUsingURL:(NSURL *)remoteUrl onCompletion:(void (^)(NSError *error))completionHandler {
 	self.parsingOperation = [[XmlParsingOperation alloc] initWithURL:remoteUrl];
-	self.parsingOperation.completionHandler = ^{
-		NSLog(@"%s : Done.", __PRETTY_FUNCTION__);
-	};
+	if (completionHandler != nil) self.parsingOperation.completionHandler = completionHandler;
+	else {
+		self.parsingOperation.completionHandler = ^(NSError *error) {
+			if (error != nil) NSLog(@"%s : Error: %@", __PRETTY_FUNCTION__, [error localizedDescription]);
+			else NSLog(@"%s : Done.", __PRETTY_FUNCTION__);
+		};
+	}
 	if (self.parsingOperation) [self.queue addOperation:self.parsingOperation];
-	return result;
 }
 
 /*!

@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) StreamController *streamController;
 @property (nonatomic, strong) NSArray *allowedElementNames;
-@property (nonatomic, copy) void (^completionHandler)(void);
+@property (nonatomic, copy) void (^completionHandler)(NSError *error);
 
 - (id)initWithURL:(NSURL *)anUrl;
 

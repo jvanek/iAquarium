@@ -166,6 +166,7 @@
 															(container.size.height - NETWORK_INDICATOR_SIZE) / 2.0,
 															NETWORK_INDICATOR_SIZE, NETWORK_INDICATOR_SIZE);
 	[self.mainViewController.view addSubview:self.networkIndicatorController.view];
+	[self.networkIndicatorController viewWillAppear:YES];
 	[self.networkIndicatorController.activityIndicator startAnimating];
 }
 

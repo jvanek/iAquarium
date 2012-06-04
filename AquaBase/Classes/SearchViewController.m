@@ -21,6 +21,7 @@
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
 - (void)refreshDatabase:(UIBarButtonItem *)sender;
+- (void)showNetworkIndicator;
 
 @end
 
@@ -37,8 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithTitle:LOCALIZED_STRING(@"Refresh Database")
-																style:UIBarButtonItemStyleBordered
+	UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
 															   target:self
 															   action:@selector(refreshDatabase:)];
 	self.navigationItem.rightBarButtonItem = refresh;
@@ -158,29 +158,33 @@
 	return [self.searchCriteria objectAtIndex:indexPath.row];
 }
 
+- (void)showNetworkIndicator {
+	APP_DELEGATE.networkIndicatorController.showsTitle = YES;
+	APP_DELEGATE.networkIndicatorController.showsSecondary = YES;
+	APP_DELEGATE.networkIndicatorController.showsProgress = NO;
+	[APP_DELEGATE.networkIndicatorController prepareWithMinValue:0.0 maxValue:0.0 forTitle:LOCALIZED_STRING(@"Refreshing...")];
+	[APP_DELEGATE showNetworkActivity];
+}
+
 - (void)refreshDatabase:(UIBarButtonItem *)sender {
-	NSError *error = nil;
-	NSURL *databaseUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
+//	NSURL *databaseUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
+	NSURL *remoteUrl = [NSURL URLWithString:@"http://www.aquabase.org/fish/dump.php3?format=xml"];
 	self.navigationItem.rightBarButtonItem.enabled = NO;
 	
-//	APP_DELEGATE.networkIndicatorController.showsTitle = YES;
-//	APP_DELEGATE.networkIndicatorController.showsSecondary = YES;
-//	APP_DELEGATE.networkIndicatorController.showsProgress = YES;
-//	[APP_DELEGATE.networkIndicatorController prepareWithMinValue:0.0 maxValue:0.0 forTitle:LOCALIZED_STRING(@"Refreshing...")];
-//	[APP_DELEGATE performSelectorOnMainThread:@selector(showNetworkActivity) withObject:nil waitUntilDone:NO];
+	[self performSelectorOnMainThread:@selector(showNetworkIndicator) withObject:nil waitUntilDone:NO];	
 	
-	BOOL result = [[DataController sharedInstance] updateDatabaseUsingURL:databaseUrl error:&error];
-	if (!result) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED_STRING(@"Error")
-														message:LOCALIZED_STRING(@"An error occured when updating the database. Please try again later.")
-													   delegate:self
-											  cancelButtonTitle:LOCALIZED_STRING(@"Ok")
-											  otherButtonTitles:nil];
-		[alert show];
-	}
-	
-//	[APP_DELEGATE performSelectorOnMainThread:@selector(hideNetworkActivity) withObject:nil waitUntilDone:NO];
-	self.navigationItem.rightBarButtonItem.enabled = YES;	
+	[[DataController sharedInstance] updateDatabaseUsingURL:remoteUrl onCompletion:^(NSError *error) {
+		[APP_DELEGATE performSelectorOnMainThread:@selector(hideNetworkActivity) withObject:nil waitUntilDone:NO];
+		self.navigationItem.rightBarButtonItem.enabled = YES;		
+		if (error != nil) {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED_STRING(@"Error")
+															message:LOCALIZED_STRING(@"An error occured when updating the database. Please try again later.")
+														   delegate:self
+												  cancelButtonTitle:LOCALIZED_STRING(@"Ok")
+												  otherButtonTitles:nil];
+			[alert show];
+		}		
+	}];
 }
 
 @end

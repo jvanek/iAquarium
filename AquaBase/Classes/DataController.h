@@ -17,6 +17,6 @@
 + (DataController *)sharedInstance;
 + (NSDictionary *)mappingForEntityName:(NSString *)entityName;
 
-- (BOOL)updateDatabaseUsingURL:(NSURL *)remoteUrl error:(NSError **)error;
+- (void)updateDatabaseUsingURL:(NSURL *)remoteUrl onCompletion:(void (^)(NSError *error))completionHandler;
 
 @end

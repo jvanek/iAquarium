@@ -83,7 +83,7 @@ static NSUInteger const kSizeOfFishBatch = 20;
 
 	NSLog(@"%s : Added %d objects (%d batches)", __PRETTY_FUNCTION__, count, batchCount);
 
-	if (self.completionHandler) self.completionHandler();	
+	if (self.completionHandler) self.completionHandler(err);	
 }
 
 #pragma mark - StreamControllerDelegate methods
