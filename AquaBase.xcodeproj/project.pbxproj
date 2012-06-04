@@ -24,6 +24,7 @@
 		D80DF8FA156655FD00488A0D /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8F9156655FD00488A0D /* DataController.m */; };
 		D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8B919AF155BE0070029B555 /* poissons-aquarium.xml */; };
 		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
+		D839F221157CAD90008B38F2 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */; };
 		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
 		D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */; };
 		D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E7481156A4256005E6ABA /* LongTextCell.m */; };
@@ -96,6 +97,7 @@
 		D80DF8F9156655FD00488A0D /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Classes/DataController.m; sourceTree = "<group>"; };
 		D80DF8FC1566627200488A0D /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Classes/NSString+Additions.h"; sourceTree = "<group>"; };
 		D80DF8FD1566627200488A0D /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "Classes/NSString+Additions.m"; sourceTree = "<group>"; };
+		D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPhone.xib"; path = "Resources/MainWindow-iPhone.xib"; sourceTree = "<group>"; };
 		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
 		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
 		D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LifeValuesCell.xib; path = Resources/LifeValuesCell.xib; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 			children = (
 				D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */,
 				D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */,
+				D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */,
 				D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */,
 				D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */,
+				D839F221157CAD90008B38F2 /* MainWindow-iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +732,7 @@
 				GCC_PREFIX_HEADER = "AquaBase/AquaBase-Prefix.pch";
 				INFOPLIST_FILE = "AquaBase/AquaBase-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -739,6 +744,7 @@
 				GCC_PREFIX_HEADER = "AquaBase/AquaBase-Prefix.pch";
 				INFOPLIST_FILE = "AquaBase/AquaBase-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -38,8 +38,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.title = NSLocalizedString(@"Master", @"Master");
-//		self.clearsSelectionOnViewWillAppear = NO;
+		self.title = LOCALIZED_STRING(@"Search Results");
+		self.clearsSelectionOnViewWillAppear = NO;
 		self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
     return self;

@@ -25,5 +25,6 @@
 - (NSURL *)applicationDocumentsDirectory;
 - (void)showNetworkActivity;
 - (void)hideNetworkActivity;
+- (BOOL)isIpad;
 
 @end
