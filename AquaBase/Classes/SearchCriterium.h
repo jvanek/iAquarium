@@ -10,10 +10,10 @@
 @interface SearchCriterium : NSObject
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSComparisonPredicate *predicate;
+@property (nonatomic, strong) NSPredicate *predicate;
 
 + (SearchCriterium *)searchCriterium;
 + (SearchCriterium *)searchCriteriumWithTitle:(NSString *)aTitle;
-+ (SearchCriterium *)searchCriteriumWithTitle:(NSString *)aTitle andPredicate:(NSComparisonPredicate *)aPredicate;
++ (SearchCriterium *)searchCriteriumWithTitle:(NSString *)aTitle andPredicate:(NSPredicate *)aPredicate;
 
 @end

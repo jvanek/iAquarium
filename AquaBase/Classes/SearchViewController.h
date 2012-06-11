@@ -7,13 +7,12 @@
 //
 
 #import "PredicateViewController.h"
-#import "ComboboxController.h"
 
 
 #define SEGUE_PREDICATE_EDITOR_ID		@"goToPredicateID"
 
 @interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PredicateViewControllerDelegate,
-									UIAlertViewDelegate, ComboboxControllerDelegate>
+									UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

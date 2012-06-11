@@ -27,6 +27,7 @@
 		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
 		D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */; };
+		D85C255215864C5500F83927 /* OperatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85C255115864C5500F83927 /* OperatorList.plist */; };
 		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
 		D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E7481156A4256005E6ABA /* LongTextCell.m */; };
 		D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E748D156A4840005E6ABA /* UILabel+Multiline.m */; };
@@ -94,6 +95,7 @@
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
 		D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPhone.storyboard; path = Resources/AquaBase_iPhone.storyboard; sourceTree = "<group>"; };
 		D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPad.storyboard; path = Resources/AquaBase_iPad.storyboard; sourceTree = "<group>"; };
+		D85C255115864C5500F83927 /* OperatorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = OperatorList.plist; path = Resources/OperatorList.plist; sourceTree = "<group>"; };
 		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
 		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
 		D85E7480156A4256005E6ABA /* LongTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LongTextCell.h; path = Classes/LongTextCell.h; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */,
 				D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */,
 				D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */,
+				D85C255115864C5500F83927 /* OperatorList.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */,
 				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
 				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,
+				D85C255215864C5500F83927 /* OperatorList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

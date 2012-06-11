@@ -56,6 +56,7 @@
 @property (nonatomic, retain) NSSet *media;
 
 + (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx;
++ (NSArray *)attributesToQuery;
 
 - (BOOL)hasBiotopInformation;
 - (NSUInteger)biotopRowCount;

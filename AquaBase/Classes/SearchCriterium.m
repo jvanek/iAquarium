@@ -25,19 +25,11 @@
 	return [SearchCriterium searchCriteriumWithTitle:aTitle andPredicate:nil];
 }
 
-+ (SearchCriterium *)searchCriteriumWithTitle:(NSString *)aTitle andPredicate:(NSComparisonPredicate *)aPredicate {
++ (SearchCriterium *)searchCriteriumWithTitle:(NSString *)aTitle andPredicate:(NSPredicate *)aPredicate {
 	SearchCriterium *result = [[SearchCriterium alloc] init];
 	result.title = aTitle;
 	result.predicate = aPredicate;
 	return result;	
 }
-
-/*
- [NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:@""]
- rightExpression:[NSExpression expressionForEvaluatedObject]
- modifier:NSDirectPredicateModifier
- type:NSEqualToPredicateOperatorType
- options:NSCaseInsensitivePredicateOption | NSDiacriticInsensitivePredicateOption]];
- */
 
 @end

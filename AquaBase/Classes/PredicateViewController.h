@@ -6,19 +6,24 @@
 //  Copyright (c) 2012 Pallas Free Foundation. All rights reserved.
 //
 
+#import "ComboboxController.h"
+
 @class PredicateViewController;
 
 @protocol PredicateViewControllerDelegate <NSObject>
 
-- (void)predicateViewController:(PredicateViewController *)controller willCloseWithTitle:(NSString *)aTitle andPredicate:(NSComparisonPredicate *)aPredicate;
+- (void)predicateViewController:(PredicateViewController *)controller willCloseWithTitle:(NSString *)aTitle andPredicate:(NSPredicate *)aPredicate;
 
 @end
 
 
 
-@interface PredicateViewController : UIViewController
+@interface PredicateViewController : UIViewController<ComboboxControllerDelegate, UITextFieldDelegate>
 
-@property (nonatomic, strong) NSComparisonPredicate *predicate;
+@property (nonatomic, strong) NSPredicate *predicate;
 @property (nonatomic, weak) id<PredicateViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UIView *attrComboContainer, *operComboContainer;
+@property (nonatomic, weak) IBOutlet UITextField *valueField;
+@property (nonatomic, weak) IBOutlet UITextField *titleField;
 
 @end

@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) NSString *displayKeyPath;
-@property (nonatomic, weak) id selectedObject;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)updateSelectionLabel;
@@ -80,7 +79,7 @@
 		if (sender != nil) sender.enabled = NO;
 		[UIView animateWithDuration:0.2
 						 animations:^{
-							 self.tableView.frame = CGRectMake(origin.x + 1.0, origin.y + container.size.height + 1.0, container.size.width - 41.0, 1.0);
+							 self.tableView.frame = CGRectMake(origin.x + 1.0, origin.y + container.size.height + 1.0, container.size.width - BUTTON_WIDTH - 1.0, 1.0);
 						 }
 						 completion:^(BOOL finished) {
 							 [self.tableView removeFromSuperview];
@@ -91,12 +90,12 @@
 	}
 	else {
 		int maxVisibleLines = MIN(5, [self.dataSource count]);
-		self.tableView.frame = CGRectMake(origin.x + 1.0, origin.y + container.size.height + 1.0, container.size.width - 40.0, 1.0);
+		self.tableView.frame = CGRectMake(origin.x + 1.0, origin.y + container.size.height + 1.0, container.size.width - BUTTON_WIDTH, 1.0);
 		[self.view.superview addSubview:self.tableView];
 		if (sender != nil) sender.enabled = NO;
 		[UIView animateWithDuration:0.2
 						 animations:^{
-							 self.tableView.frame = CGRectMake(origin.x + 1.0, origin.y + container.size.height + 1.0, container.size.width - 41.0, maxVisibleLines * DEFAULT_ROW_HEIGHT);
+							 self.tableView.frame = CGRectMake(origin.x + 1.0, origin.y + container.size.height + 1.0, container.size.width - BUTTON_WIDTH - 1.0, maxVisibleLines * DEFAULT_ROW_HEIGHT);
 						 }
 						 completion:^(BOOL finished) {
 							 if (sender != nil) sender.enabled = YES;

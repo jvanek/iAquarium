@@ -7,6 +7,7 @@
 //
 
 #define DEFAULT_ROW_HEIGHT		32.0
+#define BUTTON_WIDTH			30.0
 
 @class ComboboxController;
 
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UILabel *selectionLabel;
 @property (nonatomic, weak) id<ComboboxControllerDelegate> delegate;
+@property (nonatomic, weak) id selectedObject;
 
 - (id)initWithDataSource:(NSArray *)dataSource displayStringKeypath:(NSString *)keypath;
 

@@ -119,24 +119,23 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="AquaBase Fish" id="ESx-ub-sAN"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="yxF-nF-xyK" id="VOm-WD-dVJ"/>
-                        <outlet property="view" destination="QlG-OP-On4" id="nJQ-1n-13J"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1648" y="-855"/>
         </scene>
-        <!--View Controller - Edit Predicate-->
+        <!--Predicate View Controller - Edit Predicate-->
         <scene sceneID="2nL-vL-8rg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idX-KH-kb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="kVU-jf-WD1" sceneMemberID="viewController">
+                <viewController id="kVU-jf-WD1" customClass="PredicateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="idJ-ON-k8h">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,12 +153,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Search fish where :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8S1-f3-50D">
+                                <rect key="frame" x="20" y="127" width="191" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="fCq-nj-hAW" userLabel="Attribute combobox">
+                                <rect key="frame" x="184" y="124" width="160" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                            </view>
+                            <view contentMode="scaleToFill" id="yff-b3-gFQ" userLabel="Operator combobox">
+                                <rect key="frame" x="352" y="124" width="112" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="UCQ-a2-m78">
+                                <rect key="frame" x="472" y="124" width="276" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Predicate" id="Ttf-5X-1Cf"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="attrComboContainer" destination="fCq-nj-hAW" id="CQo-Eu-cZQ"/>
+                        <outlet property="operComboContainer" destination="yff-b3-gFQ" id="MFk-nu-vwr"/>
+                        <outlet property="titleField" destination="Byw-0b-Bsk" id="441-Fl-MUt"/>
+                        <outlet property="valueField" destination="UCQ-a2-m78" id="9WH-Jk-8UK"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2872" y="-1398"/>
@@ -234,7 +263,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Wxa-Eq-j1g" id="Xlc-oq-i3g"/>
-                        <outlet property="view" destination="1CE-v0-6Hr" id="99P-cp-tBr"/>
                     </connections>
                 </viewController>
             </objects>
@@ -406,7 +434,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fishTableView" destination="wUe-W6-8iH" id="rK1-zX-4gv"/>
-                        <outlet property="view" destination="Udi-xd-rfD" id="iFZ-FI-8qN"/>
                     </connections>
                 </viewController>
             </objects>
@@ -510,6 +537,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PredicateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PredicateViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="attrComboContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="operComboContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valueField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="SearchViewController" superclassName="UIViewController">

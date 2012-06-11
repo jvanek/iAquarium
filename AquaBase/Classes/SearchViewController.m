@@ -18,7 +18,6 @@
 @interface SearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *searchCriteria;
-@property (nonatomic, strong) ComboboxController *combobox;
 @property (nonatomic, strong) SearchCriterium *selectedCriterium;
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
@@ -34,7 +33,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize tableView;
 @synthesize searchCriteria, searchButton;
-@synthesize combobox, selectedCriterium;
+@synthesize selectedCriterium;
 
 
 - (void)viewDidLoad {
@@ -47,24 +46,12 @@
 
 	self.searchCriteria = [NSMutableArray array];
 	[self addCell:nil];
-	
-	self.combobox = [[ComboboxController alloc] initWithDataSource:[NSArray arrayWithObjects:@"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", nil] displayStringKeypath:nil];
-	self.combobox.delegate = self;
-	self.combobox.view.frame = CGRectMake(20.0, 42.0, self.view.frame.size.width - 40.0, 40.0);
-	[self.view addSubview:self.combobox.view];
-	
 	self.selectedCriterium = nil;
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    self.combobox = nil;
 	self.selectedCriterium = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	if (self.combobox != nil) [self.combobox viewWillAppear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -95,8 +82,9 @@
 	}
 }
 
-- (void)predicateViewController:(PredicateViewController *)controller willCloseWithTitle:(NSString *)aTitle andPredicate:(NSComparisonPredicate *)aPredicate {
-	
+- (void)predicateViewController:(PredicateViewController *)controller willCloseWithTitle:(NSString *)aTitle andPredicate:(NSPredicate *)aPredicate {
+	self.selectedCriterium.title = aTitle;
+	self.selectedCriterium.predicate = aPredicate;
 }
 
 #pragma mark - UIStoryboard Delegate
@@ -106,6 +94,7 @@
 	if ([SEGUE_PREDICATE_EDITOR_ID isEqualToString:segue.identifier]) {
 		PredicateViewController *next = (PredicateViewController *)segue.destinationViewController;
 		next.navigationItem.title = selectedCriterium.title;
+		next.titleField.text = selectedCriterium.title;
 		next.predicate = [selectedCriterium predicate];
 		next.delegate = self;
 	}
@@ -141,12 +130,6 @@
 
 - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
 	return NO;
-}
-
-#pragma mark - Combobox delegate
-
-- (void)comboboxController:(ComboboxController *)controller didSelectObject:(id)selectedObject {
-	NSLog(@"%s : %@", __PRETTY_FUNCTION__, selectedObject);
 }
 
 #pragma mark - Private methods
