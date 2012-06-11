@@ -94,6 +94,7 @@
                                             <outlet property="addCellButton" destination="Ype-NU-HNR" id="2rt-Se-GaZ"/>
                                             <outlet property="mainTitleLabel" destination="Iqd-w1-rGP" id="u7Z-UV-hlB"/>
                                             <outlet property="removeCellButton" destination="z7a-IL-jmE" id="U9V-s5-0eu"/>
+                                            <segue destination="kVU-jf-WD1" kind="push" identifier="goToPredicateID" id="efX-Io-DgA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -126,7 +127,6 @@
                     <connections>
                         <outlet property="tableView" destination="yxF-nF-xyK" id="VOm-WD-dVJ"/>
                         <outlet property="view" destination="QlG-OP-On4" id="nJQ-1n-13J"/>
-                        <segue destination="kVU-jf-WD1" kind="push" identifier="goToPredicateID" id="V4E-2v-Zkv"/>
                     </connections>
                 </viewController>
             </objects>
@@ -397,7 +397,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="myG-3X-Bst"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

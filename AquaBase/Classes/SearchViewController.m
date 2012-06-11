@@ -103,10 +103,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	[super prepareForSegue:segue sender:sender];
-	PredicateViewController *next = (PredicateViewController *)segue.destinationViewController;
-	next.navigationItem.title = selectedCriterium.title;
-	next.predicate = [selectedCriterium predicate];
-	next.delegate = self;
+	if ([SEGUE_PREDICATE_EDITOR_ID isEqualToString:segue.identifier]) {
+		PredicateViewController *next = (PredicateViewController *)segue.destinationViewController;
+		next.navigationItem.title = selectedCriterium.title;
+		next.predicate = [selectedCriterium predicate];
+		next.delegate = self;
+	}
 }
 
 #pragma mark - TableView Methods
@@ -122,7 +124,6 @@
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
 	self.selectedCriterium = [self criteriumAtIndexPath:indexPath];
-	[self performSegueWithIdentifier:SEGUE_PREDICATE_EDITOR_ID sender:nil];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

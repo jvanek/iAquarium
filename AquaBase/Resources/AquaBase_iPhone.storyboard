@@ -94,6 +94,7 @@
                                             <outlet property="addCellButton" destination="3ar-o3-gpr" id="PGA-Lh-LDV"/>
                                             <outlet property="mainTitleLabel" destination="MbY-kb-BhS" id="9ag-dt-uIv"/>
                                             <outlet property="removeCellButton" destination="Yha-Oj-TTS" id="k2W-Ge-iH0"/>
+                                            <segue destination="Bm7-fF-Ad6" kind="push" identifier="goToPredicateID" id="Eau-qp-UVT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -126,7 +127,6 @@
                     <connections>
                         <outlet property="tableView" destination="Hcb-ux-30J" id="vRg-kZ-dIu"/>
                         <outlet property="view" destination="YIl-dj-bYc" id="Mr1-Yd-9HA"/>
-                        <segue destination="Bm7-fF-Ad6" kind="push" identifier="goToPredicateID" id="1j0-3Q-ELr"/>
                     </connections>
                 </viewController>
             </objects>
@@ -404,7 +404,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="rqU-0x-yaa"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

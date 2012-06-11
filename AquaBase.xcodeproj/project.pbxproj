@@ -58,8 +58,6 @@
 		D8B919BE155BE7D70029B555 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */; };
 		D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
 		D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
-		D8F7AA711567A02C00B08181 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7AA701567A02C00B08181 /* ResultsViewController.m */; };
-		D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F7AA741567A06000B08181 /* ResultsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,9 +140,6 @@
 		D8B919C6155BE9CB0029B555 /* StreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamController.h; path = Classes/StreamController.h; sourceTree = "<group>"; };
 		D8B919C7155BE9CB0029B555 /* StreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamController.m; path = Classes/StreamController.m; sourceTree = "<group>"; };
 		D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "poissons-aquarium.xsd"; path = "Resources/poissons-aquarium.xsd"; sourceTree = "<group>"; };
-		D8F7AA6F1567A02C00B08181 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Classes/ResultsViewController.h; sourceTree = "<group>"; };
-		D8F7AA701567A02C00B08181 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Classes/ResultsViewController.m; sourceTree = "<group>"; };
-		D8F7AA741567A06000B08181 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Resources/ResultsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,7 +439,6 @@
 				D839F230157CB44F008B38F2 /* Combobox Controller */,
 				D882AFE4155C05800029F188 /* Master View Controller */,
 				D882AFE5155C05890029F188 /* Detail View Controller */,
-				D8F7AA731567A03300B08181 /* Results View Controller */,
 				D882AFE6155C05910029F188 /* Search View Controller */,
 				D80DF8C715663B1600488A0D /* Predicate View Controller */,
 				D80DF8F41566553F00488A0D /* Network Indicator Controller */,
@@ -466,16 +460,6 @@
 				D80DF8F9156655FD00488A0D /* DataController.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		D8F7AA731567A03300B08181 /* Results View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D8F7AA6F1567A02C00B08181 /* ResultsViewController.h */,
-				D8F7AA701567A02C00B08181 /* ResultsViewController.m */,
-				D8F7AA741567A06000B08181 /* ResultsViewController.xib */,
-			);
-			name = "Results View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,7 +536,6 @@
 				D80DF8F61566555900488A0D /* NetworkIndicatorController.xib in Resources */,
 				D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */,
 				D85F09FD156670150093941F /* Fish-mapping.plist in Resources */,
-				D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */,
 				D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */,
 				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
 				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,
@@ -598,7 +581,6 @@
 				D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */,
 				D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */,
 				D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */,
-				D8F7AA711567A02C00B08181 /* ResultsViewController.m in Sources */,
 				D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */,
 				D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */,
 				D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */,
