@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8BF156637E300488A0D /* SearchCriterium.m */; };
 		D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8C315663ACB00488A0D /* PredicateViewController.m */; };
-		D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80DF8C515663AF100488A0D /* PredicateViewController.xib */; };
 		D80DF8D115664CEB00488A0D /* CommonName.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D015664CEB00488A0D /* CommonName.m */; };
 		D80DF8D415664D0400488A0D /* Fish.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D315664D0400488A0D /* Fish.m */; };
 		D80DF8D715664D1C00488A0D /* GenderValues.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D615664D1C00488A0D /* GenderValues.m */; };
@@ -29,16 +28,13 @@
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
 		D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */; };
 		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
-		D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */; };
 		D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E7481156A4256005E6ABA /* LongTextCell.m */; };
-		D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E7484156A4277005E6ABA /* LongTextCell.xib */; };
 		D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E748D156A4840005E6ABA /* UILabel+Multiline.m */; };
 		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
 		D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F0A271566A5330093941F /* XmlParsingOperation.m */; };
 		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
 		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
-		D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */; };
 		D8B91951155BDC140029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
 		D8B91953155BDC140029B555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91952155BDC140029B555 /* Foundation.framework */; };
 		D8B91955155BDC140029B555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91954155BDC140029B555 /* CoreGraphics.framework */; };
@@ -71,7 +67,6 @@
 		D80DF8BF156637E300488A0D /* SearchCriterium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCriterium.m; path = Classes/SearchCriterium.m; sourceTree = "<group>"; };
 		D80DF8C215663ACB00488A0D /* PredicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PredicateViewController.h; path = Classes/PredicateViewController.h; sourceTree = "<group>"; };
 		D80DF8C315663ACB00488A0D /* PredicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredicateViewController.m; path = Classes/PredicateViewController.m; sourceTree = "<group>"; };
-		D80DF8C515663AF100488A0D /* PredicateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PredicateViewController.xib; path = Resources/PredicateViewController.xib; sourceTree = "<group>"; };
 		D80DF8CF15664CEB00488A0D /* CommonName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonName.h; path = Classes/CoreData/CommonName.h; sourceTree = "<group>"; };
 		D80DF8D015664CEB00488A0D /* CommonName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonName.m; path = Classes/CoreData/CommonName.m; sourceTree = "<group>"; };
 		D80DF8D215664D0400488A0D /* Fish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fish.h; path = Classes/CoreData/Fish.h; sourceTree = "<group>"; };
@@ -103,10 +98,8 @@
 		D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPad.storyboard; path = Resources/AquaBase_iPad.storyboard; sourceTree = "<group>"; };
 		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
 		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
-		D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LifeValuesCell.xib; path = Resources/LifeValuesCell.xib; sourceTree = "<group>"; };
 		D85E7480156A4256005E6ABA /* LongTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LongTextCell.h; path = Classes/LongTextCell.h; sourceTree = "<group>"; };
 		D85E7481156A4256005E6ABA /* LongTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LongTextCell.m; path = Classes/LongTextCell.m; sourceTree = "<group>"; };
-		D85E7484156A4277005E6ABA /* LongTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LongTextCell.xib; path = Resources/LongTextCell.xib; sourceTree = "<group>"; };
 		D85E748C156A4840005E6ABA /* UILabel+Multiline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Multiline.h"; path = "Classes/UILabel+Multiline.h"; sourceTree = "<group>"; };
 		D85E748D156A4840005E6ABA /* UILabel+Multiline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Multiline.m"; path = "Classes/UILabel+Multiline.m"; sourceTree = "<group>"; };
 		D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+Additions.h"; path = "Classes/CoreData/NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
@@ -119,7 +112,6 @@
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
 		D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewControllerCell.h; path = Classes/SearchViewControllerCell.h; sourceTree = "<group>"; };
 		D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewControllerCell.m; path = Classes/SearchViewControllerCell.m; sourceTree = "<group>"; };
-		D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewControllerCell.xib; path = Resources/SearchViewControllerCell.xib; sourceTree = "<group>"; };
 		D8B9194C155BDC140029B555 /* AquaBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B91950155BDC140029B555 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8B91952155BDC140029B555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -187,7 +179,6 @@
 			children = (
 				D80DF8C215663ACB00488A0D /* PredicateViewController.h */,
 				D80DF8C315663ACB00488A0D /* PredicateViewController.m */,
-				D80DF8C515663AF100488A0D /* PredicateViewController.xib */,
 			);
 			name = "Predicate View Controller";
 			sourceTree = "<group>";
@@ -249,7 +240,6 @@
 			children = (
 				D85E7479156A3389005E6ABA /* LifeValuesCell.h */,
 				D85E747A156A3389005E6ABA /* LifeValuesCell.m */,
-				D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */,
 			);
 			name = "Life Values Cell";
 			sourceTree = "<group>";
@@ -259,7 +249,6 @@
 			children = (
 				D85E7480156A4256005E6ABA /* LongTextCell.h */,
 				D85E7481156A4256005E6ABA /* LongTextCell.m */,
-				D85E7484156A4277005E6ABA /* LongTextCell.xib */,
 			);
 			name = "Long Text Cell";
 			sourceTree = "<group>";
@@ -307,7 +296,6 @@
 			children = (
 				D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */,
 				D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */,
-				D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */,
 			);
 			name = "Search View Controller Cell";
 			sourceTree = "<group>";
@@ -560,15 +548,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B9195D155BDC140029B555 /* InfoPlist.strings in Resources */,
-				D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */,
-				D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */,
 				D80DF8E6156653D300488A0D /* Localizable.strings in Resources */,
 				D80DF8F61566555900488A0D /* NetworkIndicatorController.xib in Resources */,
 				D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */,
 				D85F09FD156670150093941F /* Fish-mapping.plist in Resources */,
 				D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */,
-				D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */,
-				D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */,
 				D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */,
 				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
 				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,

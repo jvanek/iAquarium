@@ -7,6 +7,7 @@
 //
 
 #define SEGUE_PUSH_DETAIL_ID		@"goToDetailID"
+#define FISH_CELL_ID				@"FishCellID"
 
 
 @interface MasterViewController : UIViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>

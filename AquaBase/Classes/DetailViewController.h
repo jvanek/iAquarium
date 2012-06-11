@@ -7,9 +7,9 @@
 //
 
 #import "Fish.h"
-#import "LifeValuesCell.h"
-#import "LongTextCell.h"
 
+#define DETAIL_CELL_ID					@"DetailCellID"
+#define FACTS_DETAIL_CELL_ID			@"FactsDetailCellID"
 
 #define DETAIL_SECTION_COMMON_NAMES		LOCALIZED_STRING(@"Common names")
 #define DETAIL_SECTION_FAMILY			LOCALIZED_STRING(@"Family")
@@ -22,8 +22,6 @@
 
 @property (strong, nonatomic) Fish *detailItem;
 @property (strong, nonatomic) IBOutlet UITableView *fishTableView;
-@property (strong, nonatomic) IBOutlet LifeValuesCell *lifeValuesCell;
-@property (strong, nonatomic) IBOutlet LongTextCell *longTextCell;
 @property (strong, nonatomic) NSMutableArray *sections;
 
 - (id)initWithFish:(Fish *)aFish;

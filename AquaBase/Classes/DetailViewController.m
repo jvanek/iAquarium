@@ -9,6 +9,8 @@
 #import "DetailViewController.h"
 #import "CommonName.h"
 #import "LifeValues.h"
+#import "LifeValuesCell.h"
+#import "LongTextCell.h"
 
 
 @interface DetailViewController ()
@@ -25,9 +27,6 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize fishTableView, sections;
-@synthesize lifeValuesCell, longTextCell;
-//@synthesize detailDescriptionLabel = _detailDescriptionLabel;
-//@synthesize masterPopoverController = _masterPopoverController;
 
 #pragma mark - Managing the detail item
 
@@ -64,9 +63,6 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-	self.lifeValuesCell = nil;
-	self.longTextCell = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -123,34 +119,16 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *DetailCellIdentifier = @"DetailCell";
-    static NSString *FactsDetailCellIdentifier = @"FactsDetailCell";
     UITableViewCell *cell = nil;
 	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
 	if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:LIFE_VALUES_CELL_ID];
-		if (cell == nil) {
-			[[NSBundle mainBundle] loadNibNamed:@"LifeValuesCell" owner:self options:nil];
-			cell = self.lifeValuesCell;
-			self.lifeValuesCell = nil;
-		}
 	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
-		cell = [tableView dequeueReusableCellWithIdentifier:FactsDetailCellIdentifier];
-		if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:FactsDetailCellIdentifier];
-		}
+		cell = [tableView dequeueReusableCellWithIdentifier:FACTS_DETAIL_CELL_ID];
 	} else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:LONG_TEXT_CELL_ID];
-		if (cell == nil) {
-			[[NSBundle mainBundle] loadNibNamed:@"LongTextCell" owner:self options:nil];
-			cell = self.longTextCell;
-			self.longTextCell = nil;
-		}
 	} else {
-		cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
-		if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:DetailCellIdentifier];
-		}
+		cell = [tableView dequeueReusableCellWithIdentifier:DETAIL_CELL_ID];
 	}
 	[self configureCell:cell atIndexPath:indexPath];
     return cell;

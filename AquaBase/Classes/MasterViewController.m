@@ -36,20 +36,13 @@
 @synthesize selectedFish;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-		self.title = LOCALIZED_STRING(@"Search Results");
-//		self.clearsSelectionOnViewWillAppear = NO;
-		self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    }
-    return self;
-}
 							
 - (void)viewDidLoad {
     [super viewDidLoad];
 //	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	self.title = LOCALIZED_STRING(@"Search Results");
+//		self.clearsSelectionOnViewWillAppear = NO;
+	self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 	isSearching = NO;
 	self.selectedFish = nil;
 }
@@ -97,13 +90,7 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"FishCell";
-    
-    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:FISH_CELL_ID];
 	[self configureCell:cell atIndexPath:indexPath];
     return cell;
 }

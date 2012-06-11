@@ -12,12 +12,14 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Fish.h"
+#import "SearchViewControllerCell.h"
 
 
 @interface SearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *searchCriteria;
 @property (nonatomic, strong) ComboboxController *combobox;
+@property (nonatomic, strong) SearchCriterium *selectedCriterium;
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
 - (void)refreshDatabase:(UIBarButtonItem *)sender;
@@ -30,9 +32,9 @@
 @implementation SearchViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize tableView, searchCell;
+@synthesize tableView;
 @synthesize searchCriteria, searchButton;
-@synthesize combobox;
+@synthesize combobox, selectedCriterium;
 
 
 - (void)viewDidLoad {
@@ -50,11 +52,14 @@
 	self.combobox.delegate = self;
 	self.combobox.view.frame = CGRectMake(20.0, 42.0, self.view.frame.size.width - 40.0, 40.0);
 	[self.view addSubview:self.combobox.view];
+	
+	self.selectedCriterium = nil;
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
     self.combobox = nil;
+	self.selectedCriterium = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,16 +74,6 @@
 - (NSManagedObjectContext *)managedObjectContext {
 	if (_managedObjectContext == nil) _managedObjectContext = APP_DELEGATE.managedObjectContext;
 	return _managedObjectContext;
-}
-
-- (IBAction)goSearch:(UIButton *)sender {
-//	NSArray *orderings = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:FISH_KEY_SCIENTIFIC_NAME ascending:YES]];
-//	
-//	// Fetch all fish using composed predicate from list
-//	NSArray *results = [Fish fishUsingPredicate:nil andOrderings:orderings inContext:APP_DELEGATE.managedObjectContext];
-	
-	MasterViewController *next = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
-	[self.navigationController pushViewController:next animated:YES];
 }
 
 - (IBAction)addCell:(UIButton *)sender {
@@ -104,6 +99,16 @@
 	
 }
 
+#pragma mark - UIStoryboard Delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	[super prepareForSegue:segue sender:sender];
+	PredicateViewController *next = (PredicateViewController *)segue.destinationViewController;
+	next.navigationItem.title = selectedCriterium.title;
+	next.predicate = [selectedCriterium predicate];
+	next.delegate = self;
+}
+
 #pragma mark - TableView Methods
 
 - (void)tableView:(UITableView *)aTableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,21 +121,12 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
-	SearchCriterium *selectedCriterium = [self criteriumAtIndexPath:indexPath];
-	PredicateViewController *next = [[PredicateViewController alloc] initWithNibName:@"PredicateViewController" bundle:nil];
-	next.navigationItem.title = selectedCriterium.title;
-	next.predicate = [selectedCriterium predicate];
-	next.delegate = self;
-	[self.navigationController pushViewController:next animated:YES];
+	self.selectedCriterium = [self criteriumAtIndexPath:indexPath];
+	[self performSegueWithIdentifier:SEGUE_PREDICATE_EDITOR_ID sender:nil];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	SearchViewControllerCell *cell = [aTableView dequeueReusableCellWithIdentifier:SearchViewControllerCellID];
-	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"SearchViewControllerCell" owner:self options:nil];
-		cell = self.searchCell;
-		self.searchCell = nil;
-	}
 	return cell;
 }
 
