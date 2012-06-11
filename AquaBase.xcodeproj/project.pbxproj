@@ -24,7 +24,6 @@
 		D80DF8FA156655FD00488A0D /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8F9156655FD00488A0D /* DataController.m */; };
 		D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8B919AF155BE0070029B555 /* poissons-aquarium.xml */; };
 		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
-		D839F221157CAD90008B38F2 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */; };
 		D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = D839F22D157CB44A008B38F2 /* ComboboxController.m */; };
 		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
@@ -60,7 +59,6 @@
 		D8B919B1155BE0330029B555 /* AquaBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */; };
 		D8B919B4155BE0D20029B555 /* AquaBaseTestsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919B3155BE0D20029B555 /* AquaBaseTestsAppDelegate.m */; };
 		D8B919B5155BE1A00029B555 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91956155BDC140029B555 /* CoreData.framework */; };
-		D8B919BC155BE3970029B555 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */; };
 		D8B919BE155BE7D70029B555 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */; };
 		D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
 		D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
@@ -98,7 +96,6 @@
 		D80DF8F9156655FD00488A0D /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Classes/DataController.m; sourceTree = "<group>"; };
 		D80DF8FC1566627200488A0D /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Classes/NSString+Additions.h"; sourceTree = "<group>"; };
 		D80DF8FD1566627200488A0D /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "Classes/NSString+Additions.m"; sourceTree = "<group>"; };
-		D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPhone.xib"; path = "Resources/MainWindow-iPhone.xib"; sourceTree = "<group>"; };
 		D839F22C157CB44A008B38F2 /* ComboboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComboboxController.h; path = Classes/ComboboxController.h; sourceTree = "<group>"; };
 		D839F22D157CB44A008B38F2 /* ComboboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComboboxController.m; path = Classes/ComboboxController.m; sourceTree = "<group>"; };
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
@@ -149,7 +146,6 @@
 		D8B919AF155BE0070029B555 /* poissons-aquarium.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "poissons-aquarium.xml"; path = "Resources/poissons-aquarium.xml"; sourceTree = "<group>"; };
 		D8B919B2155BE0D20029B555 /* AquaBaseTestsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AquaBaseTestsAppDelegate.h; path = Classes/AquaBaseTestsAppDelegate.h; sourceTree = "<group>"; };
 		D8B919B3155BE0D20029B555 /* AquaBaseTestsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AquaBaseTestsAppDelegate.m; path = Classes/AquaBaseTestsAppDelegate.m; sourceTree = "<group>"; };
-		D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		D8B919C6155BE9CB0029B555 /* StreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamController.h; path = Classes/StreamController.h; sourceTree = "<group>"; };
 		D8B919C7155BE9CB0029B555 /* StreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamController.m; path = Classes/StreamController.m; sourceTree = "<group>"; };
@@ -399,8 +395,6 @@
 			isa = PBXGroup;
 			children = (
 				D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */,
-				D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */,
-				D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */,
 				D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */,
 				D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */,
 			);
@@ -566,7 +560,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B9195D155BDC140029B555 /* InfoPlist.strings in Resources */,
-				D8B919BC155BE3970029B555 /* MainWindow-iPad.xib in Resources */,
 				D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */,
 				D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */,
 				D80DF8E6156653D300488A0D /* Localizable.strings in Resources */,
@@ -576,7 +569,6 @@
 				D8F7AA751567A06000B08181 /* ResultsViewController.xib in Resources */,
 				D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */,
 				D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */,
-				D839F221157CAD90008B38F2 /* MainWindow-iPhone.xib in Resources */,
 				D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */,
 				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
 				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,
