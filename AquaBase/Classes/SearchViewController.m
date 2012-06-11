@@ -18,7 +18,8 @@
 @interface SearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *searchCriteria;
-@property (nonatomic, strong) SearchCriterium *selectedCriterium;
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+@property (nonatomic, strong) SearchViewControllerCell *selectedCell;
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
 - (void)refreshDatabase:(UIBarButtonItem *)sender;
@@ -31,9 +32,9 @@
 @implementation SearchViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize tableView;
+@synthesize tableView, selectedCell;
 @synthesize searchCriteria, searchButton;
-@synthesize selectedCriterium;
+@synthesize selectedIndexPath;
 
 
 - (void)viewDidLoad {
@@ -46,12 +47,13 @@
 
 	self.searchCriteria = [NSMutableArray array];
 	[self addCell:nil];
-	self.selectedCriterium = nil;
+	self.selectedIndexPath = nil;
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	self.selectedCriterium = nil;
+	self.selectedIndexPath = nil;
+	self.selectedCell = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -83,8 +85,10 @@
 }
 
 - (void)predicateViewController:(PredicateViewController *)controller willCloseWithTitle:(NSString *)aTitle andPredicate:(NSPredicate *)aPredicate {
-	self.selectedCriterium.title = aTitle;
-	self.selectedCriterium.predicate = aPredicate;
+	SearchCriterium *criterium = [SearchCriterium searchCriteriumWithTitle:aTitle andPredicate:aPredicate];
+	[self.searchCriteria replaceObjectAtIndex:self.selectedIndexPath.row withObject:criterium];
+	[self.selectedCell updateWithCriterium:criterium];
+	[self.tableView reloadData];
 }
 
 #pragma mark - UIStoryboard Delegate
@@ -93,10 +97,14 @@
 	[super prepareForSegue:segue sender:sender];
 	if ([SEGUE_PREDICATE_EDITOR_ID isEqualToString:segue.identifier]) {
 		PredicateViewController *next = (PredicateViewController *)segue.destinationViewController;
-		next.navigationItem.title = selectedCriterium.title;
-		next.titleField.text = selectedCriterium.title;
-		next.predicate = [selectedCriterium predicate];
+		next.predicateTitle = self.selectedCell.criterium.title;
+		next.predicate = self.selectedCell.criterium.predicate;
 		next.delegate = self;
+	} else if ([SEGUE_GO_SEARCH_ID isEqualToString:segue.identifier]) {
+		MasterViewController *next = (MasterViewController *)segue.destinationViewController;
+		next.searchPredicate = [self.searchCriteria count] > 1 ?
+				[NSCompoundPredicate andPredicateWithSubpredicates:[self.searchCriteria valueForKey:@"predicate"]] :
+				((SearchCriterium *)[self.searchCriteria lastObject]).predicate;
 	}
 }
 
@@ -112,7 +120,8 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
-	self.selectedCriterium = [self criteriumAtIndexPath:indexPath];
+	self.selectedCell = (SearchViewControllerCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+	self.selectedIndexPath = indexPath;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

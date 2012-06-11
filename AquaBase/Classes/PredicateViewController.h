@@ -24,6 +24,6 @@
 @property (nonatomic, weak) id<PredicateViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UIView *attrComboContainer, *operComboContainer;
 @property (nonatomic, weak) IBOutlet UITextField *valueField;
-@property (nonatomic, weak) IBOutlet UITextField *titleField;
+@property (nonatomic, strong) NSString *predicateTitle;
 
 @end

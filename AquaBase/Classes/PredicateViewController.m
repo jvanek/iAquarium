@@ -13,6 +13,7 @@
 @interface PredicateViewController ()
 
 @property (nonatomic, strong) ComboboxController *attrCombobox, *operCombobox;
+@property (nonatomic, weak) IBOutlet UITextField *titleField;
 
 - (NSPredicateOperatorType)operatorTypeFromString:(NSString *)operator;
 
@@ -22,7 +23,7 @@
 
 @implementation PredicateViewController
 
-@synthesize predicate, delegate;
+@synthesize predicate, delegate, predicateTitle;
 @synthesize titleField, attrCombobox;
 @synthesize attrComboContainer, operComboContainer;
 @synthesize valueField, operCombobox;
@@ -62,6 +63,7 @@
 	[super viewWillAppear:animated];
 	if (self.attrCombobox != nil) [self.attrCombobox viewWillAppear:animated];
 	if (self.operCombobox != nil) [self.operCombobox viewWillAppear:animated];
+	self.titleField.text = self.predicateTitle;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -69,14 +71,19 @@
 	if (self.attrCombobox != nil) [self.attrCombobox viewWillDisappear:animated];
 	if (self.operCombobox != nil) [self.operCombobox viewWillDisappear:animated];
 	
-	NSString *predicateExpr = [NSString stringWithFormat:@"%@ %@ %@", self.attrCombobox.selectedObject, [self.operCombobox.selectedObject valueForKey:@"content"], self.valueField.text];
+	NSString *predicateExpr = [NSString stringWithFormat:@"%@ %@ %@",
+							   self.attrCombobox.selectedObject, 
+							   [self.operCombobox.selectedObject valueForKey:@"content"],
+							   self.valueField.text];
 	NSLog(@"%s : '%@'", __PRETTY_FUNCTION__, predicateExpr);
 	self.predicate = [NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:self.attrCombobox.selectedObject]
-														rightExpression:[NSExpression expressionForVariable:self.valueField.text]
+														rightExpression:[NSExpression expressionForConstantValue:self.valueField.text]
 															   modifier:NSDirectPredicateModifier
 																   type:[self operatorTypeFromString:[self.operCombobox.selectedObject valueForKey:@"content"]]
 																options:NSCaseInsensitivePredicateOption | NSDiacriticInsensitivePredicateOption];
-	if (self.delegate != nil) [self.delegate predicateViewController:self willCloseWithTitle:self.titleField.text andPredicate:self.predicate];
+	if (self.delegate != nil) [self.delegate predicateViewController:self
+												  willCloseWithTitle:IS_EMPTY_STRING(self.titleField.text) ? self.navigationItem.title : self.titleField.text
+														andPredicate:self.predicate];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -89,6 +96,7 @@
 	self.titleField = nil;
     self.attrCombobox = nil;
 	self.operCombobox = nil;
+	self.predicateTitle = nil;
 }
 
 - (NSPredicateOperatorType)operatorTypeFromString:(NSString *)operator {

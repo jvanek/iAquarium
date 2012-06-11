@@ -10,6 +10,8 @@
 
 
 #define SEGUE_PREDICATE_EDITOR_ID		@"goToPredicateID"
+#define SEGUE_GO_SEARCH_ID				@"goToSearchResultsID"
+
 
 @interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PredicateViewControllerDelegate,
 									UIAlertViewDelegate>

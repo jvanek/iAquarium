@@ -33,7 +33,7 @@
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize tableView, searchResults;
-@synthesize selectedFish;
+@synthesize selectedFish, searchPredicate = _searchPredicate;
 
 
 							
@@ -123,7 +123,8 @@
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:FISH_ENTITY_NAME];
-    
+    if (self.searchPredicate != nil) [fetchRequest setPredicate:self.searchPredicate];
+
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
@@ -138,7 +139,7 @@
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 																								managedObjectContext:self.managedObjectContext
 																								  sectionNameKeyPath:FISH_KEY_SECTION
-																										   cacheName:@"Master"];
+																										   cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
