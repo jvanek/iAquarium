@@ -27,7 +27,8 @@
 		D839F221157CAD90008B38F2 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */; };
 		D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = D839F22D157CB44A008B38F2 /* ComboboxController.m */; };
 		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
-		D839F236157CF14B008B38F2 /* SearchViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F235157CF14B008B38F2 /* SearchViewController-iPhone.xib */; };
+		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
+		D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */; };
 		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
 		D85E747F156A33A9005E6ABA /* LifeValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */; };
 		D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E7481156A4256005E6ABA /* LongTextCell.m */; };
@@ -37,7 +38,6 @@
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
 		D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F0A271566A5330093941F /* XmlParsingOperation.m */; };
 		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
-		D882AFE3155C056D0029F188 /* SearchViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFE2155C056D0029F188 /* SearchViewController-iPad.xib */; };
 		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
 		D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */; };
 		D8B91951155BDC140029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
@@ -50,8 +50,6 @@
 		D8B91966155BDC140029B555 /* AquaBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */; };
 		D8B91969155BDC140029B555 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B91968155BDC140029B555 /* MasterViewController.m */; };
 		D8B9196C155BDC140029B555 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B9196B155BDC140029B555 /* DetailViewController.m */; };
-		D8B9196F155BDC140029B555 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B9196D155BDC140029B555 /* MasterViewController.xib */; };
-		D8B91972155BDC140029B555 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B91970155BDC140029B555 /* DetailViewController.xib */; };
 		D8B91985155BDCC60029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
 		D8B91986155BDCC60029B555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91952155BDC140029B555 /* Foundation.framework */; };
 		D8B91987155BDCC60029B555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91954155BDC140029B555 /* CoreGraphics.framework */; };
@@ -104,7 +102,8 @@
 		D839F22C157CB44A008B38F2 /* ComboboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComboboxController.h; path = Classes/ComboboxController.h; sourceTree = "<group>"; };
 		D839F22D157CB44A008B38F2 /* ComboboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComboboxController.m; path = Classes/ComboboxController.m; sourceTree = "<group>"; };
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
-		D839F235157CF14B008B38F2 /* SearchViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "SearchViewController-iPhone.xib"; path = "Resources/SearchViewController-iPhone.xib"; sourceTree = "<group>"; };
+		D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPhone.storyboard; path = Resources/AquaBase_iPhone.storyboard; sourceTree = "<group>"; };
+		D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPad.storyboard; path = Resources/AquaBase_iPad.storyboard; sourceTree = "<group>"; };
 		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
 		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
 		D85E747E156A33A9005E6ABA /* LifeValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LifeValuesCell.xib; path = Resources/LifeValuesCell.xib; sourceTree = "<group>"; };
@@ -121,7 +120,6 @@
 		D85F0A271566A5330093941F /* XmlParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParsingOperation.m; path = Classes/XmlParsingOperation.m; sourceTree = "<group>"; };
 		D882AFDE155C051D0029F188 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Classes/SearchViewController.h; sourceTree = "<group>"; };
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
-		D882AFE2155C056D0029F188 /* SearchViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "SearchViewController-iPad.xib"; path = "Resources/SearchViewController-iPad.xib"; sourceTree = "<group>"; };
 		D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewControllerCell.h; path = Classes/SearchViewControllerCell.h; sourceTree = "<group>"; };
 		D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewControllerCell.m; path = Classes/SearchViewControllerCell.m; sourceTree = "<group>"; };
 		D882AFEB155C0B3D0029F188 /* SearchViewControllerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewControllerCell.xib; path = Resources/SearchViewControllerCell.xib; sourceTree = "<group>"; };
@@ -141,8 +139,6 @@
 		D8B91968155BDC140029B555 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = Classes/MasterViewController.m; sourceTree = "<group>"; };
 		D8B9196A155BDC140029B555 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Classes/DetailViewController.h; sourceTree = "<group>"; };
 		D8B9196B155BDC140029B555 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Classes/DetailViewController.m; sourceTree = "<group>"; };
-		D8B9196E155BDC140029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		D8B91971155BDC140029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		D8B91983155BDCC60029B555 /* AquaBase Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AquaBase Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B9198A155BDCC60029B555 /* AquaBase Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AquaBase Tests-Info.plist"; sourceTree = "<group>"; };
 		D8B9198C155BDCC60029B555 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -285,7 +281,6 @@
 			children = (
 				D8B91967155BDC140029B555 /* MasterViewController.h */,
 				D8B91968155BDC140029B555 /* MasterViewController.m */,
-				D8B9196D155BDC140029B555 /* MasterViewController.xib */,
 			);
 			name = "Master View Controller";
 			sourceTree = "<group>";
@@ -297,7 +292,6 @@
 				D85E7483156A425A005E6ABA /* Long Text Cell */,
 				D8B9196A155BDC140029B555 /* DetailViewController.h */,
 				D8B9196B155BDC140029B555 /* DetailViewController.m */,
-				D8B91970155BDC140029B555 /* DetailViewController.xib */,
 			);
 			name = "Detail View Controller";
 			sourceTree = "<group>";
@@ -308,8 +302,6 @@
 				D882AFEA155C0B200029F188 /* Search View Controller Cell */,
 				D882AFDE155C051D0029F188 /* SearchViewController.h */,
 				D882AFDF155C051D0029F188 /* SearchViewController.m */,
-				D882AFE2155C056D0029F188 /* SearchViewController-iPad.xib */,
-				D839F235157CF14B008B38F2 /* SearchViewController-iPhone.xib */,
 			);
 			name = "Search View Controller";
 			sourceTree = "<group>";
@@ -409,6 +401,8 @@
 				D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */,
 				D8B919BB155BE3970029B555 /* MainWindow-iPad.xib */,
 				D839F220157CAD90008B38F2 /* MainWindow-iPhone.xib */,
+				D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */,
+				D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -572,10 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B9195D155BDC140029B555 /* InfoPlist.strings in Resources */,
-				D8B9196F155BDC140029B555 /* MasterViewController.xib in Resources */,
-				D8B91972155BDC140029B555 /* DetailViewController.xib in Resources */,
 				D8B919BC155BE3970029B555 /* MainWindow-iPad.xib in Resources */,
-				D882AFE3155C056D0029F188 /* SearchViewController-iPad.xib in Resources */,
 				D882AFEC155C0B3D0029F188 /* SearchViewControllerCell.xib in Resources */,
 				D80DF8C615663AF100488A0D /* PredicateViewController.xib in Resources */,
 				D80DF8E6156653D300488A0D /* Localizable.strings in Resources */,
@@ -587,7 +578,8 @@
 				D85E7485156A4277005E6ABA /* LongTextCell.xib in Resources */,
 				D839F221157CAD90008B38F2 /* MainWindow-iPhone.xib in Resources */,
 				D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */,
-				D839F236157CF14B008B38F2 /* SearchViewController-iPhone.xib in Resources */,
+				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
+				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,24 +660,6 @@
 				D8B9195C155BDC140029B555 /* en */,
 			);
 			name = InfoPlist.strings;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		D8B9196D155BDC140029B555 /* MasterViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8B9196E155BDC140029B555 /* en */,
-			);
-			name = MasterViewController.xib;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		D8B91970155BDC140029B555 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8B91971155BDC140029B555 /* en */,
-			);
-			name = DetailViewController.xib;
 			path = Resources;
 			sourceTree = "<group>";
 		};

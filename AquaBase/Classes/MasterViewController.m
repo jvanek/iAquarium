@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSArray *searchResults;
+@property (strong, nonatomic) Fish *selectedFish;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)updateSearchResults:(NSString *)searchText;
@@ -32,6 +33,7 @@
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize tableView, searchResults;
+@synthesize selectedFish;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -49,6 +51,7 @@
     [super viewDidLoad];
 //	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	isSearching = NO;
+	self.selectedFish = nil;
 }
 
 - (void)viewDidUnload {
@@ -58,6 +61,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
+}
+
+#pragma mark - UIStoryboard Delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	[super prepareForSegue:segue sender:sender];
+	((DetailViewController *)segue.destinationViewController).detailItem = self.selectedFish;
 }
 
 #pragma mark - Table View
@@ -110,8 +120,8 @@
     Fish *object = nil;
 	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
     else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
-	DetailViewController *next = [[DetailViewController alloc] initWithFish:object];
-	[self.navigationController pushViewController:next animated:YES];
+	self.selectedFish = object;
+	[self performSegueWithIdentifier:SEGUE_PUSH_DETAIL_ID sender:nil];
 }
 
 #pragma mark - Fetched results controller

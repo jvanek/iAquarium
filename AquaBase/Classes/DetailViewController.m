@@ -54,6 +54,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.sections = [NSMutableArray array];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self configureView];
 }
 
 - (void)viewDidUnload {

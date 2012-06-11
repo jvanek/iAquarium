@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Pallas Free Foundation. All rights reserved.
 //
 
+#define SEGUE_PUSH_DETAIL_ID		@"goToDetailID"
+
 
 @interface MasterViewController : UIViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 

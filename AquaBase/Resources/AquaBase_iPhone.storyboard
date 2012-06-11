@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Fs7-zt-sEn">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller - Fish-->
+        <scene sceneID="hhF-Ph-ccp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDw-dS-pBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="WR2-xQ-uIT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Fish" id="BRD-DA-ZH7"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hWG-OM-iRs">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UUh-qI-e7y" kind="relationship" relationship="rootViewController" id="Hey-jg-Do7"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="559" y="-125"/>
+        </scene>
+        <!--Search View Controller - AquaBase - Fish-->
+        <scene sceneID="lEF-sE-rTX">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pnb-07-hqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="UUh-qI-e7y" customClass="SearchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YIl-dj-bYc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Search AquaBase for fish where :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="MW5-iC-O6W">
+                                <rect key="frame" x="23" y="9" width="275" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Hcb-ux-30J">
+                                <rect key="frame" x="0.0" y="81" width="320" height="235"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UUh-qI-e7y" id="7A6-gi-JsZ"/>
+                                    <outlet property="delegate" destination="UUh-qI-e7y" id="mqB-ZK-VJa"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4mq-Ld-bRf">
+                                <rect key="frame" x="23" y="322" width="275" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="geq-2C-V3f" kind="push" id="fCL-RL-5af"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="AquaBase - Fish" id="lqL-Jf-5ml"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Hcb-ux-30J" id="vRg-kZ-dIu"/>
+                        <outlet property="view" destination="YIl-dj-bYc" id="Mr1-Yd-9HA"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1093" y="-125"/>
+        </scene>
+        <!--Master View Controller - Search Results-->
+        <scene sceneID="mFa-Xj-rNu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKS-wd-Znr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="geq-2C-V3f" customClass="MasterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="td8-3T-zOf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="75m-DY-R67">
+                                <rect key="frame" x="0.0" y="44" width="320" height="323"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                                <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="geq-2C-V3f" id="SRb-wt-6ah"/>
+                                    <outlet property="delegate" destination="geq-2C-V3f" id="OGi-Qj-U3b"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" id="VCY-ef-sd7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="geq-2C-V3f" id="4yc-ri-OeB"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Results" id="MM7-hH-DgO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="75m-DY-R67" id="wzi-vX-PEM"/>
+                        <outlet property="view" destination="td8-3T-zOf" id="AqX-z0-Zj3"/>
+                        <segue destination="4Wy-vs-vZL" kind="push" identifier="goToDetailID" id="fWj-wc-MRB"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1602" y="-125"/>
+        </scene>
+        <!--Detail View Controller - Detail-->
+        <scene sceneID="cci-SZ-vWd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Am-kL-tWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="4Wy-vs-vZL" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yka-Fl-yo4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uvQ-BU-B49">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Wy-vs-vZL" id="PNX-H6-y0E"/>
+                                    <outlet property="delegate" destination="4Wy-vs-vZL" id="beX-Rd-26Z"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="rqU-0x-yaa"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fishTableView" destination="uvQ-BU-B49" id="1jg-9A-QXA"/>
+                        <outlet property="view" destination="Yka-Fl-yo4" id="0nZ-ii-sTY"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2110" y="-125"/>
+        </scene>
+        <!--Table View Controller - AquaBase - Plants-->
+        <scene sceneID="WEY-6b-mQb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gb-UZ-1cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="uFF-pA-9PY" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Asd-Bc-n7u">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="g9y-SA-is2">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="AquaBase - Plants" id="pag-df-rH1"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1093" y="536"/>
+        </scene>
+        <!--Navigation Controller - Plants-->
+        <scene sceneID="zgA-Q4-x7P">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fY0-rt-J03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="Kp5-57-qdz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Plants" id="XD5-DM-llc"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EBO-e7-moO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uFF-pA-9PY" kind="relationship" relationship="rootViewController" id="kTA-2q-bRi"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="559" y="536"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FpB-Ax-Qud">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfM-02-oym" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController definesPresentationContext="YES" id="Fs7-zt-sEn" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="bL2-xq-Ek9">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WR2-xQ-uIT" kind="relationship" relationship="viewControllers" id="WrF-vh-gUd"/>
+                        <segue destination="Kp5-57-qdz" kind="relationship" relationship="viewControllers" id="qZV-wK-kAa"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="40" y="101"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="fishTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="lifeValuesCell" candidateClass="LifeValuesCell"/>
+                <relationship kind="outlet" name="longTextCell" candidateClass="LongTextCell"/>
+            </relationships>
+        </class>
+        <class className="LifeValuesCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LifeValuesCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="keyTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxValue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minValue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reproValue" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LongTextCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LongTextCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addCell:" candidateClass="UIButton"/>
+                <relationship kind="action" name="goSearch:" candidateClass="UIButton"/>
+                <relationship kind="action" name="removeCell:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchCell" candidateClass="SearchViewControllerCell"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SearchViewControllerCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewControllerCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addCellButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="removeCellButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

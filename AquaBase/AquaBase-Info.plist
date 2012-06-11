@@ -24,12 +24,12 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow-iPhone</string>
-	<key>NSMainNibFile~ipad</key>
-	<string>MainWindow-iPad</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
+	<key>UIMainStoryboardFile</key>
+	<string>AquaBase_iPhone</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>AquaBase_iPad</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
