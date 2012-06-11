@@ -108,7 +108,6 @@
 	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
     else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
 	self.selectedFish = object;
-	[self performSegueWithIdentifier:SEGUE_PUSH_DETAIL_ID sender:nil];
 }
 
 #pragma mark - Fetched results controller

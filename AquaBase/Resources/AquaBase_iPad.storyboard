@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="722" y="-855"/>
         </scene>
-        <!--Search View Controller - AquaBase-->
+        <!--Search View Controller - AquaBase Fish-->
         <scene sceneID="T3D-fH-6VH">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zed-6c-BFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,7 +121,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="AquaBase" id="ESx-ub-sAN"/>
+                    <navigationItem key="navigationItem" title="AquaBase Fish" id="ESx-ub-sAN"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -204,6 +204,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="qUQ-fO-4Jf" kind="push" identifier="goToDetailID" id="5Jm-Sq-NdJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -232,7 +235,6 @@
                     <connections>
                         <outlet property="tableView" destination="Wxa-Eq-j1g" id="Xlc-oq-i3g"/>
                         <outlet property="view" destination="1CE-v0-6Hr" id="99P-cp-tBr"/>
-                        <segue destination="qUQ-fO-4Jf" kind="push" identifier="goToDetailID" id="7up-ab-PmV"/>
                     </connections>
                 </viewController>
             </objects>
@@ -429,7 +431,7 @@
             </objects>
             <point key="canvasLocation" x="-260" y="-119"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Table View Controller - AquaBase Plants-->
         <scene sceneID="po0-vn-Dy0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiH-1C-DxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,7 +461,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="i0d-5z-M6a"/>
+                    <navigationItem key="navigationItem" title="AquaBase Plants" id="i0d-5z-M6a"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1648" y="864"/>

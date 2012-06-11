@@ -172,6 +172,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="4Wy-vs-vZL" kind="push" identifier="goToDetailID" id="Tkf-2N-8iQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -201,7 +204,6 @@
                     <connections>
                         <outlet property="tableView" destination="75m-DY-R67" id="wzi-vX-PEM"/>
                         <outlet property="view" destination="td8-3T-zOf" id="AqX-z0-Zj3"/>
-                        <segue destination="4Wy-vs-vZL" kind="push" identifier="goToDetailID" id="fWj-wc-MRB"/>
                     </connections>
                 </viewController>
             </objects>
