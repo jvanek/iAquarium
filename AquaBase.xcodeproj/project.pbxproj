@@ -29,7 +29,6 @@
 		D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */; };
 		D85C255215864C5500F83927 /* OperatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85C255115864C5500F83927 /* OperatorList.plist */; };
 		D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E747A156A3389005E6ABA /* LifeValuesCell.m */; };
-		D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E7481156A4256005E6ABA /* LongTextCell.m */; };
 		D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E748D156A4840005E6ABA /* UILabel+Multiline.m */; };
 		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
@@ -59,6 +58,7 @@
 		D8B919BE155BE7D70029B555 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */; };
 		D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
 		D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
+		D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,8 +98,6 @@
 		D85C255115864C5500F83927 /* OperatorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = OperatorList.plist; path = Resources/OperatorList.plist; sourceTree = "<group>"; };
 		D85E7479156A3389005E6ABA /* LifeValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeValuesCell.h; path = Classes/LifeValuesCell.h; sourceTree = "<group>"; };
 		D85E747A156A3389005E6ABA /* LifeValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LifeValuesCell.m; path = Classes/LifeValuesCell.m; sourceTree = "<group>"; };
-		D85E7480156A4256005E6ABA /* LongTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LongTextCell.h; path = Classes/LongTextCell.h; sourceTree = "<group>"; };
-		D85E7481156A4256005E6ABA /* LongTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LongTextCell.m; path = Classes/LongTextCell.m; sourceTree = "<group>"; };
 		D85E748C156A4840005E6ABA /* UILabel+Multiline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Multiline.h"; path = "Classes/UILabel+Multiline.h"; sourceTree = "<group>"; };
 		D85E748D156A4840005E6ABA /* UILabel+Multiline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Multiline.m"; path = "Classes/UILabel+Multiline.m"; sourceTree = "<group>"; };
 		D85F09ED15666AEB0093941F /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+Additions.h"; path = "Classes/CoreData/NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
@@ -142,6 +140,8 @@
 		D8B919C6155BE9CB0029B555 /* StreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamController.h; path = Classes/StreamController.h; sourceTree = "<group>"; };
 		D8B919C7155BE9CB0029B555 /* StreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamController.m; path = Classes/StreamController.m; sourceTree = "<group>"; };
 		D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "poissons-aquarium.xsd"; path = "Resources/poissons-aquarium.xsd"; sourceTree = "<group>"; };
+		D8D1511715A2EB4000C4E108 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DescriptionViewController.h; path = Classes/DescriptionViewController.h; sourceTree = "<group>"; };
+		D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DescriptionViewController.m; path = Classes/DescriptionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,15 +241,6 @@
 			name = "Life Values Cell";
 			sourceTree = "<group>";
 		};
-		D85E7483156A425A005E6ABA /* Long Text Cell */ = {
-			isa = PBXGroup;
-			children = (
-				D85E7480156A4256005E6ABA /* LongTextCell.h */,
-				D85E7481156A4256005E6ABA /* LongTextCell.m */,
-			);
-			name = "Long Text Cell";
-			sourceTree = "<group>";
-		};
 		D85F09FB15666FFA0093941F /* Mappings */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				D85E747D156A338C005E6ABA /* Life Values Cell */,
-				D85E7483156A425A005E6ABA /* Long Text Cell */,
 				D8B9196A155BDC140029B555 /* DetailViewController.h */,
 				D8B9196B155BDC140029B555 /* DetailViewController.m */,
 			);
@@ -443,6 +433,7 @@
 				D882AFE4155C05800029F188 /* Master View Controller */,
 				D882AFE5155C05890029F188 /* Detail View Controller */,
 				D882AFE6155C05910029F188 /* Search View Controller */,
+				D8D1511A15A2EB4700C4E108 /* Description View Controller */,
 				D80DF8C715663B1600488A0D /* Predicate View Controller */,
 				D80DF8F41566553F00488A0D /* Network Indicator Controller */,
 			);
@@ -463,6 +454,15 @@
 				D80DF8F9156655FD00488A0D /* DataController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D8D1511A15A2EB4700C4E108 /* Description View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8D1511715A2EB4000C4E108 /* DescriptionViewController.h */,
+				D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */,
+			);
+			name = "Description View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,7 +509,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Pallas Free Foundation";
+				ORGANIZATIONNAME = "Pallas Software";
 			};
 			buildConfigurationList = D8B91946155BDC140029B555 /* Build configuration list for PBXProject "AquaBase" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -586,9 +586,9 @@
 				D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */,
 				D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */,
 				D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */,
-				D85E7482156A4256005E6ABA /* LongTextCell.m in Sources */,
 				D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */,
 				D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */,
+				D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

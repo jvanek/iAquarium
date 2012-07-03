@@ -10,7 +10,6 @@
 #import "CommonName.h"
 #import "LifeValues.h"
 #import "LifeValuesCell.h"
-#import "LongTextCell.h"
 
 
 @interface DetailViewController ()
@@ -69,7 +68,12 @@
 	return YES;
 }
 
-							
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	[super prepareForSegue:segue sender:sender];
+	if ([SHOW_DESCRIPTION_SEGUE_ID isEqualToString:segue.identifier]) {
+	}
+}
+
 #pragma mark - Split view
 /*
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
@@ -125,8 +129,6 @@
 		cell = [tableView dequeueReusableCellWithIdentifier:LIFE_VALUES_CELL_ID];
 	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:FACTS_DETAIL_CELL_ID];
-	} else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
-		cell = [tableView dequeueReusableCellWithIdentifier:LONG_TEXT_CELL_ID];
 	} else {
 		cell = [tableView dequeueReusableCellWithIdentifier:DETAIL_CELL_ID];
 	}
@@ -147,9 +149,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
-	if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) return 180.0;
-	else return 44.0;
+	return 44.0;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -170,7 +170,8 @@
 		cell.detailTextLabel.text = [[self.detailItem factsValues] objectForKey:factKey];
 	} else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
 		NSString *textKey = [[self.detailItem descriptionsKeys] objectAtIndex:indexPath.row];
-		[(LongTextCell *)cell configureWithTitle:textKey andText:[[self.detailItem descriptionsValues] objectForKey:textKey]];
+		cell.textLabel.text = textKey;
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	} else cell.textLabel.text = @"";
 }
 

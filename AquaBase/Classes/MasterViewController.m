@@ -18,7 +18,6 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSArray *searchResults;
-@property (strong, nonatomic) Fish *selectedFish;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)updateSearchResults:(NSString *)searchText;
@@ -33,7 +32,7 @@
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize tableView, searchResults;
-@synthesize selectedFish, searchPredicate = _searchPredicate;
+@synthesize searchPredicate = _searchPredicate;
 
 
 							
@@ -44,12 +43,27 @@
 //		self.clearsSelectionOnViewWillAppear = NO;
 	self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 	isSearching = NO;
-	self.selectedFish = nil;
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+	self.detailViewController = nil;
+	self.fetchedResultsController.delegate = nil;
+	self.fetchedResultsController = nil;
+	self.managedObjectContext = nil;
+	self.tableView = nil;
+	self.searchResults = nil;
+	self.searchPredicate = nil;
+}
+
+- (void)dealloc {
+	self.detailViewController = nil;
+	self.fetchedResultsController.delegate = nil;
+	self.fetchedResultsController = nil;
+	self.managedObjectContext = nil;
+	self.tableView = nil;
+	self.searchResults = nil;
+	self.searchPredicate = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -59,8 +73,11 @@
 #pragma mark - UIStoryboard Delegate
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	[super prepareForSegue:segue sender:sender];
-	((DetailViewController *)segue.destinationViewController).detailItem = self.selectedFish;
+    Fish *object = nil;
+	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
+    else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+	((DetailViewController *)segue.destinationViewController).detailItem = object;
 }
 
 #pragma mark - Table View
@@ -104,10 +121,7 @@
 }
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Fish *object = nil;
-	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
-    else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
-	self.selectedFish = object;
+	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - Fetched results controller

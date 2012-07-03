@@ -17,6 +17,8 @@
 #define DETAIL_SECTION_SIMPLE_VALUES	LOCALIZED_STRING(@"Facts")
 #define DETAIL_SECTION_DESCRIPTIONS		LOCALIZED_STRING(@"Descriptions")
 
+#define SHOW_DESCRIPTION_SEGUE_ID		@"showDescriptionSegueID"
+
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
