@@ -8,6 +8,7 @@
 
 #import "DataController.h"
 #import "XmlParsingOperation.h"
+#import "UpdateSectionsOperation.h"
 
 
 // Les mappings par plistes ne sont plus utilises
@@ -20,6 +21,7 @@ static NSMutableArray *mappingsNotFound;
 
 @property (nonatomic, strong) NSOperationQueue *queue;
 @property (nonatomic, strong) XmlParsingOperation *parsingOperation;
+@property (nonatomic, strong) UpdateSectionsOperation *updateOperation;
 
 - (void)setup;
 
@@ -28,7 +30,7 @@ static NSMutableArray *mappingsNotFound;
 
 @implementation DataController
 
-@synthesize queue, parsingOperation;
+@synthesize queue, parsingOperation, updateOperation = _updateOperation;
 @synthesize dateFormatter = _dateFormatter;
 
 
@@ -51,6 +53,12 @@ static NSMutableArray *mappingsNotFound;
 	self.queue = nil;
 	self.parsingOperation = nil;
 	self.dateFormatter = nil;
+	self.updateOperation = nil;
+}
+
+- (UpdateSectionsOperation *)updateOperation {
+	if (_updateOperation == nil) _updateOperation = [[UpdateSectionsOperation alloc] init];
+	return _updateOperation;
 }
 
 - (void)updateDatabaseUsingURL:(NSURL *)remoteUrl onCompletion:(void (^)(NSError *error))completionHandler {
@@ -62,7 +70,11 @@ static NSMutableArray *mappingsNotFound;
 			else NSLog(@"%s : Done.", __PRETTY_FUNCTION__);
 		};
 	}
-	if (self.parsingOperation) [self.queue addOperation:self.parsingOperation];
+	[self.queue addOperation:self.parsingOperation];
+}
+
+- (void)updateIndexes {
+	[self.queue addOperation:self.updateOperation];
 }
 
 /*!

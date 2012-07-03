@@ -73,6 +73,8 @@
 - (NSArray *)descriptionsKeys;
 - (NSDictionary *)descriptionsValues;
 
+- (void)updateSectionIndex;
+
 @end
 
 @interface Fish (CoreDataGeneratedAccessors)

@@ -59,6 +59,9 @@
 		D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
 		D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
 		D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */; };
+		D8D1512015A2F16100C4E108 /* DescriptionTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = D8D1511F15A2F16100C4E108 /* DescriptionTemplate.html */; };
+		D8D1512215A2F28D00C4E108 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = D8D1512115A2F28D00C4E108 /* bootstrap.css */; };
+		D8D1512515A304B300C4E108 /* UpdateSectionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +145,10 @@
 		D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "poissons-aquarium.xsd"; path = "Resources/poissons-aquarium.xsd"; sourceTree = "<group>"; };
 		D8D1511715A2EB4000C4E108 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DescriptionViewController.h; path = Classes/DescriptionViewController.h; sourceTree = "<group>"; };
 		D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DescriptionViewController.m; path = Classes/DescriptionViewController.m; sourceTree = "<group>"; };
+		D8D1511F15A2F16100C4E108 /* DescriptionTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = DescriptionTemplate.html; path = Resources/DescriptionTemplate.html; sourceTree = "<group>"; };
+		D8D1512115A2F28D00C4E108 /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = bootstrap.css; path = Resources/bootstrap.css; sourceTree = "<group>"; };
+		D8D1512315A304B300C4E108 /* UpdateSectionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateSectionsOperation.h; path = Classes/UpdateSectionsOperation.h; sourceTree = "<group>"; };
+		D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateSectionsOperation.m; path = Classes/UpdateSectionsOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +380,8 @@
 				D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */,
 				D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */,
 				D85C255115864C5500F83927 /* OperatorList.plist */,
+				D8D1511F15A2F16100C4E108 /* DescriptionTemplate.html */,
+				D8D1512115A2F28D00C4E108 /* bootstrap.css */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -450,6 +459,8 @@
 				D80DF8BF156637E300488A0D /* SearchCriterium.m */,
 				D85F0A261566A5330093941F /* XmlParsingOperation.h */,
 				D85F0A271566A5330093941F /* XmlParsingOperation.m */,
+				D8D1512315A304B300C4E108 /* UpdateSectionsOperation.h */,
+				D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */,
 				D80DF8F8156655FD00488A0D /* DataController.h */,
 				D80DF8F9156655FD00488A0D /* DataController.m */,
 			);
@@ -543,6 +554,8 @@
 				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
 				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,
 				D85C255215864C5500F83927 /* OperatorList.plist in Resources */,
+				D8D1512015A2F16100C4E108 /* DescriptionTemplate.html in Resources */,
+				D8D1512215A2F28D00C4E108 /* bootstrap.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +602,7 @@
 				D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */,
 				D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */,
 				D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */,
+				D8D1512515A304B300C4E108 /* UpdateSectionsOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

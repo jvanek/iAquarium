@@ -164,7 +164,8 @@
 	
 	[[DataController sharedInstance] updateDatabaseUsingURL:remoteUrl onCompletion:^(NSError *error) {
 		[APP_DELEGATE performSelectorOnMainThread:@selector(hideNetworkActivity) withObject:nil waitUntilDone:NO];
-		self.navigationItem.rightBarButtonItem.enabled = YES;		
+		self.navigationItem.rightBarButtonItem.enabled = YES;
+//		[[DataController sharedInstance] updateIndexes];
 		if (error != nil) {
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED_STRING(@"Error")
 															message:LOCALIZED_STRING(@"An error occured when updating the database. Please try again later.")

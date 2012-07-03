@@ -18,5 +18,6 @@
 + (NSDictionary *)mappingForEntityName:(NSString *)entityName;
 
 - (void)updateDatabaseUsingURL:(NSURL *)remoteUrl onCompletion:(void (^)(NSError *error))completionHandler;
+- (void)updateIndexes;
 
 @end

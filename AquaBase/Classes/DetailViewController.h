@@ -10,6 +10,7 @@
 
 #define DETAIL_CELL_ID					@"DetailCellID"
 #define FACTS_DETAIL_CELL_ID			@"FactsDetailCellID"
+#define DETAIL_NONSELECTABLE_CELL_ID	@"DetailNonSelectableCellID"
 
 #define DETAIL_SECTION_COMMON_NAMES		LOCALIZED_STRING(@"Common names")
 #define DETAIL_SECTION_FAMILY			LOCALIZED_STRING(@"Family")

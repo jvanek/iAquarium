@@ -10,6 +10,7 @@
 #import "CommonName.h"
 #import "LifeValues.h"
 #import "LifeValuesCell.h"
+#import "DescriptionViewController.h"
 
 
 @interface DetailViewController ()
@@ -71,6 +72,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	[super prepareForSegue:segue sender:sender];
 	if ([SHOW_DESCRIPTION_SEGUE_ID isEqualToString:segue.identifier]) {
+		NSIndexPath *indexPath = [self.fishTableView indexPathForSelectedRow];
+		NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
+		DescriptionViewController *next = (DescriptionViewController *)segue.destinationViewController;
+		if ([DETAIL_SECTION_FAMILY isEqualToString:sectionTitle]) {
+			[next setupWithTitle:self.detailItem.family andContent:@"Family description goes here"];
+		} else if ([DETAIL_SECTION_DESCRIPTIONS isEqualToString:sectionTitle]) {
+			NSString *textKey = [[self.detailItem descriptionsKeys] objectAtIndex:indexPath.row];
+			NSString *text = [[self.detailItem descriptionsValues] objectForKey:textKey];
+			[next setupWithTitle:textKey andContent:text];
+		}
 	}
 }
 
@@ -125,7 +136,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
 	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
-	if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
+	if ([DETAIL_SECTION_COMMON_NAMES isEqualToString:sectionTitle]) {
+		cell = [tableView dequeueReusableCellWithIdentifier:DETAIL_NONSELECTABLE_CELL_ID];
+	} else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:LIFE_VALUES_CELL_ID];
 	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:FACTS_DETAIL_CELL_ID];

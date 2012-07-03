@@ -47,15 +47,24 @@
 			FISH_KEY_LIFE_ZONE, FISH_KEY_ORIGIN, FISH_KEY_REPRODUCTION, FISH_KEY_SCIENTIFIC_NAME, nil];	
 }
 
+- (void)awakeFromInsert {
+	[super awakeFromInsert];
+	[self updateSectionIndex];
+}
+
 - (NSArray *)attributeKeys {
 	return [NSArray arrayWithObjects:FISH_KEY_AUTHOR, FISH_KEY_BEHAVIOR, FISH_KEY_COMMENT, FISH_KEY_DIMORPHISM, FISH_KEY_FAMILY,
 			FISH_KEY_LIFE_ZONE, FISH_KEY_ORIGIN, FISH_KEY_REPRODUCTION, FISH_KEY_SCIENTIFIC_NAME, nil];
 }
 
+- (void)updateSectionIndex {
+	self.section = IS_EMPTY_STRING(self.scientificName) ? nil : [[self.scientificName substringToIndex:1] uppercaseString];	
+}
+
 - (void)replaceWithDictionary:(NSDictionary *)aDict {
 	[super replaceWithDictionary:aDict];
 
-	self.section = IS_EMPTY_STRING(self.scientificName) ? nil : [[self.scientificName substringToIndex:1] uppercaseString];
+	[self updateSectionIndex];
 	self.lifeDuration = [self floatValueFromObject:[aDict objectForKey:[self mappedKeyForKey:FISH_KEY_LIFE_DURATION]]];
 
 	NSArray *names = [aDict objectForKey:STREAM_KEY_NOM_COMMUNS];

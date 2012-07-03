@@ -143,8 +143,8 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:FISH_KEY_SCIENTIFIC_NAME ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:FISH_KEY_SCIENTIFIC_NAME ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:FISH_KEY_SECTION ascending:YES], sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     

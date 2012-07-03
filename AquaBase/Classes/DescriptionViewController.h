@@ -11,4 +11,6 @@
 
 @property (nonatomic, strong) IBOutlet UIWebView *contentView;
 
+- (void)setupWithTitle:(NSString *)aTitle andContent:(NSString *)aContent;
+
 @end

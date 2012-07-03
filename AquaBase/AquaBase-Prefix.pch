@@ -12,3 +12,5 @@
 #define APP_DELEGATE				((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define IS_EMPTY_STRING(str)		((str) == nil || [(str) length] == 0)
 #define LOCALIZED_STRING(str)		NSLocalizedString((str), (str))
+
+#define LOG(fmt,...)	NSLog((@"%s(%d) - " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
