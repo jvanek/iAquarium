@@ -27,6 +27,4 @@
 @property (strong, nonatomic) IBOutlet UITableView *fishTableView;
 @property (strong, nonatomic) NSMutableArray *sections;
 
-- (id)initWithFish:(Fish *)aFish;
-
 @end

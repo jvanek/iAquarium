@@ -348,7 +348,7 @@
                                             <outlet property="reproValue" destination="m83-Jl-I9r" id="v2o-TX-iUg"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactsDetailCellID" textLabel="AeG-Wv-wDG" rowHeight="44" style="IBUITableViewCellStyleDefault" id="1PP-GN-nJS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCellID" textLabel="AeG-Wv-wDG" rowHeight="44" style="IBUITableViewCellStyleDefault" id="1PP-GN-nJS">
                                         <rect key="frame" x="0.0" y="99" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -369,7 +369,7 @@
                                             <segue destination="6SV-gt-TOf" kind="push" identifier="showDescriptionSegueID" id="lNl-7f-Nll"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCellID" textLabel="V9D-iG-c48" detailTextLabel="Cdl-mO-vAj" rowHeight="44" style="IBUITableViewCellStyleValue2" id="QkQ-cW-c1o">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactsDetailCellID" textLabel="V9D-iG-c48" detailTextLabel="Cdl-mO-vAj" rowHeight="44" style="IBUITableViewCellStyleValue2" id="QkQ-cW-c1o">
                                         <rect key="frame" x="0.0" y="143" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

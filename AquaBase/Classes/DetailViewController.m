@@ -30,17 +30,9 @@
 
 #pragma mark - Managing the detail item
 
-- (id)initWithFish:(Fish *)aFish {
-	if ((self = [super initWithNibName:@"DetailViewController" bundle:nil]) != nil) {
-		self.detailItem = aFish;
-		self.sections = [NSMutableArray array];
-		[self configureView];
-	}
-	return self;
-}
-
 - (void)configureView {
     // Update the user interface for the detail item.
+	self.sections = [NSMutableArray array];
 	if (self.detailItem) {
 		self.navigationItem.title = self.detailItem.scientificName;
 		if (self.detailItem.commonNames != nil && [self.detailItem.commonNames count] > 0) [self.sections addObject:DETAIL_SECTION_COMMON_NAMES];
@@ -53,7 +45,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.sections = [NSMutableArray array];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
