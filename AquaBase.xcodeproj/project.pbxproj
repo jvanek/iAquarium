@@ -27,6 +27,8 @@
 		D8181E0315BEE3BA008C6E55 /* plantes-aquarium.xsd in Resources */ = {isa = PBXBuildFile; fileRef = D8181E0115BEE3BA008C6E55 /* plantes-aquarium.xsd */; };
 		D8181E0715BEEEAC008C6E55 /* Organism.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0615BEEEAC008C6E55 /* Organism.m */; };
 		D8181E0A15BEEED5008C6E55 /* Plant.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0915BEEED5008C6E55 /* Plant.m */; };
+		D8181E0F15BEF81F008C6E55 /* FishParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0E15BEF81E008C6E55 /* FishParsingOperation.m */; };
+		D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */; };
 		D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = D839F22D157CB44A008B38F2 /* ComboboxController.m */; };
 		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
@@ -103,6 +105,10 @@
 		D8181E0615BEEEAC008C6E55 /* Organism.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Organism.m; path = Classes/CoreData/Organism.m; sourceTree = "<group>"; };
 		D8181E0815BEEED5008C6E55 /* Plant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plant.h; path = Classes/CoreData/Plant.h; sourceTree = "<group>"; };
 		D8181E0915BEEED5008C6E55 /* Plant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Plant.m; path = Classes/CoreData/Plant.m; sourceTree = "<group>"; };
+		D8181E0D15BEF81E008C6E55 /* FishParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishParsingOperation.h; path = Classes/FishParsingOperation.h; sourceTree = "<group>"; };
+		D8181E0E15BEF81E008C6E55 /* FishParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FishParsingOperation.m; path = Classes/FishParsingOperation.m; sourceTree = "<group>"; };
+		D8181E1015BEF836008C6E55 /* PlantParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlantParsingOperation.h; path = Classes/PlantParsingOperation.h; sourceTree = "<group>"; };
+		D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlantParsingOperation.m; path = Classes/PlantParsingOperation.m; sourceTree = "<group>"; };
 		D839F22C157CB44A008B38F2 /* ComboboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComboboxController.h; path = Classes/ComboboxController.h; sourceTree = "<group>"; };
 		D839F22D157CB44A008B38F2 /* ComboboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComboboxController.m; path = Classes/ComboboxController.m; sourceTree = "<group>"; };
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
@@ -241,6 +247,21 @@
 				D80DF8F11566552D00488A0D /* RoundedCornerView.m */,
 			);
 			name = "Rounded Corner View";
+			sourceTree = "<group>";
+		};
+		D8181E1315BEF83D008C6E55 /* Parsing Operations */ = {
+			isa = PBXGroup;
+			children = (
+				D85F0A261566A5330093941F /* XmlParsingOperation.h */,
+				D85F0A271566A5330093941F /* XmlParsingOperation.m */,
+				D8181E0D15BEF81E008C6E55 /* FishParsingOperation.h */,
+				D8181E0E15BEF81E008C6E55 /* FishParsingOperation.m */,
+				D8181E1015BEF836008C6E55 /* PlantParsingOperation.h */,
+				D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */,
+				D8D1512315A304B300C4E108 /* UpdateSectionsOperation.h */,
+				D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */,
+			);
+			name = "Parsing Operations";
 			sourceTree = "<group>";
 		};
 		D839F230157CB44F008B38F2 /* Combobox Controller */ = {
@@ -471,12 +492,9 @@
 				D85F09FE156672D00093941F /* StreamKeys.h */,
 				D8B919C6155BE9CB0029B555 /* StreamController.h */,
 				D8B919C7155BE9CB0029B555 /* StreamController.m */,
+				D8181E1315BEF83D008C6E55 /* Parsing Operations */,
 				D80DF8BE156637E300488A0D /* SearchCriterium.h */,
 				D80DF8BF156637E300488A0D /* SearchCriterium.m */,
-				D85F0A261566A5330093941F /* XmlParsingOperation.h */,
-				D85F0A271566A5330093941F /* XmlParsingOperation.m */,
-				D8D1512315A304B300C4E108 /* UpdateSectionsOperation.h */,
-				D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */,
 				D80DF8F8156655FD00488A0D /* DataController.h */,
 				D80DF8F9156655FD00488A0D /* DataController.m */,
 			);
@@ -623,6 +641,8 @@
 				D8D1512515A304B300C4E108 /* UpdateSectionsOperation.m in Sources */,
 				D8181E0715BEEEAC008C6E55 /* Organism.m in Sources */,
 				D8181E0A15BEEED5008C6E55 /* Plant.m in Sources */,
+				D8181E0F15BEF81F008C6E55 /* FishParsingOperation.m in Sources */,
+				D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

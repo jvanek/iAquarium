@@ -8,6 +8,12 @@
 
 #import "Organism.h"
 
+#define PLANT_ENTITY_NAME		@"Plant"
+
+#define PLANT_KEY_SUBSTSTRACT	@"substract"
+#define PLANT_KEY_GROWING_SPEED	@"growingSpeed"
+#define PLANT_KEY_LIGHT			@"light"
+#define PLANT_KEY_PLACEMENT		@"placement"
 
 @interface Plant : Organism
 

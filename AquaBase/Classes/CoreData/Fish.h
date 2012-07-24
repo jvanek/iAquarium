@@ -10,24 +10,16 @@
 
 #define FISH_ENTITY_NAME			@"Fish"
 
-#define FISH_KEY_SCIENTIFIC_NAME	@"scientificName"
 #define FISH_KEY_COMMENT			@"comment"
 #define FISH_KEY_FAMILY				@"family"
 #define FISH_KEY_LIFE_DURATION		@"lifeDuration"
 #define FISH_KEY_LIFE_ZONE			@"lifeZone"
-#define FISH_KEY_ORIGIN				@"origin"
 #define FISH_KEY_DIMORPHISM			@"dimorphism"
 #define FISH_KEY_BEHAVIOR			@"behavior"
 #define FISH_KEY_REPRODUCTION		@"reproduction"
 #define FISH_KEY_AUTHOR				@"author"
-#define FISH_KEY_SECTION			@"section"
 
-#define FISH_REL_COMMON_NAMES		@"commonNames"
-#define FISH_REL_TEMPERATURE		@"temperature"
-#define FISH_REL_ACIDITY			@"acidity"
-#define FISH_REL_HARDNESS_GH		@"hardnessGH"
 #define FISH_REL_SIZE				@"size"
-#define FISH_REL_MEDIA				@"media"
 
 
 @class CommonName;

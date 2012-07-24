@@ -9,7 +9,6 @@
 #import "XmlParsingOperation.h"
 #import "NSString+Additions.h"
 #import "StreamKeys.h"
-#import "Fish.h"
 
 
 static NSUInteger const kSizeOfFishBatch = 20;
@@ -21,10 +20,7 @@ static NSUInteger const kSizeOfFishBatch = 20;
 
 @property (nonatomic, strong) NSURL *remoteUrl;
 @property (nonatomic, strong) NSMutableDictionary *currentItem;
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSMutableArray *currentParseBatch;
-
-- (void)addBatchToDatabase:(NSArray *)batch;
 
 @end
 
@@ -58,14 +54,6 @@ static NSUInteger const kSizeOfFishBatch = 20;
 	[self.managedObjectContext setPersistentStoreCoordinator:APP_DELEGATE.persistentStoreCoordinator];
 
 	NSError *err = nil;
-	self.allowedElementNames = [NSArray arrayWithObjects:STREAM_KEY_POISSON, STREAM_KEY_NOM_SCIENT,
-								STREAM_KEY_NOM_COMMUN, STREAM_KEY_DESCRIPTEUR, STREAM_KEY_FAMILLE, STREAM_KEY_TEMPERATURE,
-								STREAM_KEY_TEMP_MIN, STREAM_KEY_TEMP_MAX, STREAM_KEY_TEMP_REPRO, STREAM_KEY_ACIDITE,
-								STREAM_KEY_PHMIN, STREAM_KEY_PHMAX, STREAM_KEY_PHREPRO, STREAM_KEY_DURETE,		
-								STREAM_KEY_GHMIN, STREAM_KEY_GHMAX, STREAM_KEY_GHREPRO,
-								STREAM_KEY_TAILLE_MALE, STREAM_KEY_TAILLE_FEMELLE, STREAM_KEY_ESPERANCE_VIE, STREAM_KEY_ZONE_VIE,		
-								STREAM_KEY_ORIGINE, STREAM_KEY_DESCRIPTION, STREAM_KEY_DIMORPHISME, STREAM_KEY_COMPORTEMENT,	
-								STREAM_KEY_REPRODUCTION, nil];
 	self.currentItem = nil;
 	count = 0;
 	batchCount = 0;
@@ -96,7 +84,7 @@ static NSUInteger const kSizeOfFishBatch = 20;
 }
 
 - (NSString *)xmlReaderItemElementName {
-	return STREAM_KEY_POISSON;
+	return nil;
 }
 
 - (BOOL)xmlReaderIsValidParsingElementName:(NSString *)elementName {
@@ -128,29 +116,6 @@ static NSUInteger const kSizeOfFishBatch = 20;
 #pragma mark - Batch methods
 
 - (void)addBatchToDatabase:(NSArray *)batch {
-	NSError *error = nil;
-	for (NSDictionary *aDict in batch) {
-#ifdef DEBUG_XML
-		NSLog(@"%s : Adding to database %@", __PRETTY_FUNCTION__, [self.currentItem description]);
-#endif
-		[GenericManagedObject updateObjectForKey:FISH_KEY_SCIENTIFIC_NAME
-										   value:[aDict objectForKey:STREAM_KEY_NOM_SCIENT]
-									  entityName:FISH_ENTITY_NAME
-								  fromDictionary:aDict
-							   orCreateInContext:self.managedObjectContext];
-	}
-	
-    if (![self.managedObjectContext save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate.
-        // You should not use this function in a shipping application, although it may be useful
-        // during development. If it is not possible to recover from the error, display an alert
-        // panel that instructs the user to quit the application by pressing the Home button.
-        //
-        NSLog(@"%s : Unresolved error %@, %@", __PRETTY_FUNCTION__, error, [error userInfo]);
-        abort();
-    }
-	
 	batchCount++;
 }
 

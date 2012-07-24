@@ -12,9 +12,11 @@
 @interface XmlParsingOperation : NSOperation<StreamControllerDelegate>
 
 @property (nonatomic, strong) StreamController *streamController;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *allowedElementNames;
 @property (nonatomic, copy) void (^completionHandler)(NSError *error);
 
 - (id)initWithURL:(NSURL *)anUrl;
+- (void)addBatchToDatabase:(NSArray *)batch;
 
 @end

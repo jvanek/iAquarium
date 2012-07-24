@@ -61,9 +61,20 @@
 
 #pragma mark - Test methods
 
-- (void)test_1_ParseXml {
+- (void)test_1_ParseFish {
 	NSError *error = nil;
 	NSURL *streamUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
+	GHAssertNotNil(streamUrl, @"The xml file cannot be found");
+	
+	self.streamController = [[StreamController alloc] init];
+	self.streamController.delegate = self;
+	BOOL result = [self.streamController parseXmlFromUrl:streamUrl error:&error];
+	GHAssertTrue(result, @"Error when parsing xml stream : %@", [error localizedDescription]);
+}
+
+- (void)test_2_ParsePlants {
+	NSError *error = nil;
+	NSURL *streamUrl = [[NSBundle mainBundle] URLForResource:@"plantes-aquarium" withExtension:@"xml"];
 	GHAssertNotNil(streamUrl, @"The xml file cannot be found");
 	
 	self.streamController = [[StreamController alloc] init];
