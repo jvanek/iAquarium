@@ -56,6 +56,4 @@
 - (NSArray *)descriptionsKeys;
 - (NSDictionary *)descriptionsValues;
 
-- (void)updateSectionIndex;
-
 @end

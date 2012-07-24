@@ -17,9 +17,12 @@
 #define LIFE_VALUES_REL_TEMPERATURE		@"organismTemp"
 #define LIFE_VALUES_REL_ACIDITY			@"organismAcid"
 #define LIFE_VALUES_REL_HARDNESS_GH		@"orgnaismHardnessGH"
+#define LIFE_VALUES_REL_PLANTS			@"plants"
 
 
 @class Organism;
+@class Plant;
+
 
 @interface LifeValues : GenericManagedObject
 
@@ -30,6 +33,7 @@
 @property (nonatomic, retain) NSSet *organismTemp;
 @property (nonatomic, retain) NSSet *organismAcid;
 @property (nonatomic, retain) NSSet *organismHardnessGH;
+@property (nonatomic, retain) NSSet *plants;
 
 @end
 
@@ -49,5 +53,10 @@
 - (void)removeOrganismHardnessGHObject:(Organism *)value;
 - (void)addOrganismHardnessGH:(NSSet *)values;
 - (void)removeOrganismHardnessGH:(NSSet *)values;
+
+- (void)addPlantObject:(Plant *)value;
+- (void)removePlantObject:(Plant *)value;
+- (void)addPlant:(NSSet *)values;
+- (void)removePlant:(NSSet *)values;
 
 @end

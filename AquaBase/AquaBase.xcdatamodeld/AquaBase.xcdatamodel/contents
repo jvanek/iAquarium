@@ -27,6 +27,7 @@
         <relationship name="organismAcid" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organism" inverseName="acidity" inverseEntity="Organism" syncable="YES"/>
         <relationship name="organismHardnessGH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organism" inverseName="hardnessGH" inverseEntity="Organism" syncable="YES"/>
         <relationship name="organismTemp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organism" inverseName="temperature" inverseEntity="Organism" syncable="YES"/>
+        <relationship name="plants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plant" inverseName="size" inverseEntity="Plant" syncable="YES"/>
     </entity>
     <entity name="Localization" representedClassName="Localization" syncable="YES">
         <attribute name="code" attributeType="String" syncable="YES"/>
@@ -55,15 +56,16 @@
         <attribute name="light" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="placement" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="substract" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="size" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="LifeValues" inverseName="plants" inverseEntity="LifeValues" syncable="YES"/>
     </entity>
     <elements>
         <element name="CommonName" positionX="-20241" positionY="-8802" width="128" height="90"/>
         <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="300"/>
         <element name="GenderValues" positionX="-20241" positionY="-8505" width="128" height="90"/>
-        <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="135"/>
+        <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="150"/>
         <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>
         <element name="Medium" positionX="-19730" positionY="-8532" width="128" height="105"/>
-        <element name="Plant" positionX="-452745" positionY="-43362" width="128" height="105"/>
+        <element name="Plant" positionX="-452745" positionY="-43362" width="128" height="120"/>
         <element name="Organism" positionX="-452639" positionY="-43614" width="128" height="180"/>
     </elements>
 </model>

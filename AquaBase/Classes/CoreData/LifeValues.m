@@ -19,5 +19,6 @@
 @dynamic organismTemp;
 @dynamic organismAcid;
 @dynamic organismHardnessGH;
+@dynamic plants;
 
 @end

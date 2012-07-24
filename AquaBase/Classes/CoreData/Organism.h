@@ -36,6 +36,8 @@
 @property (nonatomic, retain) LifeValues *temperature;
 @property (nonatomic, retain) NSSet *media;
 
+- (void)updateSectionIndex;
+
 @end
 
 @interface Organism (CoreDataGeneratedAccessors)

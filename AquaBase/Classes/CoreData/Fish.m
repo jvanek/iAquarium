@@ -35,36 +35,20 @@
 
 + (NSArray *)attributesToQuery {
 	return [NSArray arrayWithObjects:FISH_KEY_AUTHOR, FISH_KEY_BEHAVIOR, FISH_KEY_COMMENT, FISH_KEY_DIMORPHISM, FISH_KEY_FAMILY,
-			FISH_KEY_LIFE_ZONE, FISH_KEY_ORIGIN, FISH_KEY_REPRODUCTION, FISH_KEY_SCIENTIFIC_NAME, nil];	
-}
-
-- (void)awakeFromInsert {
-	[super awakeFromInsert];
-	[self updateSectionIndex];
+			FISH_KEY_LIFE_ZONE, ORGANISM_KEY_ORIGIN, FISH_KEY_REPRODUCTION, ORGANISM_KEY_SCIENTIFIC_NAME, nil];	
 }
 
 - (NSArray *)attributeKeys {
-	return [NSArray arrayWithObjects:FISH_KEY_AUTHOR, FISH_KEY_BEHAVIOR, FISH_KEY_COMMENT, FISH_KEY_DIMORPHISM, FISH_KEY_FAMILY,
-			FISH_KEY_LIFE_ZONE, FISH_KEY_ORIGIN, FISH_KEY_REPRODUCTION, FISH_KEY_SCIENTIFIC_NAME, nil];
-}
-
-- (void)updateSectionIndex {
-	self.section = IS_EMPTY_STRING(self.scientificName) ? nil : [[self.scientificName substringToIndex:1] uppercaseString];	
+	NSMutableArray *result = [NSMutableArray arrayWithArray:[super attributeKeys]];
+	[result addObjectsFromArray:[NSArray arrayWithObjects:FISH_KEY_AUTHOR, FISH_KEY_BEHAVIOR, FISH_KEY_COMMENT, FISH_KEY_DIMORPHISM, FISH_KEY_FAMILY,
+			FISH_KEY_LIFE_ZONE, FISH_KEY_REPRODUCTION, nil]];
+	return result;
 }
 
 - (void)replaceWithDictionary:(NSDictionary *)aDict {
 	[super replaceWithDictionary:aDict];
 
-	[self updateSectionIndex];
 	self.lifeDuration = [self floatValueFromObject:[aDict objectForKey:[self mappedKeyForKey:FISH_KEY_LIFE_DURATION]]];
-
-	NSArray *names = [aDict objectForKey:STREAM_KEY_NOM_COMMUNS];
-	for (CommonName *cName in self.commonNames) [self.managedObjectContext deleteObject:cName];
-	for (NSString *aName in names) {
-		CommonName *cName = [NSEntityDescription insertNewObjectForEntityForName:COMMON_NAME_ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
-		cName.label = aName;
-		[self addCommonNamesObject:cName];
-	}
 	
 	if (!(IS_EMPTY_STRING([aDict objectForKey:STREAM_KEY_PHMAX]) &&
 		  IS_EMPTY_STRING([aDict objectForKey:STREAM_KEY_PHMIN]) &&
