@@ -38,9 +38,6 @@ static NSUInteger const kSizeOfFishBatch = 20;
 - (id)initWithURL:(NSURL *)anUrl {
 	if ((self = [super init]) != nil) {
 		self.remoteUrl = anUrl;
-        self.managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [self.managedObjectContext setUndoManager:nil];
-        [self.managedObjectContext setPersistentStoreCoordinator:APP_DELEGATE.persistentStoreCoordinator];
 	}
 	return self;
 }
@@ -55,6 +52,11 @@ static NSUInteger const kSizeOfFishBatch = 20;
 }
 
 - (void)main {
+	// managed object context ne doit pas etre cree dans init
+	self.managedObjectContext = [[NSManagedObjectContext alloc] init];
+	[self.managedObjectContext setUndoManager:nil];
+	[self.managedObjectContext setPersistentStoreCoordinator:APP_DELEGATE.persistentStoreCoordinator];
+
 	NSError *err = nil;
 	self.allowedElementNames = [NSArray arrayWithObjects:STREAM_KEY_POISSON, STREAM_KEY_NOM_SCIENT,
 								STREAM_KEY_NOM_COMMUN, STREAM_KEY_DESCRIPTEUR, STREAM_KEY_FAMILLE, STREAM_KEY_TEMPERATURE,
