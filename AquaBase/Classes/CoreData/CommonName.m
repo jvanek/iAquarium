@@ -13,7 +13,7 @@
 
 @dynamic label;
 @dynamic localization;
-@dynamic fish;
+@dynamic organism;
 
 - (NSArray *)attributeKeys {
 	return [NSArray arrayWithObjects:COMMON_NAME_KEY_LABEL, nil];

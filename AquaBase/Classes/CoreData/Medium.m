@@ -15,6 +15,7 @@
 @dynamic mediumUrl;
 @dynamic mimeType;
 @dynamic comment;
-@dynamic fish;
+
+@dynamic organism;
 
 @end

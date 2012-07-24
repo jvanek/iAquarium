@@ -46,7 +46,7 @@ static NSMutableArray *mappingsNotFound;
 
 - (void)setup {
 	self.queue = [[NSOperationQueue alloc] init];
-	[self.queue setMaxConcurrentOperationCount:1];
+	[self.queue setMaxConcurrentOperationCount:10];
 }
 
 - (void)dealloc {

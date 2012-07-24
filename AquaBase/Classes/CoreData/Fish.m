@@ -15,24 +15,15 @@
 
 @implementation Fish
 
-@dynamic scientificName;
 @dynamic comment;
 @dynamic family;
 @dynamic lifeDuration;
 @dynamic lifeZone;
-@dynamic origin;
 @dynamic dimorphism;
 @dynamic behavior;
-@dynamic reproduction;
 @dynamic author;
-@dynamic section;
 
-@dynamic commonNames;
-@dynamic temperature;
-@dynamic acidity;
-@dynamic hardnessGH;
 @dynamic size;
-@dynamic media;
 
 + (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx {
 	NSError *err = nil;

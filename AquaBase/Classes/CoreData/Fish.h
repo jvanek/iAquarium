@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pallas Free Foundation. All rights reserved.
 //
 
-#import "GenericManagedObject.h"
+#import "Organism.h"
 
 #define FISH_ENTITY_NAME			@"Fish"
 
@@ -34,26 +34,17 @@
 @class LifeValues;
 @class GenderValues;
 
-@interface Fish : GenericManagedObject
+@interface Fish : Organism
 
-@property (nonatomic, retain) NSString * scientificName;
 @property (nonatomic, retain) NSString * comment;
 @property (nonatomic, retain) NSString * family;
 @property (nonatomic, retain) NSNumber * lifeDuration;
 @property (nonatomic, retain) NSString * lifeZone;
-@property (nonatomic, retain) NSString * origin;
 @property (nonatomic, retain) NSString * dimorphism;
 @property (nonatomic, retain) NSString * behavior;
-@property (nonatomic, retain) NSString * reproduction;
 @property (nonatomic, retain) NSString * author;
-@property (nonatomic, retain) NSString * section;
 
-@property (nonatomic, retain) NSSet *commonNames;
-@property (nonatomic, retain) LifeValues *temperature;
-@property (nonatomic, retain) LifeValues *acidity;
-@property (nonatomic, retain) LifeValues *hardnessGH;
 @property (nonatomic, retain) GenderValues *size;
-@property (nonatomic, retain) NSSet *media;
 
 + (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx;
 + (NSArray *)attributesToQuery;
@@ -74,19 +65,5 @@
 - (NSDictionary *)descriptionsValues;
 
 - (void)updateSectionIndex;
-
-@end
-
-@interface Fish (CoreDataGeneratedAccessors)
-
-- (void)addCommonNamesObject:(CommonName *)value;
-- (void)removeCommonNamesObject:(CommonName *)value;
-- (void)addCommonNames:(NSSet *)values;
-- (void)removeCommonNames:(NSSet *)values;
-
-- (void)addMediaObject:(NSManagedObject *)value;
-- (void)removeMediaObject:(NSManagedObject *)value;
-- (void)addMedia:(NSSet *)values;
-- (void)removeMedia:(NSSet *)values;
 
 @end

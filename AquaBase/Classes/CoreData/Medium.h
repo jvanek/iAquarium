@@ -14,16 +14,17 @@
 #define MEDIUM_KEY_MIMETYPE			@"mimeType"
 #define MEDIUM_KEY_COMMENT			@"comment"
 
-#define MEDIUM_REL_FISH				@"fish"
+#define MEDIUM_REL_FISH				@"organism"
 
 
-@class Fish;
+@class Organism;
 
 @interface Medium : GenericManagedObject
 
 @property (nonatomic, retain) NSString * mediumUrl;
 @property (nonatomic, retain) NSString * mimeType;
 @property (nonatomic, retain) NSString * comment;
-@property (nonatomic, retain) Fish *fish;
+
+@property (nonatomic, retain) Organism *organism;
 
 @end

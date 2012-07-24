@@ -14,39 +14,40 @@
 #define LIFE_VALUES_KEY_VALUEMAX		@"valueMax"
 #define LIFE_VALUES_KEY_VALUEREPRO		@"valueRepro"
 
-#define LIFE_VALUES_REL_TEMPERATURE		@"fishTemp"
-#define LIFE_VALUES_REL_ACIDITY			@"fishAcid"
-#define LIFE_VALUES_REL_HARDNESS_GH		@"fishHardnessGH"
+#define LIFE_VALUES_REL_TEMPERATURE		@"organismTemp"
+#define LIFE_VALUES_REL_ACIDITY			@"organismAcid"
+#define LIFE_VALUES_REL_HARDNESS_GH		@"orgnaismHardnessGH"
 
 
-@class Fish;
+@class Organism;
 
 @interface LifeValues : GenericManagedObject
 
 @property (nonatomic, retain) NSNumber * valueMin;
 @property (nonatomic, retain) NSNumber * valueMax;
 @property (nonatomic, retain) NSNumber * valueRepro;
-@property (nonatomic, retain) NSSet *fishTemp;
-@property (nonatomic, retain) NSSet *fishAcid;
-@property (nonatomic, retain) NSSet *fishHardnessGH;
+
+@property (nonatomic, retain) NSSet *organismTemp;
+@property (nonatomic, retain) NSSet *organismAcid;
+@property (nonatomic, retain) NSSet *organismHardnessGH;
 
 @end
 
 @interface LifeValues (CoreDataGeneratedAccessors)
 
-- (void)addFishTempObject:(Fish *)value;
-- (void)removeFishTempObject:(Fish *)value;
-- (void)addFishTemp:(NSSet *)values;
-- (void)removeFishTemp:(NSSet *)values;
+- (void)addOrganismTempObject:(Organism *)value;
+- (void)removeOrganismTempObject:(Organism *)value;
+- (void)addOrganismTemp:(NSSet *)values;
+- (void)removeOrganismTemp:(NSSet *)values;
 
-- (void)addFishAcidObject:(Fish *)value;
-- (void)removeFishAcidObject:(Fish *)value;
-- (void)addFishAcid:(NSSet *)values;
-- (void)removeFishAcid:(NSSet *)values;
+- (void)addOrganismAcidObject:(Organism *)value;
+- (void)removeOrganismAcidObject:(Organism *)value;
+- (void)addOrganismAcid:(NSSet *)values;
+- (void)removeOrganismAcid:(NSSet *)values;
 
-- (void)addFishHardnessGHObject:(Fish *)value;
-- (void)removeFishHardnessGHObject:(Fish *)value;
-- (void)addFishHardnessGH:(NSSet *)values;
-- (void)removeFishHardnessGH:(NSSet *)values;
+- (void)addOrganismHardnessGHObject:(Organism *)value;
+- (void)removeOrganismHardnessGHObject:(Organism *)value;
+- (void)addOrganismHardnessGH:(NSSet *)values;
+- (void)removeOrganismHardnessGH:(NSSet *)values;
 
 @end

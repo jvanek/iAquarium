@@ -13,16 +13,16 @@
 #define COMMON_NAME_KEY_LABEL			@"label"
 
 #define COMMON_NAME_REL_LOCALIZATION	@"localization"
-#define COMMON_NAME_REL_FISH			@"fish"
+#define COMMON_NAME_REL_ORGANISM		@"organism"
 
 @class Localization;
-@class Fish;
+@class Organism;
 
 
 @interface CommonName : GenericManagedObject
 
 @property (nonatomic, retain) NSString * label;
 @property (nonatomic, retain) Localization *localization;
-@property (nonatomic, retain) Fish *fish;
+@property (nonatomic, retain) Organism *organism;
 
 @end

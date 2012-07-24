@@ -2,10 +2,10 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CommonName" representedClassName="CommonName" syncable="YES">
         <attribute name="label" attributeType="String" syncable="YES"/>
-        <relationship name="fish" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Fish" inverseName="commonNames" inverseEntity="Fish" syncable="YES"/>
         <relationship name="localization" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Localization" inverseName="commonNames" inverseEntity="Localization" syncable="YES"/>
+        <relationship name="organism" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Organism" inverseName="commonNames" inverseEntity="Organism" syncable="YES"/>
     </entity>
-    <entity name="Fish" representedClassName="Fish" syncable="YES">
+    <entity name="Fish" representedClassName="Fish" parentEntity="Organism" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="behavior" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,16 +13,7 @@
         <attribute name="family" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lifeDuration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lifeZone" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reproduction" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="scientificName" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="section" optional="YES" attributeType="String" maxValueString="1" indexed="YES" syncable="YES"/>
-        <relationship name="acidity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishAcid" inverseEntity="LifeValues" syncable="YES"/>
-        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommonName" inverseName="fish" inverseEntity="CommonName" syncable="YES"/>
-        <relationship name="hardnessGH" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishHardnessGH" inverseEntity="LifeValues" syncable="YES"/>
-        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medium" inverseName="fish" inverseEntity="Medium" syncable="YES"/>
         <relationship name="size" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GenderValues" inverseName="fish" inverseEntity="GenderValues" syncable="YES"/>
-        <relationship name="temperature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="fishTemp" inverseEntity="LifeValues" syncable="YES"/>
     </entity>
     <entity name="GenderValues" representedClassName="GenderValues" syncable="YES">
         <attribute name="femaleValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -33,9 +24,9 @@
         <attribute name="valueMax" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="valueMin" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="valueRepro" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="fishAcid" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="acidity" inverseEntity="Fish" syncable="YES"/>
-        <relationship name="fishHardnessGH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="hardnessGH" inverseEntity="Fish" syncable="YES"/>
-        <relationship name="fishTemp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fish" inverseName="temperature" inverseEntity="Fish" syncable="YES"/>
+        <relationship name="organismAcid" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organism" inverseName="acidity" inverseEntity="Organism" syncable="YES"/>
+        <relationship name="organismHardnessGH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organism" inverseName="hardnessGH" inverseEntity="Organism" syncable="YES"/>
+        <relationship name="organismTemp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organism" inverseName="temperature" inverseEntity="Organism" syncable="YES"/>
     </entity>
     <entity name="Localization" representedClassName="Localization" syncable="YES">
         <attribute name="code" attributeType="String" syncable="YES"/>
@@ -46,7 +37,24 @@
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mediumUrl" attributeType="String" syncable="YES"/>
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="fish" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Fish" inverseName="media" inverseEntity="Fish" syncable="YES"/>
+        <relationship name="organism" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Organism" inverseName="media" inverseEntity="Organism" syncable="YES"/>
+    </entity>
+    <entity name="Organism" representedClassName="Organism" isAbstract="YES" syncable="YES">
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reproduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scientificName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="section" optional="YES" attributeType="String" maxValueString="1" syncable="YES"/>
+        <relationship name="acidity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="organismAcid" inverseEntity="LifeValues" syncable="YES"/>
+        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommonName" inverseName="organism" inverseEntity="CommonName" syncable="YES"/>
+        <relationship name="hardnessGH" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="organismHardnessGH" inverseEntity="LifeValues" syncable="YES"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medium" inverseName="organism" inverseEntity="Medium" syncable="YES"/>
+        <relationship name="temperature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="organismTemp" inverseEntity="LifeValues" syncable="YES"/>
+    </entity>
+    <entity name="Plant" representedClassName="Plant" parentEntity="Organism" syncable="YES">
+        <attribute name="growingSpeed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="light" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placement" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="substract" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="CommonName" positionX="-20241" positionY="-8802" width="128" height="90"/>
@@ -55,5 +63,7 @@
         <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="135"/>
         <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>
         <element name="Medium" positionX="-19730" positionY="-8532" width="128" height="105"/>
+        <element name="Plant" positionX="-452745" positionY="-43362" width="128" height="105"/>
+        <element name="Organism" positionX="-452639" positionY="-43614" width="128" height="180"/>
     </elements>
 </model>

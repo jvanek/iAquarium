@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="plantes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="plante">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NomScientifique" type="xs:string" />
+              <xs:element name="NomCommuns">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NomCommun" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Temperature">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TempMin" type="xs:decimal" />
+                    <xs:element name="TempMax" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Acidite">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PHMin" type="xs:decimal" />
+                    <xs:element name="PHMax" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Durete">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="GHMin" type="xs:decimal" />
+                    <xs:element name="GHMax" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Taille">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TailleMin" type="xs:decimal" />
+                    <xs:element name="TailleMax" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Origine" />
+              <xs:element name="Substrat" />
+              <xs:element name="Eclairage" />
+              <xs:element name="Croissance" />
+              <xs:element name="Emplacement" />
+              <xs:element name="Reproduction" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

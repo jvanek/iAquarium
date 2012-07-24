@@ -156,8 +156,12 @@
 }
 
 - (void)refreshDatabase:(UIBarButtonItem *)sender {
+//	Poissons
 //	NSURL *databaseUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
 	NSURL *remoteUrl = [NSURL URLWithString:@"http://www.aquabase.org/fish/dump.php3?format=xml"];
+	
+//	Plantes
+//	NSURL *remoteUrl = [NSURL URLWithString:@"http://www.aquabase.org/plant/dump.php3?format=xml"];
 	self.navigationItem.rightBarButtonItem.enabled = NO;
 	
 	[self performSelectorOnMainThread:@selector(showNetworkIndicator) withObject:nil waitUntilDone:NO];	

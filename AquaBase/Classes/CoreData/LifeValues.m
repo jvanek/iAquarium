@@ -15,8 +15,9 @@
 @dynamic valueMin;
 @dynamic valueMax;
 @dynamic valueRepro;
-@dynamic fishTemp;
-@dynamic fishAcid;
-@dynamic fishHardnessGH;
+
+@dynamic organismTemp;
+@dynamic organismAcid;
+@dynamic organismHardnessGH;
 
 @end

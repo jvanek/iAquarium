@@ -23,6 +23,10 @@
 		D80DF8FA156655FD00488A0D /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8F9156655FD00488A0D /* DataController.m */; };
 		D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8B919AF155BE0070029B555 /* poissons-aquarium.xml */; };
 		D80DF8FE1566627200488A0D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8FD1566627200488A0D /* NSString+Additions.m */; };
+		D8181E0215BEE3BA008C6E55 /* plantes-aquarium.xml in Resources */ = {isa = PBXBuildFile; fileRef = D8181E0015BEE3BA008C6E55 /* plantes-aquarium.xml */; };
+		D8181E0315BEE3BA008C6E55 /* plantes-aquarium.xsd in Resources */ = {isa = PBXBuildFile; fileRef = D8181E0115BEE3BA008C6E55 /* plantes-aquarium.xsd */; };
+		D8181E0715BEEEAC008C6E55 /* Organism.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0615BEEEAC008C6E55 /* Organism.m */; };
+		D8181E0A15BEEED5008C6E55 /* Plant.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0915BEEED5008C6E55 /* Plant.m */; };
 		D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = D839F22D157CB44A008B38F2 /* ComboboxController.m */; };
 		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
@@ -93,6 +97,12 @@
 		D80DF8F9156655FD00488A0D /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Classes/DataController.m; sourceTree = "<group>"; };
 		D80DF8FC1566627200488A0D /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Classes/NSString+Additions.h"; sourceTree = "<group>"; };
 		D80DF8FD1566627200488A0D /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "Classes/NSString+Additions.m"; sourceTree = "<group>"; };
+		D8181E0015BEE3BA008C6E55 /* plantes-aquarium.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "plantes-aquarium.xml"; path = "Resources/plantes-aquarium.xml"; sourceTree = "<group>"; };
+		D8181E0115BEE3BA008C6E55 /* plantes-aquarium.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; name = "plantes-aquarium.xsd"; path = "Resources/plantes-aquarium.xsd"; sourceTree = "<group>"; };
+		D8181E0515BEEEAC008C6E55 /* Organism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Organism.h; path = Classes/CoreData/Organism.h; sourceTree = "<group>"; };
+		D8181E0615BEEEAC008C6E55 /* Organism.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Organism.m; path = Classes/CoreData/Organism.m; sourceTree = "<group>"; };
+		D8181E0815BEEED5008C6E55 /* Plant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plant.h; path = Classes/CoreData/Plant.h; sourceTree = "<group>"; };
+		D8181E0915BEEED5008C6E55 /* Plant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Plant.m; path = Classes/CoreData/Plant.m; sourceTree = "<group>"; };
 		D839F22C157CB44A008B38F2 /* ComboboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComboboxController.h; path = Classes/ComboboxController.h; sourceTree = "<group>"; };
 		D839F22D157CB44A008B38F2 /* ComboboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComboboxController.m; path = Classes/ComboboxController.m; sourceTree = "<group>"; };
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
@@ -195,6 +205,10 @@
 				D80DF8E215664DAA00488A0D /* GenericManagedObject.m */,
 				D80DF8CF15664CEB00488A0D /* CommonName.h */,
 				D80DF8D015664CEB00488A0D /* CommonName.m */,
+				D8181E0515BEEEAC008C6E55 /* Organism.h */,
+				D8181E0615BEEEAC008C6E55 /* Organism.m */,
+				D8181E0815BEEED5008C6E55 /* Plant.h */,
+				D8181E0915BEEED5008C6E55 /* Plant.m */,
 				D80DF8D215664D0400488A0D /* Fish.h */,
 				D80DF8D315664D0400488A0D /* Fish.m */,
 				D80DF8D515664D1C00488A0D /* GenderValues.h */,
@@ -429,6 +443,8 @@
 		D8B919AE155BDFF90029B555 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8181E0015BEE3BA008C6E55 /* plantes-aquarium.xml */,
+				D8181E0115BEE3BA008C6E55 /* plantes-aquarium.xsd */,
 				D8B919AF155BE0070029B555 /* poissons-aquarium.xml */,
 				D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */,
 			);
@@ -565,6 +581,8 @@
 			files = (
 				D8B9198D155BDCC60029B555 /* InfoPlist.strings in Resources */,
 				D8B919B0155BE0070029B555 /* poissons-aquarium.xml in Resources */,
+				D8181E0215BEE3BA008C6E55 /* plantes-aquarium.xml in Resources */,
+				D8181E0315BEE3BA008C6E55 /* plantes-aquarium.xsd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +621,8 @@
 				D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */,
 				D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */,
 				D8D1512515A304B300C4E108 /* UpdateSectionsOperation.m in Sources */,
+				D8181E0715BEEEAC008C6E55 /* Organism.m in Sources */,
+				D8181E0A15BEEED5008C6E55 /* Plant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
