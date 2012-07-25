@@ -9,6 +9,13 @@
 #import "AppDelegate.h"
 
 
+@interface AppDelegate()
+
+- (void)manageObjectContextDidChange:(NSNotification *)notification;
+
+@end
+
+
 
 @implementation AppDelegate
 
@@ -21,6 +28,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(managedObjectContextDidChange:)
+												 name:NSManagedObjectContextDidSaveNotification
+											   object:nil];
 	self.searchViewController.managedObjectContext = self.managedObjectContext;
     [self.window makeKeyAndVisible];
     return YES;
@@ -143,11 +154,14 @@
     return __persistentStoreCoordinator;
 }
 
+- (void)manageObjectContextDidChange:(NSNotification *)notification {
+	[self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+}
+
 #pragma mark - Application's Documents directory
 
 // Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory
-{
+- (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 

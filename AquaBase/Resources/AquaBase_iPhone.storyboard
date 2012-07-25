@@ -182,7 +182,7 @@
                                     <outlet property="delegate" destination="geq-2C-V3f" id="OGi-Qj-U3b"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" id="VCY-ef-sd7">
+                            <searchBar contentMode="redraw" placeholder="Search fish" showsCancelButton="YES" id="VCY-ef-sd7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
@@ -465,41 +465,6 @@
             </objects>
             <point key="canvasLocation" x="2629" y="174"/>
         </scene>
-        <!--Table View Controller - AquaBase - Plants-->
-        <scene sceneID="WEY-6b-mQb">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gb-UZ-1cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="uFF-pA-9PY" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Asd-Bc-n7u">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantsCellID" textLabel="7EH-K5-89c" style="IBUITableViewCellStyleDefault" id="g9y-SA-is2">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7EH-K5-89c">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="AquaBase - Plants" id="pag-df-rH1"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="1093" y="536"/>
-        </scene>
         <!--Navigation Controller - Plants-->
         <scene sceneID="zgA-Q4-x7P">
             <objects>
@@ -510,11 +475,75 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="uFF-pA-9PY" kind="relationship" relationship="rootViewController" id="kTA-2q-bRi"/>
+                        <segue destination="n5L-dR-h9D" kind="relationship" relationship="rootViewController" id="vdU-nn-K3b"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="559" y="536"/>
+        </scene>
+        <!--Plants View Controller-->
+        <scene sceneID="esh-MA-uDa">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwN-E6-9VB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="n5L-dR-h9D" customClass="PlantsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eMC-ru-jDF">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KhF-Fi-nij">
+                                <rect key="frame" x="0.0" y="44" width="320" height="323"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FishCellID" textLabel="bM0-4c-oEh" detailTextLabel="Qqy-Rj-JE5" style="IBUITableViewCellStyleSubtitle" id="HHz-8D-qzH">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bM0-4c-oEh">
+                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qqy-Rj-JE5">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n5L-dR-h9D" id="9d8-3p-KMR"/>
+                                    <outlet property="delegate" destination="n5L-dR-h9D" id="O1n-us-G3t"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search plant" showsCancelButton="YES" id="dPR-Dg-s0n">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                                <connections>
+                                    <outlet property="delegate" destination="n5L-dR-h9D" id="xTQ-Hh-7Ip"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k1H-dd-Kl6"/>
+                    <connections>
+                        <outlet property="tableView" destination="KhF-Fi-nij" id="SKN-rC-CwA"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1093" y="536"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FpB-Ax-Qud">
@@ -558,11 +587,11 @@
                 <relationship kind="outlet" name="reproValue" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="MasterViewController" superclassName="UIViewController">
+        <class className="MasterViewController" superclassName="SearchBarTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
+        </class>
+        <class className="PlantsViewController" superclassName="SearchBarTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlantsViewController.h"/>
         </class>
         <class className="PredicateViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PredicateViewController.h"/>
@@ -571,6 +600,12 @@
                 <relationship kind="outlet" name="operComboContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="valueField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SearchBarTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchBarTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="SearchViewController" superclassName="UIViewController">

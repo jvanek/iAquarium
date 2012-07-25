@@ -29,6 +29,8 @@
 		D8181E0A15BEEED5008C6E55 /* Plant.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0915BEEED5008C6E55 /* Plant.m */; };
 		D8181E0F15BEF81F008C6E55 /* FishParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E0E15BEF81E008C6E55 /* FishParsingOperation.m */; };
 		D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */; };
+		D8181E1615C0AB72008C6E55 /* PlantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1515C0AB72008C6E55 /* PlantsViewController.m */; };
+		D8181E1A15C0AE07008C6E55 /* SearchBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1915C0AE07008C6E55 /* SearchBarTableViewController.m */; };
 		D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = D839F22D157CB44A008B38F2 /* ComboboxController.m */; };
 		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
@@ -109,6 +111,10 @@
 		D8181E0E15BEF81E008C6E55 /* FishParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FishParsingOperation.m; path = Classes/FishParsingOperation.m; sourceTree = "<group>"; };
 		D8181E1015BEF836008C6E55 /* PlantParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlantParsingOperation.h; path = Classes/PlantParsingOperation.h; sourceTree = "<group>"; };
 		D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlantParsingOperation.m; path = Classes/PlantParsingOperation.m; sourceTree = "<group>"; };
+		D8181E1415C0AB72008C6E55 /* PlantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlantsViewController.h; path = Classes/PlantsViewController.h; sourceTree = "<group>"; };
+		D8181E1515C0AB72008C6E55 /* PlantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlantsViewController.m; path = Classes/PlantsViewController.m; sourceTree = "<group>"; };
+		D8181E1815C0AE07008C6E55 /* SearchBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchBarTableViewController.h; path = Classes/SearchBarTableViewController.h; sourceTree = "<group>"; };
+		D8181E1915C0AE07008C6E55 /* SearchBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchBarTableViewController.m; path = Classes/SearchBarTableViewController.m; sourceTree = "<group>"; };
 		D839F22C157CB44A008B38F2 /* ComboboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComboboxController.h; path = Classes/ComboboxController.h; sourceTree = "<group>"; };
 		D839F22D157CB44A008B38F2 /* ComboboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComboboxController.m; path = Classes/ComboboxController.m; sourceTree = "<group>"; };
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
@@ -262,6 +268,24 @@
 				D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */,
 			);
 			name = "Parsing Operations";
+			sourceTree = "<group>";
+		};
+		D8181E1715C0AB78008C6E55 /* Plants View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8181E1415C0AB72008C6E55 /* PlantsViewController.h */,
+				D8181E1515C0AB72008C6E55 /* PlantsViewController.m */,
+			);
+			name = "Plants View Controller";
+			sourceTree = "<group>";
+		};
+		D8181E1B15C0AE0E008C6E55 /* Search Bar Table View Cotroller */ = {
+			isa = PBXGroup;
+			children = (
+				D8181E1815C0AE07008C6E55 /* SearchBarTableViewController.h */,
+				D8181E1915C0AE07008C6E55 /* SearchBarTableViewController.m */,
+			);
+			name = "Search Bar Table View Cotroller";
 			sourceTree = "<group>";
 		};
 		D839F230157CB44F008B38F2 /* Combobox Controller */ = {
@@ -476,6 +500,8 @@
 			isa = PBXGroup;
 			children = (
 				D839F230157CB44F008B38F2 /* Combobox Controller */,
+				D8181E1B15C0AE0E008C6E55 /* Search Bar Table View Cotroller */,
+				D8181E1715C0AB78008C6E55 /* Plants View Controller */,
 				D882AFE4155C05800029F188 /* Master View Controller */,
 				D882AFE5155C05890029F188 /* Detail View Controller */,
 				D882AFE6155C05910029F188 /* Search View Controller */,
@@ -643,6 +669,8 @@
 				D8181E0A15BEEED5008C6E55 /* Plant.m in Sources */,
 				D8181E0F15BEF81F008C6E55 /* FishParsingOperation.m in Sources */,
 				D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */,
+				D8181E1615C0AB72008C6E55 /* PlantsViewController.m in Sources */,
+				D8181E1A15C0AE07008C6E55 /* SearchBarTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
