@@ -8,7 +8,6 @@
 
 #import "SearchViewController.h"
 #import "NetworkIndicatorController.h"
-#import "DataController.h"
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Fish.h"
@@ -22,8 +21,6 @@
 @property (nonatomic, strong) SearchViewControllerCell *selectedCell;
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath;
-- (void)refreshDatabase:(UIBarButtonItem *)sender;
-- (void)showNetworkIndicator;
 
 @end
 
@@ -39,12 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-															   target:self
-															   action:@selector(refreshDatabase:)];
-	self.navigationItem.rightBarButtonItem = refresh;
-
 	self.searchCriteria = [NSMutableArray array];
 	[self addCell:nil];
 	self.selectedIndexPath = nil;
@@ -145,40 +136,6 @@
 
 - (SearchCriterium *)criteriumAtIndexPath:(NSIndexPath *)indexPath {
 	return [self.searchCriteria objectAtIndex:indexPath.row];
-}
-
-- (void)showNetworkIndicator {
-	APP_DELEGATE.networkIndicatorController.showsTitle = YES;
-	APP_DELEGATE.networkIndicatorController.showsSecondary = YES;
-	APP_DELEGATE.networkIndicatorController.showsProgress = NO;
-	[APP_DELEGATE.networkIndicatorController prepareWithMinValue:0.0 maxValue:0.0 forTitle:LOCALIZED_STRING(@"Refreshing...")];
-	[APP_DELEGATE showNetworkActivity];
-}
-
-- (void)refreshDatabase:(UIBarButtonItem *)sender {
-//	Poissons
-//	NSURL *databaseUrl = [[NSBundle mainBundle] URLForResource:@"poissons-aquarium" withExtension:@"xml"];
-	NSURL *remoteUrl = [NSURL URLWithString:@"http://www.aquabase.org/fish/dump.php3?format=xml"];
-	
-//	Plantes
-//	NSURL *remoteUrl = [NSURL URLWithString:@"http://www.aquabase.org/plant/dump.php3?format=xml"];
-	self.navigationItem.rightBarButtonItem.enabled = NO;
-	
-	[self performSelectorOnMainThread:@selector(showNetworkIndicator) withObject:nil waitUntilDone:NO];	
-	
-	[[DataController sharedInstance] updateDatabaseUsingURL:remoteUrl withXmlOperationType:XmlOperationFish onCompletion:^(NSError *error) {
-		[APP_DELEGATE performSelectorOnMainThread:@selector(hideNetworkActivity) withObject:nil waitUntilDone:NO];
-		self.navigationItem.rightBarButtonItem.enabled = YES;
-//		[[DataController sharedInstance] updateIndexes];
-		if (error != nil) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED_STRING(@"Error")
-															message:LOCALIZED_STRING(@"An error occured when updating the database. Please try again later.")
-														   delegate:self
-												  cancelButtonTitle:LOCALIZED_STRING(@"Ok")
-												  otherButtonTitles:nil];
-			[alert show];
-		}		
-	}];
 }
 
 @end

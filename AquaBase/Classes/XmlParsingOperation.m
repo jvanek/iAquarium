@@ -120,9 +120,7 @@ static NSUInteger const kSizeOfFishBatch = 20;
 
 - (void)addBatchToDatabase:(NSArray *)batch {
 	batchCount++;
-#ifdef DEBUG
-	LOG(@"Adding to database batch %d", batchCount);
-#endif
+//	LOG(@"Adding to database batch %d", batchCount);
 	NSError *error = nil;
 	for (NSDictionary *aDict in batch) {
 		[GenericManagedObject updateObjectForKey:ORGANISM_KEY_SCIENTIFIC_NAME

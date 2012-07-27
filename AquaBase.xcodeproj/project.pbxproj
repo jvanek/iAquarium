@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8BF156637E300488A0D /* SearchCriterium.m */; };
-		D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8C315663ACB00488A0D /* PredicateViewController.m */; };
 		D80DF8D115664CEB00488A0D /* CommonName.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D015664CEB00488A0D /* CommonName.m */; };
 		D80DF8D415664D0400488A0D /* Fish.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D315664D0400488A0D /* Fish.m */; };
 		D80DF8D715664D1C00488A0D /* GenderValues.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DF8D615664D1C00488A0D /* GenderValues.m */; };
@@ -31,8 +30,6 @@
 		D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */; };
 		D8181E1615C0AB72008C6E55 /* PlantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1515C0AB72008C6E55 /* PlantsViewController.m */; };
 		D8181E1A15C0AE07008C6E55 /* SearchBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1915C0AE07008C6E55 /* SearchBarTableViewController.m */; };
-		D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = D839F22D157CB44A008B38F2 /* ComboboxController.m */; };
-		D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D839F231157CB472008B38F2 /* ComboboxController.xib */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
 		D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */; };
 		D85C255215864C5500F83927 /* OperatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85C255115864C5500F83927 /* OperatorList.plist */; };
@@ -45,8 +42,7 @@
 		D86A4D4615C2C3C6007DF088 /* Icon-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4515C2C3C6007DF088 /* Icon-iphone@2x.png */; };
 		D86A4D4815C2C3CC007DF088 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4715C2C3CC007DF088 /* Icon-ipad.png */; };
 		D86A4D4A15C2C3D2007DF088 /* Icon-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4915C2C3D2007DF088 /* Icon-ipad@2x.png */; };
-		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
-		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
+		D8858F8515C2CAC200900979 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8858F8415C2CAC200900979 /* PreferencesViewController.m */; };
 		D8B91951155BDC140029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
 		D8B91953155BDC140029B555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91952155BDC140029B555 /* Foundation.framework */; };
 		D8B91955155BDC140029B555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91954155BDC140029B555 /* CoreGraphics.framework */; };
@@ -144,6 +140,8 @@
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
 		D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewControllerCell.h; path = Classes/SearchViewControllerCell.h; sourceTree = "<group>"; };
 		D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewControllerCell.m; path = Classes/SearchViewControllerCell.m; sourceTree = "<group>"; };
+		D8858F8315C2CAC200900979 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesViewController.h; path = Classes/PreferencesViewController.h; sourceTree = "<group>"; };
+		D8858F8415C2CAC200900979 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesViewController.m; path = Classes/PreferencesViewController.m; sourceTree = "<group>"; };
 		D8B9194C155BDC140029B555 /* AquaBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B91950155BDC140029B555 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8B91952155BDC140029B555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -388,6 +386,25 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		D8858F8715C2CACE00900979 /* Preferences View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8858F8315C2CAC200900979 /* PreferencesViewController.h */,
+				D8858F8415C2CAC200900979 /* PreferencesViewController.m */,
+			);
+			name = "Preferences View Controller";
+			sourceTree = "<group>";
+		};
+		D8858F8815C2D0DB00900979 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				D839F230157CB44F008B38F2 /* Combobox Controller */,
+				D882AFE6155C05910029F188 /* Search View Controller */,
+				D80DF8C715663B1600488A0D /* Predicate View Controller */,
+			);
+			name = Unused;
+			sourceTree = "<group>";
+		};
 		D8B91941155BDC140029B555 = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +442,7 @@
 				D8B9197C155BDC680029B555 /* Classes */,
 				D8B9197E155BDC7B0029B555 /* Resources */,
 				D8B91959155BDC140029B555 /* Supporting Files */,
+				D8858F8815C2D0DB00900979 /* Unused */,
 			);
 			path = AquaBase;
 			sourceTree = "<group>";
@@ -522,14 +540,12 @@
 		D8B919BF155BE9500029B555 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D839F230157CB44F008B38F2 /* Combobox Controller */,
 				D8181E1B15C0AE0E008C6E55 /* Search Bar Table View Cotroller */,
 				D8181E1715C0AB78008C6E55 /* Plants View Controller */,
 				D882AFE4155C05800029F188 /* Master View Controller */,
 				D882AFE5155C05890029F188 /* Detail View Controller */,
-				D882AFE6155C05910029F188 /* Search View Controller */,
 				D8D1511A15A2EB4700C4E108 /* Description View Controller */,
-				D80DF8C715663B1600488A0D /* Predicate View Controller */,
+				D8858F8715C2CACE00900979 /* Preferences View Controller */,
 				D80DF8F41566553F00488A0D /* Network Indicator Controller */,
 			);
 			name = "View Controllers";
@@ -633,7 +649,6 @@
 				D80DF8F61566555900488A0D /* NetworkIndicatorController.xib in Resources */,
 				D80DF8FB156658EC00488A0D /* poissons-aquarium.xml in Resources */,
 				D85F09FD156670150093941F /* Fish-mapping.plist in Resources */,
-				D839F232157CB472008B38F2 /* ComboboxController.xib in Resources */,
 				D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */,
 				D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */,
 				D85C255215864C5500F83927 /* OperatorList.plist in Resources */,
@@ -671,10 +686,7 @@
 				D8B91969155BDC140029B555 /* MasterViewController.m in Sources */,
 				D8B9196C155BDC140029B555 /* DetailViewController.m in Sources */,
 				D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */,
-				D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */,
-				D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */,
 				D80DF8C0156637E300488A0D /* SearchCriterium.m in Sources */,
-				D80DF8C415663ACC00488A0D /* PredicateViewController.m in Sources */,
 				D80DF8D115664CEB00488A0D /* CommonName.m in Sources */,
 				D80DF8D415664D0400488A0D /* Fish.m in Sources */,
 				D80DF8D715664D1C00488A0D /* GenderValues.m in Sources */,
@@ -690,7 +702,6 @@
 				D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */,
 				D85E747B156A3389005E6ABA /* LifeValuesCell.m in Sources */,
 				D85E748E156A4840005E6ABA /* UILabel+Multiline.m in Sources */,
-				D839F22E157CB44A008B38F2 /* ComboboxController.m in Sources */,
 				D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */,
 				D8D1512515A304B300C4E108 /* UpdateSectionsOperation.m in Sources */,
 				D8181E0715BEEEAC008C6E55 /* Organism.m in Sources */,
@@ -699,6 +710,7 @@
 				D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */,
 				D8181E1615C0AB72008C6E55 /* PlantsViewController.m in Sources */,
 				D8181E1A15C0AE07008C6E55 /* SearchBarTableViewController.m in Sources */,
+				D8858F8515C2CAC200900979 /* PreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

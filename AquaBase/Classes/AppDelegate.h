@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Pallas Free Foundation. All rights reserved.
 //
 
-#import "SearchViewController.h"
 #import "NetworkIndicatorController.h"
 
 
@@ -17,8 +16,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (strong, nonatomic) IBOutlet UINavigationController *mainViewController;
-@property (strong, nonatomic) IBOutlet SearchViewController *searchViewController;
 @property (nonatomic, strong) NetworkIndicatorController *networkIndicatorController;
 @property (nonatomic, readonly) BOOL isIpad;
 @property (nonatomic, readonly) BOOL isIphone;

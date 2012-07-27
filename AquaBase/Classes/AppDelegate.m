@@ -11,7 +11,7 @@
 
 @interface AppDelegate()
 
-- (void)manageObjectContextDidChange:(NSNotification *)notification;
+- (void)managedObjectContextDidChange:(NSNotification *)notification;
 
 @end
 
@@ -23,8 +23,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize mainViewController;
-@synthesize searchViewController, networkIndicatorController = _networkIndicatorController;
+@synthesize networkIndicatorController = _networkIndicatorController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -32,7 +31,6 @@
 											 selector:@selector(managedObjectContextDidChange:)
 												 name:NSManagedObjectContextDidSaveNotification
 											   object:nil];
-	self.searchViewController.managedObjectContext = self.managedObjectContext;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -58,6 +56,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Saves changes in the application's managed object context before the application terminates.
 	[self saveContext];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
 }
 
 - (void)saveContext {
@@ -154,7 +153,7 @@
     return __persistentStoreCoordinator;
 }
 
-- (void)manageObjectContextDidChange:(NSNotification *)notification {
+- (void)managedObjectContextDidChange:(NSNotification *)notification {
 	[self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
 }
 
@@ -175,11 +174,11 @@
 
 - (void)showNetworkActivity {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-	CGRect container = self.mainViewController.view.frame;
+	CGRect container = self.window.frame;
 	self.networkIndicatorController.view.frame = CGRectMake((container.size.width - NETWORK_INDICATOR_SIZE) / 2.0,
 															(container.size.height - NETWORK_INDICATOR_SIZE) / 2.0,
 															NETWORK_INDICATOR_SIZE, NETWORK_INDICATOR_SIZE);
-	[self.mainViewController.view addSubview:self.networkIndicatorController.view];
+	[self.window addSubview:self.networkIndicatorController.view];
 	[self.networkIndicatorController viewWillAppear:YES];
 	[self.networkIndicatorController.activityIndicator startAnimating];
 }

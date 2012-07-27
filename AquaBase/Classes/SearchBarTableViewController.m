@@ -27,9 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	//	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	self.title = LOCALIZED_STRING(@"Search Results");
-	//		self.clearsSelectionOnViewWillAppear = NO;
+//	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//	self.title = LOCALIZED_STRING(@"Search Results");
+//	self.clearsSelectionOnViewWillAppear = NO;
 	self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 	isSearching = NO;
 }
