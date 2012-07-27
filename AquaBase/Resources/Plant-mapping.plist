@@ -6,6 +6,14 @@
 	<string>Origine</string>
 	<key>reproduction</key>
 	<string>Reproduction</string>
+	<key>substract</key>
+	<string>Substrat</string>
+	<key>growingSpeed</key>
+	<string>Croissance</string>
+	<key>light</key>
+	<string>Eclairage</string>
+	<key>placement</key>
+	<string>Emplacement</string>
 	<key>scientificName</key>
 	<string>NomScientifique</string>
 </dict>

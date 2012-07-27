@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="75m-DY-R67">
-                                <rect key="frame" x="0.0" y="44" width="320" height="323"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -72,22 +72,16 @@
                                     <outlet property="delegate" destination="geq-2C-V3f" id="OGi-Qj-U3b"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search fish" showsCancelButton="YES" id="VCY-ef-sd7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="geq-2C-V3f" id="4yc-ri-OeB"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Fish" id="MM7-hH-DgO"/>
+                    <navigationItem key="navigationItem" title="Fish" id="MM7-hH-DgO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ePL-JA-BiQ">
+                            <connections>
+                                <action selector="toggleSearchBar:" destination="geq-2C-V3f" id="J9l-U6-Lao"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -374,7 +368,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KhF-Fi-nij">
-                                <rect key="frame" x="0.0" y="44" width="320" height="323"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -409,18 +403,16 @@
                                     <outlet property="delegate" destination="n5L-dR-h9D" id="O1n-us-G3t"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search plant" showsCancelButton="YES" id="dPR-Dg-s0n">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
-                                <connections>
-                                    <outlet property="delegate" destination="n5L-dR-h9D" id="xTQ-Hh-7Ip"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Plants" id="k1H-dd-Kl6"/>
+                    <navigationItem key="navigationItem" title="Plants" id="k1H-dd-Kl6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="3Sy-Gq-6Mj">
+                            <connections>
+                                <action selector="toggleSearchBar:" destination="n5L-dR-h9D" id="TNc-pJ-9Mh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="KhF-Fi-nij" id="SKN-rC-CwA"/>
                     </connections>
@@ -487,6 +479,7 @@
         <class className="SearchBarTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchBarTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="toggleSearchBar:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

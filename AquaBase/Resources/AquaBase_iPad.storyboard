@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="722" y="-855"/>
         </scene>
-        <!--Master View Controller - Search Result-->
+        <!--Master View Controller - Fish-->
         <scene sceneID="pIs-k0-dd3">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLY-ex-5dV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wxa-Eq-j1g">
-                                <rect key="frame" x="0.0" y="44" width="768" height="867"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -71,22 +71,16 @@
                                     <outlet property="delegate" destination="DfV-bc-hLq" id="lfg-HA-gfh"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" id="ygV-MO-xfb">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="DfV-bc-hLq" id="Gyg-U5-dAq"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Result" id="1ep-D0-dz3"/>
+                    <navigationItem key="navigationItem" title="Fish" id="1ep-D0-dz3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="fJF-Aj-z7M">
+                            <connections>
+                                <action selector="toggleSearchBar:" destination="DfV-bc-hLq" id="Ax5-W9-tSI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -394,7 +388,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Az4-Fq-MrL">
-                                <rect key="frame" x="0.0" y="44" width="768" height="867"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -429,18 +423,16 @@
                                     <outlet property="delegate" destination="uAI-Vb-ccQ" id="Jfm-Ow-x75"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" id="BfR-SK-izT">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="uAI-Vb-ccQ" id="NRg-3b-efG"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="n8E-pD-QZ6"/>
+                    <navigationItem key="navigationItem" title="Plants" id="n8E-pD-QZ6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="lfa-ap-Rcm">
+                            <connections>
+                                <action selector="toggleSearchBar:" destination="uAI-Vb-ccQ" id="oCs-Fy-rdU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Az4-Fq-MrL" id="KDC-4T-lmL"/>
                     </connections>
@@ -487,6 +479,7 @@
         <class className="SearchBarTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchBarTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="toggleSearchBar:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

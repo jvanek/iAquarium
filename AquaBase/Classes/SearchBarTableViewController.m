@@ -10,7 +10,11 @@
 #import "CommonName.h"
 
 
-@interface SearchBarTableViewController ()
+@interface SearchBarTableViewController () {
+	BOOL isShowingSearchBar;
+}
+
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -23,6 +27,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize tableView, searchResults;
 @synthesize searchPredicate = _searchPredicate;
+@synthesize searchBar;
 
 
 - (void)viewDidLoad {
@@ -32,6 +37,13 @@
 //	self.clearsSelectionOnViewWillAppear = NO;
 	self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 	isSearching = NO;
+	self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 44.0)];
+	self.searchBar.showsCancelButton = YES;
+	self.searchBar.placeholder = @"Search name";
+	self.searchBar.delegate = self;
+	self.searchBar.alpha = 0.0;
+	self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+	isShowingSearchBar = NO;
 }
 
 - (void)viewDidUnload {
@@ -43,6 +55,7 @@
 	self.tableView = nil;
 	self.searchResults = nil;
 	self.searchPredicate = nil;
+	self.searchBar = nil;
 }
 
 - (void)dealloc {
@@ -53,10 +66,16 @@
 	self.tableView = nil;
 	self.searchResults = nil;
 	self.searchPredicate = nil;
+	self.searchBar = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	if (isShowingSearchBar) [self toggleSearchBar:nil];
+	[super viewWillDisappear:animated];
 }
 
 #pragma mark - UIStoryboard Delegate
@@ -240,18 +259,44 @@
 	[self.tableView reloadData];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-	[self updateSearchResults:searchBar.text];
+- (void)searchBar:(UISearchBar *)aSearchBar textDidChange:(NSString *)searchText {
+	[self updateSearchResults:aSearchBar.text];
 }
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+- (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
 	[self updateSearchResults:nil];
-	if (APP_DELEGATE.isIphone) [searchBar resignFirstResponder];
+	if (APP_DELEGATE.isIphone) [aSearchBar resignFirstResponder];
+	[self toggleSearchBar:nil];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-	[self updateSearchResults:searchBar.text];
-	if (APP_DELEGATE.isIphone) [searchBar resignFirstResponder];
+- (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar {
+	[self updateSearchResults:aSearchBar.text];
+	if (APP_DELEGATE.isIphone) [aSearchBar resignFirstResponder];
+}
+
+- (IBAction)toggleSearchBar:(UIBarButtonItem *)sender {
+	CGRect tblRect = self.tableView.frame;
+	CGRect sbRect = self.searchBar.frame;
+	if ([self.searchBar superview] != nil) {
+		[UIView animateWithDuration:0.3 animations:^{
+			self.searchBar.alpha = 0.0;
+			self.tableView.frame = CGRectMake(tblRect.origin.x, tblRect.origin.y - sbRect.size.height,
+											  tblRect.size.width, tblRect.size.height + sbRect.size.height);
+		} completion:^(BOOL finished) {
+			[self.searchBar removeFromSuperview];
+			isShowingSearchBar = NO;
+		}];
+	}
+	else {
+		[UIView animateWithDuration:0.3 animations:^{
+			[self.view addSubview:self.searchBar];
+			self.tableView.frame = CGRectMake(tblRect.origin.x, tblRect.origin.y + sbRect.size.height,
+											  tblRect.size.width, tblRect.size.height - sbRect.size.height);
+			self.searchBar.alpha = 1.0;
+		} completion:^(BOOL finished) {
+			isShowingSearchBar = YES;
+		}];
+	}
 }
 
 @end

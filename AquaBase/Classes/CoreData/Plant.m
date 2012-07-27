@@ -21,7 +21,7 @@
 
 - (NSArray *)attributeKeys {
 	NSMutableArray *result = [NSMutableArray arrayWithArray:[super attributeKeys]];
-	[result addObjectsFromArray:[NSArray arrayWithObjects:nil]];
+	[result addObjectsFromArray:[NSArray arrayWithObjects:PLANT_KEY_SUBSTSTRACT, PLANT_KEY_LIGHT, PLANT_KEY_PLACEMENT, PLANT_KEY_GROWING_SPEED, nil]];
 	return result;
 }
 

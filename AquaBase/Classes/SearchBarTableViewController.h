@@ -24,6 +24,8 @@
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSArray *searchResults;
 
+- (IBAction)toggleSearchBar:(UIBarButtonItem *)sender;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)updateSearchResults:(NSString *)searchText;
 - (NSString *)orgnanismConcreteEntityName;
