@@ -41,6 +41,10 @@
 		D85F09EF15666AEB0093941F /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F09EE15666AEB0093941F /* NSManagedObjectContext+Additions.m */; };
 		D85F09FD156670150093941F /* Fish-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85F09FC156670150093941F /* Fish-mapping.plist */; };
 		D85F0A281566A5330093941F /* XmlParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F0A271566A5330093941F /* XmlParsingOperation.m */; };
+		D86A4D4415C2C3BE007DF088 /* Icon-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4315C2C3BE007DF088 /* Icon-iphone.png */; };
+		D86A4D4615C2C3C6007DF088 /* Icon-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4515C2C3C6007DF088 /* Icon-iphone@2x.png */; };
+		D86A4D4815C2C3CC007DF088 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4715C2C3CC007DF088 /* Icon-ipad.png */; };
+		D86A4D4A15C2C3D2007DF088 /* Icon-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86A4D4915C2C3D2007DF088 /* Icon-ipad@2x.png */; };
 		D882AFE0155C051D0029F188 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFDF155C051D0029F188 /* SearchViewController.m */; };
 		D882AFE9155C0B180029F188 /* SearchViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D882AFE8155C0B180029F188 /* SearchViewControllerCell.m */; };
 		D8B91951155BDC140029B555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B91950155BDC140029B555 /* UIKit.framework */; };
@@ -66,6 +70,7 @@
 		D8B919BE155BE7D70029B555 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919BD155BE7D70029B555 /* GHUnitIOSTestMain.m */; };
 		D8B919C8155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
 		D8B919C9155BE9CB0029B555 /* StreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B919C7155BE9CB0029B555 /* StreamController.m */; };
+		D8CAB6AF15C2BD15001D862B /* Plant-mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8CAB6AE15C2BD15001D862B /* Plant-mapping.plist */; };
 		D8D1511915A2EB4000C4E108 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */; };
 		D8D1512015A2F16100C4E108 /* DescriptionTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = D8D1511F15A2F16100C4E108 /* DescriptionTemplate.html */; };
 		D8D1512215A2F28D00C4E108 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = D8D1512115A2F28D00C4E108 /* bootstrap.css */; };
@@ -131,6 +136,10 @@
 		D85F09FE156672D00093941F /* StreamKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StreamKeys.h; path = Classes/StreamKeys.h; sourceTree = "<group>"; };
 		D85F0A261566A5330093941F /* XmlParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XmlParsingOperation.h; path = Classes/XmlParsingOperation.h; sourceTree = "<group>"; };
 		D85F0A271566A5330093941F /* XmlParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParsingOperation.m; path = Classes/XmlParsingOperation.m; sourceTree = "<group>"; };
+		D86A4D4315C2C3BE007DF088 /* Icon-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-iphone.png"; path = "../Icon-iphone.png"; sourceTree = "<group>"; };
+		D86A4D4515C2C3C6007DF088 /* Icon-iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-iphone@2x.png"; path = "../Icon-iphone@2x.png"; sourceTree = "<group>"; };
+		D86A4D4715C2C3CC007DF088 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-ipad.png"; path = "../Icon-ipad.png"; sourceTree = "<group>"; };
+		D86A4D4915C2C3D2007DF088 /* Icon-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-ipad@2x.png"; path = "../Icon-ipad@2x.png"; sourceTree = "<group>"; };
 		D882AFDE155C051D0029F188 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Classes/SearchViewController.h; sourceTree = "<group>"; };
 		D882AFDF155C051D0029F188 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Classes/SearchViewController.m; sourceTree = "<group>"; };
 		D882AFE7155C0B180029F188 /* SearchViewControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewControllerCell.h; path = Classes/SearchViewControllerCell.h; sourceTree = "<group>"; };
@@ -165,6 +174,7 @@
 		D8B919C6155BE9CB0029B555 /* StreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamController.h; path = Classes/StreamController.h; sourceTree = "<group>"; };
 		D8B919C7155BE9CB0029B555 /* StreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamController.m; path = Classes/StreamController.m; sourceTree = "<group>"; };
 		D8B919D0155BF4910029B555 /* poissons-aquarium.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "poissons-aquarium.xsd"; path = "Resources/poissons-aquarium.xsd"; sourceTree = "<group>"; };
+		D8CAB6AE15C2BD15001D862B /* Plant-mapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Plant-mapping.plist"; path = "Resources/Plant-mapping.plist"; sourceTree = "<group>"; };
 		D8D1511715A2EB4000C4E108 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DescriptionViewController.h; path = Classes/DescriptionViewController.h; sourceTree = "<group>"; };
 		D8D1511815A2EB4000C4E108 /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DescriptionViewController.m; path = Classes/DescriptionViewController.m; sourceTree = "<group>"; };
 		D8D1511F15A2F16100C4E108 /* DescriptionTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = DescriptionTemplate.html; path = Resources/DescriptionTemplate.html; sourceTree = "<group>"; };
@@ -311,8 +321,20 @@
 			isa = PBXGroup;
 			children = (
 				D85F09FC156670150093941F /* Fish-mapping.plist */,
+				D8CAB6AE15C2BD15001D862B /* Plant-mapping.plist */,
 			);
 			name = Mappings;
+			sourceTree = "<group>";
+		};
+		D86A4D3915C2C39F007DF088 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D86A4D4915C2C3D2007DF088 /* Icon-ipad@2x.png */,
+				D86A4D4715C2C3CC007DF088 /* Icon-ipad.png */,
+				D86A4D4515C2C3C6007DF088 /* Icon-iphone@2x.png */,
+				D86A4D4315C2C3BE007DF088 /* Icon-iphone.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		D882AFE4155C05800029F188 /* Master View Controller */ = {
@@ -435,6 +457,7 @@
 		D8B9197E155BDC7B0029B555 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D86A4D3915C2C39F007DF088 /* images */,
 				D8B91964155BDC140029B555 /* AquaBase.xcdatamodeld */,
 				D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */,
 				D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */,
@@ -616,6 +639,11 @@
 				D85C255215864C5500F83927 /* OperatorList.plist in Resources */,
 				D8D1512015A2F16100C4E108 /* DescriptionTemplate.html in Resources */,
 				D8D1512215A2F28D00C4E108 /* bootstrap.css in Resources */,
+				D8CAB6AF15C2BD15001D862B /* Plant-mapping.plist in Resources */,
+				D86A4D4415C2C3BE007DF088 /* Icon-iphone.png in Resources */,
+				D86A4D4615C2C3C6007DF088 /* Icon-iphone@2x.png in Resources */,
+				D86A4D4815C2C3CC007DF088 /* Icon-ipad.png in Resources */,
+				D86A4D4A15C2C3D2007DF088 /* Icon-ipad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,5 +18,6 @@
 
 - (id)initWithURL:(NSURL *)anUrl;
 - (void)addBatchToDatabase:(NSArray *)batch;
+- (NSString *)parsedObjectEntityName;
 
 @end

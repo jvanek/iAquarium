@@ -49,7 +49,7 @@
 	
 	[self performSelectorOnMainThread:@selector(showNetworkIndicator) withObject:nil waitUntilDone:NO];	
 	
-	[[DataController sharedInstance] updateDatabaseUsingURL:remoteUrl onCompletion:^(NSError *error) {
+	[[DataController sharedInstance] updateDatabaseUsingURL:remoteUrl withXmlOperationType:XmlOperationPlants onCompletion:^(NSError *error) {
 		[APP_DELEGATE performSelectorOnMainThread:@selector(hideNetworkActivity) withObject:nil waitUntilDone:NO];
 		self.navigationItem.rightBarButtonItem.enabled = YES;
 		//		[[DataController sharedInstance] updateIndexes];

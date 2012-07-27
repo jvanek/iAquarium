@@ -9,6 +9,10 @@
 
 #define NETWORK_DATA_DATE_FORMAT	@"yyyy-MM-dd'T'HH:mm:ss'Z'"
 
+typedef enum {
+	XmlOperationFish,
+	XmlOperationPlants
+} XmlOperationType;
 
 @interface DataController : NSObject
 
@@ -17,7 +21,7 @@
 + (DataController *)sharedInstance;
 + (NSDictionary *)mappingForEntityName:(NSString *)entityName;
 
-- (void)updateDatabaseUsingURL:(NSURL *)remoteUrl onCompletion:(void (^)(NSError *error))completionHandler;
+- (void)updateDatabaseUsingURL:(NSURL *)remoteUrl withXmlOperationType:(XmlOperationType)type onCompletion:(void (^)(NSError *error))completionHandler;
 - (void)updateIndexes;
 
 @end

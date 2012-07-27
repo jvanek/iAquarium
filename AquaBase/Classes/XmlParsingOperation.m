@@ -9,6 +9,7 @@
 #import "XmlParsingOperation.h"
 #import "NSString+Additions.h"
 #import "StreamKeys.h"
+#import "Organism.h"
 
 
 static NSUInteger const kSizeOfFishBatch = 20;
@@ -61,19 +62,17 @@ static NSUInteger const kSizeOfFishBatch = 20;
 
 	self.streamController = [[StreamController alloc] init];
 	self.streamController.delegate = self;
-	[self.streamController parseXmlFromUrl:remoteUrl error:&err];
-
-    if (![self isCancelled]) {
-        if ([self.currentParseBatch count] > 0) {
-			[self performSelectorOnMainThread:@selector(addBatchToDatabase:)
-								   withObject:self.currentParseBatch
-								waitUntilDone:NO];
-        }
-    }
-
-	NSLog(@"%s : Added %d objects (%d batches)", __PRETTY_FUNCTION__, count, batchCount);
-
-	if (self.completionHandler) self.completionHandler(err);	
+	if ([self.streamController parseXmlFromUrl:remoteUrl error:&err]) {
+		if (![self isCancelled]) {
+			if ([self.currentParseBatch count] > 0) {
+				[self performSelectorOnMainThread:@selector(addBatchToDatabase:)
+									   withObject:self.currentParseBatch
+									waitUntilDone:NO];
+			}
+		}
+		LOG(@"Added %d objects (%d batches)", count, batchCount);
+	} else if (err != nil) LOG(@"Error when parsing %@: %@", remoteUrl, [err localizedDescription]);
+	if (self.completionHandler) self.completionHandler(err);
 }
 
 #pragma mark - StreamControllerDelegate methods
@@ -113,10 +112,30 @@ static NSUInteger const kSizeOfFishBatch = 20;
 	}
 }
 
+- (NSString *)parsedObjectEntityName {
+	return nil;
+}
+
 #pragma mark - Batch methods
 
 - (void)addBatchToDatabase:(NSArray *)batch {
 	batchCount++;
+#ifdef DEBUG
+	LOG(@"Adding to database batch %d", batchCount);
+#endif
+	NSError *error = nil;
+	for (NSDictionary *aDict in batch) {
+		[GenericManagedObject updateObjectForKey:ORGANISM_KEY_SCIENTIFIC_NAME
+										   value:[aDict objectForKey:STREAM_KEY_NOM_SCIENT]
+									  entityName:[self parsedObjectEntityName]
+								  fromDictionary:aDict
+							   orCreateInContext:self.managedObjectContext];
+	}
+	
+    if (![self.managedObjectContext save:&error]) {
+        LOG(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 @end

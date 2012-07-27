@@ -7,8 +7,9 @@
 //
 
 #import "DataController.h"
-#import "XmlParsingOperation.h"
 #import "UpdateSectionsOperation.h"
+#import "FishParsingOperation.h"
+#import "PlantParsingOperation.h"
 
 
 // Les mappings par plistes ne sont plus utilises
@@ -61,13 +62,21 @@ static NSMutableArray *mappingsNotFound;
 	return _updateOperation;
 }
 
-- (void)updateDatabaseUsingURL:(NSURL *)remoteUrl onCompletion:(void (^)(NSError *error))completionHandler {
-	self.parsingOperation = [[XmlParsingOperation alloc] initWithURL:remoteUrl];
+- (void)updateDatabaseUsingURL:(NSURL *)remoteUrl withXmlOperationType:(XmlOperationType)type onCompletion:(void (^)(NSError *error))completionHandler {
+	self.parsingOperation = nil;
+	switch (type) {
+		case XmlOperationFish:
+			self.parsingOperation = [[FishParsingOperation alloc] initWithURL:remoteUrl];
+			break;
+		case XmlOperationPlants:
+			self.parsingOperation = [[PlantParsingOperation alloc] initWithURL:remoteUrl];
+			break;
+	}
 	if (completionHandler != nil) self.parsingOperation.completionHandler = completionHandler;
 	else {
 		self.parsingOperation.completionHandler = ^(NSError *error) {
-			if (error != nil) NSLog(@"%s : Error: %@", __PRETTY_FUNCTION__, [error localizedDescription]);
-			else NSLog(@"%s : Done.", __PRETTY_FUNCTION__);
+			if (error != nil) LOG(@"Error: %@", [error localizedDescription]);
+			else LOG(@"Done.");
 		};
 	}
 	[self.queue addOperation:self.parsingOperation];

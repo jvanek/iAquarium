@@ -35,7 +35,8 @@
 }
 
 - (void)updateSectionIndex {
-	self.section = IS_EMPTY_STRING(self.scientificName) ? nil : [[self.scientificName substringToIndex:1] uppercaseString];	
+	if (IS_EMPTY_STRING(self.scientificName)) self.scientificName = @"Undefined";
+	self.section = [[self.scientificName substringToIndex:1] uppercaseString];
 }
 
 - (void)replaceWithDictionary:(NSDictionary *)aDict {

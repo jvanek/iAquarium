@@ -31,27 +31,8 @@
 	return STREAM_KEY_POISSON;
 }
 
-#pragma mark - Batch methods
-
-- (void)addBatchToDatabase:(NSArray *)batch {
-	NSError *error = nil;
-	for (NSDictionary *aDict in batch) {
-#ifdef DEBUG_XML
-		NSLog(@"%s : Adding to database %@", __PRETTY_FUNCTION__, [self.currentItem description]);
-#endif
-		[GenericManagedObject updateObjectForKey:ORGANISM_KEY_SCIENTIFIC_NAME
-										   value:[aDict objectForKey:STREAM_KEY_NOM_SCIENT]
-									  entityName:FISH_ENTITY_NAME
-								  fromDictionary:aDict
-							   orCreateInContext:self.managedObjectContext];
-	}
-	
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"%s : Unresolved error %@, %@", __PRETTY_FUNCTION__, error, [error userInfo]);
-        abort();
-    }
-
-	[super addBatchToDatabase:batch];
+- (NSString *)parsedObjectEntityName {
+	return FISH_ENTITY_NAME;
 }
 
 @end

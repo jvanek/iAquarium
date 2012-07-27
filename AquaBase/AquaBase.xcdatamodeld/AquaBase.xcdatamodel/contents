@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CommonName" representedClassName="CommonName" syncable="YES">
         <attribute name="label" attributeType="String" syncable="YES"/>
         <relationship name="localization" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Localization" inverseName="commonNames" inverseEntity="Localization" syncable="YES"/>
@@ -46,7 +46,7 @@
         <attribute name="scientificName" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="section" optional="YES" attributeType="String" maxValueString="1" syncable="YES"/>
         <relationship name="acidity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="organismAcid" inverseEntity="LifeValues" syncable="YES"/>
-        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommonName" inverseName="organism" inverseEntity="CommonName" syncable="YES"/>
+        <relationship name="commonNames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CommonName" inverseName="organism" inverseEntity="CommonName" syncable="YES"/>
         <relationship name="hardnessGH" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="organismHardnessGH" inverseEntity="LifeValues" syncable="YES"/>
         <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medium" inverseName="organism" inverseEntity="Medium" syncable="YES"/>
         <relationship name="temperature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LifeValues" inverseName="organismTemp" inverseEntity="LifeValues" syncable="YES"/>
@@ -59,13 +59,13 @@
         <relationship name="size" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="LifeValues" inverseName="plants" inverseEntity="LifeValues" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CommonName" positionX="-20241" positionY="-8802" width="128" height="90"/>
-        <element name="Fish" positionX="-20025" positionY="-8796" width="128" height="300"/>
-        <element name="GenderValues" positionX="-20241" positionY="-8505" width="128" height="90"/>
-        <element name="LifeValues" positionX="-19757" positionY="-8784" width="128" height="150"/>
-        <element name="Localization" positionX="-20232" positionY="-8640" width="128" height="90"/>
-        <element name="Medium" positionX="-19730" positionY="-8532" width="128" height="105"/>
-        <element name="Plant" positionX="-452745" positionY="-43362" width="128" height="120"/>
-        <element name="Organism" positionX="-452639" positionY="-43614" width="128" height="180"/>
+        <element name="CommonName" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Fish" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GenderValues" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LifeValues" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Localization" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Medium" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Organism" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Plant" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
