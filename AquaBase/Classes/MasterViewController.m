@@ -8,6 +8,8 @@
 
 #import "MasterViewController.h"
 #import "Fish.h"
+#import "DetailFishViewController.h"
+
 
 @interface MasterViewController ()
 
@@ -19,6 +21,16 @@
 
 - (NSString *)orgnanismConcreteEntityName {
 	return FISH_ENTITY_NAME;
+}
+
+#pragma mark - UIStoryboard Delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    Fish *object = nil;
+	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
+    else object = (Fish *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+	[(DetailFishViewController *)segue.destinationViewController setDetailItem:object];
 }
 
 @end

@@ -8,6 +8,9 @@
 
 #import "SearchBarTableViewController.h"
 #import "CommonName.h"
+#import "Organism.h"
+#import "DetailFishViewController.h"
+#import "DetailPlantViewController.h"
 
 
 @interface SearchBarTableViewController () {
@@ -22,7 +25,6 @@
 
 @implementation SearchBarTableViewController
 
-@synthesize detailViewController = _detailViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize tableView, searchResults;
@@ -48,7 +50,6 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	self.detailViewController = nil;
 	self.fetchedResultsController.delegate = nil;
 	self.fetchedResultsController = nil;
 	self.managedObjectContext = nil;
@@ -59,7 +60,6 @@
 }
 
 - (void)dealloc {
-	self.detailViewController = nil;
 	self.fetchedResultsController.delegate = nil;
 	self.fetchedResultsController = nil;
 	self.managedObjectContext = nil;
@@ -76,16 +76,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	if (isShowingSearchBar) [self toggleSearchBar:nil];
 	[super viewWillDisappear:animated];
-}
-
-#pragma mark - UIStoryboard Delegate
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    Organism *object = nil;
-	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-	if (isSearching) object = [self.searchResults objectAtIndex:indexPath.row];
-    else object = (Organism *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
-	((DetailViewController *)segue.destinationViewController).detailItem = object;
 }
 
 #pragma mark - Table View

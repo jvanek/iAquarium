@@ -30,6 +30,8 @@
 		D8181E1215BEF837008C6E55 /* PlantParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1115BEF836008C6E55 /* PlantParsingOperation.m */; };
 		D8181E1615C0AB72008C6E55 /* PlantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1515C0AB72008C6E55 /* PlantsViewController.m */; };
 		D8181E1A15C0AE07008C6E55 /* SearchBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8181E1915C0AE07008C6E55 /* SearchBarTableViewController.m */; };
+		D83EDC5C15C2E223007DE3D5 /* DetailFishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83EDC5B15C2E223007DE3D5 /* DetailFishViewController.m */; };
+		D83EDC5F15C2E239007DE3D5 /* DetailPlantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83EDC5E15C2E238007DE3D5 /* DetailPlantViewController.m */; };
 		D85C254D1585CEF500F83927 /* AquaBase_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */; };
 		D85C25501585CF0C00F83927 /* AquaBase_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */; };
 		D85C255215864C5500F83927 /* OperatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85C255115864C5500F83927 /* OperatorList.plist */; };
@@ -119,6 +121,10 @@
 		D839F22C157CB44A008B38F2 /* ComboboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComboboxController.h; path = Classes/ComboboxController.h; sourceTree = "<group>"; };
 		D839F22D157CB44A008B38F2 /* ComboboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComboboxController.m; path = Classes/ComboboxController.m; sourceTree = "<group>"; };
 		D839F231157CB472008B38F2 /* ComboboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComboboxController.xib; path = Resources/ComboboxController.xib; sourceTree = "<group>"; };
+		D83EDC5A15C2E223007DE3D5 /* DetailFishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailFishViewController.h; path = Classes/DetailFishViewController.h; sourceTree = "<group>"; };
+		D83EDC5B15C2E223007DE3D5 /* DetailFishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailFishViewController.m; path = Classes/DetailFishViewController.m; sourceTree = "<group>"; };
+		D83EDC5D15C2E238007DE3D5 /* DetailPlantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPlantViewController.h; path = Classes/DetailPlantViewController.h; sourceTree = "<group>"; };
+		D83EDC5E15C2E238007DE3D5 /* DetailPlantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailPlantViewController.m; path = Classes/DetailPlantViewController.m; sourceTree = "<group>"; };
 		D85C254C1585CEF500F83927 /* AquaBase_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPhone.storyboard; path = Resources/AquaBase_iPhone.storyboard; sourceTree = "<group>"; };
 		D85C254F1585CF0C00F83927 /* AquaBase_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AquaBase_iPad.storyboard; path = Resources/AquaBase_iPad.storyboard; sourceTree = "<group>"; };
 		D85C255115864C5500F83927 /* OperatorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = OperatorList.plist; path = Resources/OperatorList.plist; sourceTree = "<group>"; };
@@ -350,6 +356,10 @@
 				D85E747D156A338C005E6ABA /* Life Values Cell */,
 				D8B9196A155BDC140029B555 /* DetailViewController.h */,
 				D8B9196B155BDC140029B555 /* DetailViewController.m */,
+				D83EDC5A15C2E223007DE3D5 /* DetailFishViewController.h */,
+				D83EDC5B15C2E223007DE3D5 /* DetailFishViewController.m */,
+				D83EDC5D15C2E238007DE3D5 /* DetailPlantViewController.h */,
+				D83EDC5E15C2E238007DE3D5 /* DetailPlantViewController.m */,
 			);
 			name = "Detail View Controller";
 			sourceTree = "<group>";
@@ -711,6 +721,8 @@
 				D8181E1615C0AB72008C6E55 /* PlantsViewController.m in Sources */,
 				D8181E1A15C0AE07008C6E55 /* SearchBarTableViewController.m in Sources */,
 				D8858F8515C2CAC200900979 /* PreferencesViewController.m in Sources */,
+				D83EDC5C15C2E223007DE3D5 /* DetailFishViewController.m in Sources */,
+				D83EDC5F15C2E239007DE3D5 /* DetailPlantViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
