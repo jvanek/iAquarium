@@ -133,4 +133,24 @@
 	return result;	
 }
 
+- (BOOL)hasGenderInformation {
+	return (self.size != nil);
+}
+
+- (NSUInteger)genderRowCount {
+	return [[self genderKeys] count];
+}
+
+- (NSArray *)genderKeys {
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:1];
+	if (self.size != nil) [result addObject:LOCALIZED_STRING(@"Size")];
+	return result;
+}
+
+- (NSDictionary *)genderValues {
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:1];
+	if (self.size != nil) [result setObject:self.size forKey:LOCALIZED_STRING(@"Size")];
+	return result;
+}
+
 @end

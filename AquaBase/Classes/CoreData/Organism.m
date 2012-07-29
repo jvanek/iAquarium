@@ -114,4 +114,20 @@
 	return result;
 }
 
+- (BOOL)hasGenderInformation {
+	return NO;
+}
+
+- (NSUInteger)genderRowCount {
+	return 0;
+}
+
+- (NSArray *)genderKeys {
+	return nil;
+}
+
+- (NSDictionary *)genderValues {
+	return nil;
+}
+
 @end

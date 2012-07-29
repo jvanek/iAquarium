@@ -21,6 +21,7 @@
 // Fish specific
 #define DETAIL_SECTION_FAMILY			LOCALIZED_STRING(@"Family")
 #define DETAIL_SECTION_SIMPLE_VALUES	LOCALIZED_STRING(@"Facts")
+#define DETAIL_SECTION_GENDER_VALUES	LOCALIZED_STRING(@"Specific values")
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

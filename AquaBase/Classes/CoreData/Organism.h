@@ -53,6 +53,11 @@
 - (NSArray *)descriptionsKeys;
 - (NSDictionary *)descriptionsValues;
 
+- (BOOL)hasGenderInformation;
+- (NSUInteger)genderRowCount;
+- (NSArray *)genderKeys;
+- (NSDictionary *)genderValues;
+
 @end
 
 @interface Organism (CoreDataGeneratedAccessors)

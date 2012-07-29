@@ -12,6 +12,7 @@
 #import "LifeValues.h"
 #import "CommonName.h"
 #import "Fish.h"
+#import "GenderValuesCell.h"
 
 
 @interface DetailViewController ()
@@ -34,6 +35,7 @@
 		self.navigationItem.title = self.detailItem.scientificName;
 		if (self.detailItem.commonNames != nil && [self.detailItem.commonNames count] > 0) [self.sections addObject:DETAIL_SECTION_COMMON_NAMES];
 		if ([self.detailItem hasBiotopInformation]) [self.sections addObject:DETAIL_SECTION_BIOTOP];
+		if ([self.detailItem hasGenderInformation]) [self.sections addObject:DETAIL_SECTION_GENDER_VALUES];
 		if ([self.detailItem hasDescriptions]) [self.sections addObject:DETAIL_SECTION_DESCRIPTIONS];
 		if ([self.detailItem hasFactsInformation]) [self.sections addObject:DETAIL_SECTION_SIMPLE_VALUES];
 	} else self.navigationItem.title = LOCALIZED_STRING(@"Detail");
@@ -85,6 +87,9 @@
 	else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
 		return [self.detailItem biotopRowCount];
 	}
+	else if ([DETAIL_SECTION_GENDER_VALUES isEqualToString:sectionTitle]) {
+		return [self.detailItem genderRowCount];
+	}
 	else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
 		return [self.detailItem factsRowCount];
 	}
@@ -106,6 +111,8 @@
 		cell = [tableView dequeueReusableCellWithIdentifier:DETAIL_NONSELECTABLE_CELL_ID];
 	} else if ([DETAIL_SECTION_BIOTOP isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:LIFE_VALUES_CELL_ID];
+	} else if ([DETAIL_SECTION_GENDER_VALUES isEqualToString:sectionTitle]) {
+		cell = [tableView dequeueReusableCellWithIdentifier:GENDER_VALUES_CELL_ID];
 	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
 		cell = [tableView dequeueReusableCellWithIdentifier:FACTS_DETAIL_CELL_ID];
 	} else {
@@ -143,6 +150,10 @@
 		NSString *biotopKey = [[self.detailItem biotopKeys] objectAtIndex:indexPath.row];
 		LifeValues *lv = [[self.detailItem biotopValues] objectForKey:biotopKey];
 		[(LifeValuesCell *)cell configureWithLifeValues:lv forTitle:biotopKey];
+	} else if ([DETAIL_SECTION_GENDER_VALUES isEqualToString:sectionTitle]) {
+		NSString *sizeKey = [[self.detailItem genderKeys] objectAtIndex:indexPath.row];
+		GenderValues *gv = [[self.detailItem genderValues] objectForKey:sizeKey];
+		[(GenderValuesCell *)cell configureWithGenderValues:gv forTitle:sizeKey];
 	} else if ([DETAIL_SECTION_SIMPLE_VALUES isEqualToString:sectionTitle]) {
 		NSString *factKey = [[self.detailItem factsKeys] objectAtIndex:indexPath.row];
 		cell.textLabel.text = factKey;

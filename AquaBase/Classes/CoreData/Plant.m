@@ -61,6 +61,33 @@
 	} else [self.managedObjectContext deleteObject:self.size];
 }
 
+- (BOOL)hasBiotopInformation {
+	return [super hasBiotopInformation] || (self.size != nil);
+}
+
+- (NSArray *)biotopKeys {
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:3];
+	if (self.temperature != nil) [result addObject:LOCALIZED_STRING(@"Temp (°C)")];
+	if (self.acidity != nil) [result addObject:LOCALIZED_STRING(@"pH")];
+	if (self.hardnessGH != nil) [result addObject:LOCALIZED_STRING(@"GH")];
+	if (self.size != nil) [result addObject:LOCALIZED_STRING(@"Size")];
+	return result;
+}
+
+- (NSDictionary *)biotopValues {
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:3];
+	if (self.temperature != nil) [result setObject:self.temperature forKey:LOCALIZED_STRING(@"Temp (°C)")];
+	if (self.acidity != nil) [result setObject:self.acidity forKey:LOCALIZED_STRING(@"pH")];
+	if (self.hardnessGH != nil) [result setObject:self.hardnessGH forKey:LOCALIZED_STRING(@"GH")];
+	if (self.size != nil) [result setObject:self.size forKey:LOCALIZED_STRING(@"Size")];
+	return result;
+}
+
+- (BOOL)hasDescriptions {
+	return [super hasDescriptions] || !(IS_EMPTY_STRING(self.substract) && IS_EMPTY_STRING(self.growingSpeed) &&
+										IS_EMPTY_STRING(self.light) && IS_EMPTY_STRING(self.placement));
+}
+
 - (NSArray *)descriptionsKeys {
 	NSMutableArray *result = [NSMutableArray arrayWithArray:[super descriptionsKeys]];
 	if (!IS_EMPTY_STRING(self.substract)) [result addObject:LOCALIZED_STRING(@"Substract")];
