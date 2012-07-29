@@ -89,30 +89,6 @@
 	} else [self.managedObjectContext deleteObject:self.size];
 }
 
-- (BOOL)hasBiotopInformation {
-	return self.temperature != nil || self.hardnessGH != nil || self.acidity != nil || self.lifeZone != nil;
-}
-
-- (NSUInteger)biotopRowCount {
-	return [[self biotopKeys] count];
-}
-
-- (NSArray *)biotopKeys {
-	NSMutableArray *result = [NSMutableArray arrayWithCapacity:3];
-	if (self.temperature != nil) [result addObject:LOCALIZED_STRING(@"Temp (°C)")];
-	if (self.acidity != nil) [result addObject:LOCALIZED_STRING(@"pH")];
-	if (self.hardnessGH != nil) [result addObject:LOCALIZED_STRING(@"GH")];
-	return result;	
-}
-
-- (NSDictionary *)biotopValues {
-	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:3];
-	if (self.temperature != nil) [result setObject:self.temperature forKey:LOCALIZED_STRING(@"Temp (°C)")];
-	if (self.acidity != nil) [result setObject:self.acidity forKey:LOCALIZED_STRING(@"pH")];
-	if (self.hardnessGH != nil) [result setObject:self.hardnessGH forKey:LOCALIZED_STRING(@"GH")];
-	return result;
-}
-
 - (BOOL)hasFactsInformation {
 	return self.lifeDuration != nil || self.lifeZone != nil || self.author != nil;
 }
@@ -138,31 +114,22 @@
 }
 
 - (BOOL)hasDescriptions {
-	return !(IS_EMPTY_STRING(self.origin) && IS_EMPTY_STRING(self.comment) && IS_EMPTY_STRING(self.dimorphism) &&
-			 IS_EMPTY_STRING(self.behavior) && IS_EMPTY_STRING(self.reproduction));
-}
-
-- (NSUInteger)descriptionsRowCount {
-	return [[self descriptionsKeys] count];
+	return [super hasDescriptions] || !(IS_EMPTY_STRING(self.comment) && IS_EMPTY_STRING(self.dimorphism) && IS_EMPTY_STRING(self.behavior));
 }
 
 - (NSArray *)descriptionsKeys {
-	NSMutableArray *result = [NSMutableArray arrayWithCapacity:5];
-	if (!IS_EMPTY_STRING(self.origin)) [result addObject:LOCALIZED_STRING(@"Origin")];
+	NSMutableArray *result = [NSMutableArray arrayWithArray:[super descriptionsKeys]];
 	if (!IS_EMPTY_STRING(self.comment)) [result addObject:LOCALIZED_STRING(@"Description")];
 	if (!IS_EMPTY_STRING(self.dimorphism)) [result addObject:LOCALIZED_STRING(@"Dimorphism")];
 	if (!IS_EMPTY_STRING(self.behavior)) [result addObject:LOCALIZED_STRING(@"Behavior")];
-	if (!IS_EMPTY_STRING(self.reproduction)) [result addObject:LOCALIZED_STRING(@"Reproduction")];
-	return result;	
+	return result;
 }
 
 - (NSDictionary *)descriptionsValues {
-	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:5];
-	if (!IS_EMPTY_STRING(self.origin)) [result setObject:self.origin forKey:LOCALIZED_STRING(@"Origin")];
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:[super descriptionsValues]];
 	if (!IS_EMPTY_STRING(self.comment)) [result setObject:self.comment forKey:LOCALIZED_STRING(@"Description")];
 	if (!IS_EMPTY_STRING(self.dimorphism)) [result setObject:self.dimorphism forKey:LOCALIZED_STRING(@"Dimorphism")];
 	if (!IS_EMPTY_STRING(self.behavior)) [result setObject:self.behavior forKey:LOCALIZED_STRING(@"Behavior")];
-	if (!IS_EMPTY_STRING(self.reproduction)) [result setObject:self.reproduction forKey:LOCALIZED_STRING(@"Reproduction")];
 	return result;	
 }
 

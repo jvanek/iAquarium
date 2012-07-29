@@ -61,4 +61,22 @@
 	} else [self.managedObjectContext deleteObject:self.size];
 }
 
+- (NSArray *)descriptionsKeys {
+	NSMutableArray *result = [NSMutableArray arrayWithArray:[super descriptionsKeys]];
+	if (!IS_EMPTY_STRING(self.substract)) [result addObject:LOCALIZED_STRING(@"Substract")];
+	if (!IS_EMPTY_STRING(self.growingSpeed)) [result addObject:LOCALIZED_STRING(@"Growing speed")];
+	if (!IS_EMPTY_STRING(self.light)) [result addObject:LOCALIZED_STRING(@"Light")];
+	if (!IS_EMPTY_STRING(self.placement)) [result addObject:LOCALIZED_STRING(@"Placement")];
+	return result;
+}
+
+- (NSDictionary *)descriptionsValues {
+	NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:[super descriptionsValues]];
+	if (!IS_EMPTY_STRING(self.substract)) [result setObject:self.origin forKey:LOCALIZED_STRING(@"Substract")];
+	if (!IS_EMPTY_STRING(self.growingSpeed)) [result setObject:self.reproduction forKey:LOCALIZED_STRING(@"Growing speed")];
+	if (!IS_EMPTY_STRING(self.light)) [result setObject:self.origin forKey:LOCALIZED_STRING(@"Light")];
+	if (!IS_EMPTY_STRING(self.placement)) [result setObject:self.reproduction forKey:LOCALIZED_STRING(@"Placement")];
+	return result;
+}
+
 @end

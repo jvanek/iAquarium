@@ -41,19 +41,4 @@
 + (NSArray *)fishUsingPredicate:(NSPredicate *)predicate andOrderings:(NSArray *)orderings inContext:(NSManagedObjectContext *)ctx;
 + (NSArray *)attributesToQuery;
 
-- (BOOL)hasBiotopInformation;
-- (NSUInteger)biotopRowCount;
-- (NSArray *)biotopKeys;
-- (NSDictionary *)biotopValues;
-
-- (BOOL)hasFactsInformation;
-- (NSUInteger)factsRowCount;
-- (NSArray *)factsKeys;
-- (NSDictionary *)factsValues;
-
-- (BOOL)hasDescriptions;
-- (NSUInteger)descriptionsRowCount;
-- (NSArray *)descriptionsKeys;
-- (NSDictionary *)descriptionsValues;
-
 @end

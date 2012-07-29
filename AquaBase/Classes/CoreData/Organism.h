@@ -38,6 +38,21 @@
 
 - (void)updateSectionIndex;
 
+- (BOOL)hasBiotopInformation;
+- (NSUInteger)biotopRowCount;
+- (NSArray *)biotopKeys;
+- (NSDictionary *)biotopValues;
+
+- (BOOL)hasFactsInformation;
+- (NSUInteger)factsRowCount;
+- (NSArray *)factsKeys;
+- (NSDictionary *)factsValues;
+
+- (BOOL)hasDescriptions;
+- (NSUInteger)descriptionsRowCount;
+- (NSArray *)descriptionsKeys;
+- (NSDictionary *)descriptionsValues;
+
 @end
 
 @interface Organism (CoreDataGeneratedAccessors)

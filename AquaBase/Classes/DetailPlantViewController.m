@@ -19,26 +19,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
 	[super configureView];
-	if (self.detailItem) {
-		self.navigationItem.title = self.detailItem.scientificName;
-	} else self.navigationItem.title = @"";
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSString *sectionTitle = [self.sections objectAtIndex:section];
-	return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
-	cell = [tableView dequeueReusableCellWithIdentifier:PlantDetailCellID];
-	[self configureCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-	NSString *sectionTitle = [self.sections objectAtIndex:indexPath.section];
-	cell.textLabel.text = @"";
+	if (self.detailItem == nil) self.navigationItem.title = LOCALIZED_STRING(@"Detail Plant");
 }
 
 @end

@@ -73,6 +73,7 @@
 		D8D1512015A2F16100C4E108 /* DescriptionTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = D8D1511F15A2F16100C4E108 /* DescriptionTemplate.html */; };
 		D8D1512215A2F28D00C4E108 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = D8D1512115A2F28D00C4E108 /* bootstrap.css */; };
 		D8D1512515A304B300C4E108 /* UpdateSectionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */; };
+		D8FE7DD515C5000F009B914E /* GenderValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE7DD415C5000F009B914E /* GenderValuesCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +186,8 @@
 		D8D1512115A2F28D00C4E108 /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = bootstrap.css; path = Resources/bootstrap.css; sourceTree = "<group>"; };
 		D8D1512315A304B300C4E108 /* UpdateSectionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateSectionsOperation.h; path = Classes/UpdateSectionsOperation.h; sourceTree = "<group>"; };
 		D8D1512415A304B300C4E108 /* UpdateSectionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateSectionsOperation.m; path = Classes/UpdateSectionsOperation.m; sourceTree = "<group>"; };
+		D8FE7DD315C5000F009B914E /* GenderValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenderValuesCell.h; path = Classes/GenderValuesCell.h; sourceTree = "<group>"; };
+		D8FE7DD415C5000F009B914E /* GenderValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenderValuesCell.m; path = Classes/GenderValuesCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				D85E747D156A338C005E6ABA /* Life Values Cell */,
+				D8FE7DD715C50026009B914E /* Gender Values Cell */,
 				D8B9196A155BDC140029B555 /* DetailViewController.h */,
 				D8B9196B155BDC140029B555 /* DetailViewController.m */,
 				D83EDC5A15C2E223007DE3D5 /* DetailFishViewController.h */,
@@ -585,6 +589,15 @@
 			name = "Description View Controller";
 			sourceTree = "<group>";
 		};
+		D8FE7DD715C50026009B914E /* Gender Values Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE7DD315C5000F009B914E /* GenderValuesCell.h */,
+				D8FE7DD415C5000F009B914E /* GenderValuesCell.m */,
+			);
+			name = "Gender Values Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -723,6 +736,7 @@
 				D8858F8515C2CAC200900979 /* PreferencesViewController.m in Sources */,
 				D83EDC5C15C2E223007DE3D5 /* DetailFishViewController.m in Sources */,
 				D83EDC5F15C2E239007DE3D5 /* DetailPlantViewController.m in Sources */,
+				D8FE7DD515C5000F009B914E /* GenderValuesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

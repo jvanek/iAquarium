@@ -7,14 +7,9 @@
 //
 
 #import "DetailViewController.h"
-#import "Plant.h"
 
-
-#define PlantDetailCellID	@"PlantDetailCellID"
 
 
 @interface DetailPlantViewController : DetailViewController
-
-@property (strong, nonatomic) Plant *detailItem;
 
 @end
